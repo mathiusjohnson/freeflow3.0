@@ -11,7 +11,7 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "HTTPS=TRUE react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -30,5 +30,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "axios": "^0.20.0",
+    "node": "^14.14.0",
+    "react-router-dom": "^5.2.0",
+    "react-tag-autocomplete": "^6.1.0",
+    "reactstrap": "^8.6.0",
+    "sass": "^1.27.0"
+  },
+  "proxy": "http://localhost:8001"
 }

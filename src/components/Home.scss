@@ -1,0 +1,91 @@
+.dashboard-page {
+	.title {
+		display: flex;
+		justify-content: center;
+	}
+	.filter-btns {
+		margin-top: -30px;
+		
+	}
+	.filter-btn {
+		padding: 0.3rem 0 0.2rem;
+		margin-right: 0.25rem;
+		color: #222b45;
+		border-radius: 5px;
+		width: 84px;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.filter-btn:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	
+	.filter-btn-selected {
+		opacity: 0.7;
+	}
+	
+	.filter-btn-all {
+		background: #e2e3e5;
+		border-color: #d6d8db;
+	}
+	
+	.filter-btn-css {
+		background: #fff3cd;
+		border-color: #ffeeba;
+	}
+	
+	.filter-btn-ruby {
+		background: #cce5ff;
+		border-color: #b8daff;
+	}
+	
+	.filter-btn-javascript {
+		background: #d4edda;
+		border-color: #c3e6cb;
+	}
+}
+  .hero {
+    text-align: center;
+    margin: 40px 0 60px 0;
+  }
+  .container {
+    // position: absolute;
+    .post-filter {
+      display: flex;
+      position: relative;
+      top: 65px;
+      left: 100px;
+    }
+
+    .filter-btn:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .filter-btn-selected {
+      opacity: 0.7;
+    }
+
+    .filter-btn-all {
+      background: #e2e3e5;
+      border-color: #d6d8db;
+    }
+
+    .filter-btn-css {
+      background: #fff3cd;
+      border-color: #ffeeba;
+    }
+
+    .filter-btn-ruby {
+      background: #cce5ff;
+      border-color: #b8daff;
+    }
+
+    .filter-btn-javascript {
+      background: #d4edda;
+      border-color: #c3e6cb;
+    }
+  }
+
