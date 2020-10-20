@@ -83,7 +83,7 @@ export default function Home(props) {
 				      </button>
               <Editor
                 createPost={createPost}
-                suggestion={state.stack_preferences}
+                suggestion={state.db_skills}
                 users={users}
               />
               <div className="container">

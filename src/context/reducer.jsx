@@ -15,6 +15,7 @@ export const initialState = {
 };
 
 export const AuthReducer = (initialState, action) => {
+	console.log("action payload in reducer: ", action.payload);
 	switch (action.type) {
 		case 'REQUEST_LOGIN':
 			return {
@@ -25,7 +26,7 @@ export const AuthReducer = (initialState, action) => {
 			return {
 				...initialState,
 				user: action.payload.user,
-				token: action.payload.auth_token,
+				token: action.payload.password,
 				loading: false,
 			};
 		case 'LOGOUT':

@@ -3,7 +3,7 @@
 export function sortFilterAllTutorData(tutorData, loggedInUserID) {
 
   const userTutorData = tutorData.filter(session => {
-    return session.mentor_id === loggedInUserID || session.student_id === loggedInUserID;
+    return session.helper_id === loggedInUserID || session.helped_id === loggedInUserID;
   });;
 
   const pendingData = userTutorData.filter(data => data.status === 'pending').sort((a, b) => {
@@ -49,16 +49,16 @@ export function formatDate(dateString) {
   return new Date(dateString).toLocaleDateString(undefined, options)
 }
 
-export function getMentorUsername(props) {
-  let mentorUsername;
+export function getHelperUsername(props) {
+  let helperUsername;
 
   for (let user of props.currentUserData) {
-    if (user.id === props.mentorID) {
-      mentorUsername = user.username;
+    if (user.id === props.helperID) {
+      helperUsername = user.username;
     }
   }
 
-  return mentorUsername;
+  return helperUsername;
 }
 
 export function getStudentUsername(props) {

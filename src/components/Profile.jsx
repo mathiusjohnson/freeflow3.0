@@ -24,7 +24,7 @@ function UserProfileItem(props) {
     state,
     createPost,
     updateUserInfo,
-    updateMentorStack,
+    updatehelperStack,
     createComment,
     updatePost,
     deletePost,
@@ -69,8 +69,8 @@ function UserProfileItem(props) {
 
           if (
             currentUser.id ||
-            currentUser.student_id ||
-            currentUser.mentor_id
+            currentUser.helped_id ||
+            currentUser.helper_id
           ) {
             senderID = currentUser;
           }
@@ -80,15 +80,15 @@ function UserProfileItem(props) {
 
           const user = getUser(state.user_profiles, senderID.id);
 
-          const mentor = data.state.mentor_points.find(
-            (mentor) => mentor.id === user.id
+          const helper = data.state.helper_points.find(
+            (helper) => helper.id === user.id
           );
 
-          const student = data.state.student_points.find(
-            (student) => student.id === user.id
+          const helped = data.state.helped_points.find(
+            (helped) => helped.id === user.id
           );
 
-          const mentor_stack = getStack(state.mentor_stack, senderID.id);
+          const helper_stack = getStack(state.helper_stack, senderID.id);
 
           return (
 
@@ -101,7 +101,7 @@ function UserProfileItem(props) {
                     user={currentUser}
                     loggedInUser={data.selected}
                     onEdit={onEdit}
-                    mentor_stack={mentor_stack}
+                    helper_stack={helper_stack}
                   />
                 </>
               )}
@@ -110,11 +110,11 @@ function UserProfileItem(props) {
                   <EditUserInfo
                     user={currentUser}
                     loggedInUser={data.selected}
-                    mentor_stack={mentor_stack}
-                    suggestion={state.stack_preferences}
+                    helper_stack={helper_stack}
+                    suggestion={state.db_skills}
                     avatars={state.avatars}
                     onSaveNewInfo={updateUserInfo}
-                    onSaveNewStack={updateMentorStack}
+                    onSaveNewStack={updatehelperStack}
                     onSave={onSave}
                     onCancel={onCancel}
                   />
@@ -125,7 +125,7 @@ function UserProfileItem(props) {
                     <Editor
                       id={user.id}
                       createPost={createPost}
-                      suggestion={state.stack_preferences}
+                      suggestion={state.db_skills}
                     />
 
               ) : (

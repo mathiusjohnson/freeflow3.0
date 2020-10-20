@@ -5,23 +5,23 @@ function Experience(props) {
   // console.log("props in experience: ", props);
 
   if (!props.user) return {};
-  console.log("user in experience: ", props.user.studentrating);
+  console.log("user in experience: ", props.user.helpedrating);
 
   return (
     <div className="experience">
       <div className="exp-classification">
-        {props.user.mentorrating ? <p>Mentor Level</p> : ""}
-        {props.user.mentorrating ? (
-          <ProgressBar experience={Number(props.user.mentorrating)} />
+        {props.user.helperrating ? <p>Helper Level</p> : ""}
+        {props.user.helperrating ? (
+          <ProgressBar experience={Number(props.user.helperrating)} />
         ) : (
           ""
         )}
       </div>
 
       <div className="exp-classification">
-        {props.user.studentrating ? <p>Student Level</p> : ""}
-        {props.user.studentrating ? (
-          <ProgressBar experience={Number(props.user.studentrating)} />
+        {props.user.helpedrating ? <p>Helped Level</p> : ""}
+        {props.user.helpedrating ? (
+          <ProgressBar experience={Number(props.user.helpedrating)} />
         ) : (
           ""
         )}

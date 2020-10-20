@@ -46,7 +46,7 @@ function EditUserInfo(props) {
       location: location,
     };
 
-    const oldStack = props.mentor_stack.map((val) => {
+    const oldStack = props.user_skills.map((val) => {
       return val["name"];
     });
     const newStack = techTags.map((val) => {
@@ -113,7 +113,7 @@ function EditUserInfo(props) {
             {/* </Col>
             <Col breakPoint={{ xs: 12, sm: 12, md: 12, lg: 12 }}> */}
               <Tags
-                tags={props.mentor_stack}
+                tags={props.user_skills}
                 onChange={onChangeInput}
                 suggested={props.suggestion}
               />

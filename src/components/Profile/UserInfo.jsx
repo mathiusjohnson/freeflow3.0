@@ -42,12 +42,12 @@ function UserInfo(props) {
             {/* </Col>
             <Col breakPoint={{ xs: 12, sm: 12, md: 12, lg: 12 }}></Col>
             <Col breakPoint={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
-              <Stack mentor={props.mentor_stack} />
+              <Stack helper={props.helper_stack} />
             </Col> */}
             {/* <Col breakPoint={{ xs: 12, sm: 12, md: 12, lg: 12 }}> */}
             <Experience
-              mentor={props.user.mentorrating}
-              student={props.user.studentrating}
+              helper={props.user.helperrating}
+              helped={props.user.helpedrating}
               user={props.user}
             />
             {/* </Col> */}

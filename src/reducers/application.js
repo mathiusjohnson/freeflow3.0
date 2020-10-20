@@ -1,7 +1,7 @@
 const SET_POINTS = "SET_POINTS";
 const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
-const SET_MENTOR_POINTS = "SET_MENTOR_POINTS";
-const SET_STUDENT_POINTS = "SET_STUDENT_POINTS";
+const SET_HELPER_POINTS = "SET_HELPER_POINTS";
+const SET_HELPED_POINTS = "SET_HELPED_POINTS";
 const SET_SELECTED_USER = "SET_SELECTED_USER";
 const SET_POSTS = "SET_POSTS";
 const SET_NEW_INFO = "SET_NEW_INFO";
@@ -181,7 +181,7 @@ export default function reducer(state, action) {
 
     case REMOVE_FROM_STACK: {
       const { removed } = action;
-      const removedState = state.mentor_stack.filter((stack) => {
+      const removedState = state.user_skills.filter((stack) => {
         for (let removedStack of removed) {
           if (
             stack.user_id === removedStack.user_id &&
@@ -192,13 +192,13 @@ export default function reducer(state, action) {
         }
         return true;
       });
-      state = { ...state, mentor_stack: removedState };
+      state = { ...state, user_skills: removedState };
       return state;
     }
 
     case ADD_TO_STACK: {
       const { added } = action;
-      state = { ...state, mentor_stack: [...state.mentor_stack, ...added] };
+      state = { ...state, user_skills: [...state.user_skills, ...added] };
       return state;
     }
 
@@ -213,18 +213,18 @@ export default function reducer(state, action) {
     case SET_APPLICATION_DATA:
       const {
         comments,
-        mentor_points,
-        mentor_stack,
+        HELPER_POINTS,
+        user_skills,
         likes,
         messages,
         posts,
-        student_points,
-        student_stack,
-        tutor_experiences,
+        helped_points,
+        helped_stack,
+        experiences,
         user_profiles,
         users,
-        stack_preferences,
-        posts_stacks,
+        db_skills,
+        posts_skills,
         avatars,
         selected,
         filtered_posts,
@@ -233,18 +233,18 @@ export default function reducer(state, action) {
       return {
         ...state,
         comments,
-        mentor_stack,
-        mentor_points,
+        user_skills,
+        HELPER_POINTS,
         likes,
         messages,
         posts,
-        student_points,
-        student_stack,
-        tutor_experiences,
+        helped_points,
+        helped_stack,
+        experiences,
         user_profiles,
         users,
-        stack_preferences,
-        posts_stacks,
+        db_skills,
+        posts_skills,
         avatars,
         selected,
         filtered_posts,
@@ -268,8 +268,8 @@ export {
   SET_POSTS,
   ADD_COMMENT,
   SET_APPLICATION_DATA,
-  SET_MENTOR_POINTS,
-  SET_STUDENT_POINTS,
+  SET_HELPER_POINTS,
+  SET_HELPED_POINTS,
   SET_SELECTED_USER,
   SET_NEW_INFO,
   REMOVE_FROM_STACK,

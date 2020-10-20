@@ -20,7 +20,7 @@ function Editor(props) {
 
   const postObj = {
     text: value,
-    mentor: checkbox[1],
+    helper: checkbox[1],
   };
 
   let techTags = [];

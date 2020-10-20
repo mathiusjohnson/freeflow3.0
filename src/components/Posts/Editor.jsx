@@ -40,7 +40,7 @@ function Editor(props) {
 
           const postObj = {
             text: value,
-            mentor: checkbox[1],
+            helper: checkbox[1],
             avatar: avatarUrl,
             username: username,
             stack: techTags,
@@ -72,7 +72,7 @@ function Editor(props) {
                       status="Success"
                       onChange={(value) => onChangeCheckbox(value, 1)}
                     >
-                      Mentor Help Needed
+                      helper Help Needed
                   </Checkbox> */}
                   </div>
                 </div>
