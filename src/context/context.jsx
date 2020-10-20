@@ -1,39 +1,35 @@
-// // Context.js
-// import React from "react"
+import React, { useReducer } from 'react';
+import { initialState, AuthReducer } from './reducer';
 
-// const defaultContextValue = {
-//   data: {
-//     // set your initial data shape here
-//     menuOpen: false,
-//   },
-//   set: () => { },
-// }
+const AuthStateContext = React.createContext();
+const AuthDispatchContext = React.createContext();
 
-// const { Provider, Consumer } = React.createContext(defaultContextValue);
+export function useAuthState() {
+	const context = React.useContext(AuthStateContext);
+	if (context === undefined) {
+		throw new Error('useAuthState must be used within a AuthProvider');
+	}
 
-// class ContextProviderComponent extends React.Component {
-//   constructor() {
-//     super()
+	return context;
+}
 
-//     this.setData = this.setData.bind(this)
-//     this.state = {
-//       ...defaultContextValue,
-//       set: this.setData,
-//     }
-//   }
+export function useAuthDispatch() {
+	const context = React.useContext(AuthDispatchContext);
+	if (context === undefined) {
+		throw new Error('useAuthDispatch must be used within a AuthProvider');
+	}
 
-//   setData(newData) {
-//     this.setState(state => ({
-//       data: {
-//         ...state.data,
-//         ...newData,
-//       },
-//     }))
-//   }
+	return context;
+}
 
-//   render() {
-//     return <Provider value={this.state}>{this.props.children}</Provider>
-//   }
-// }
+export const AuthProvider = ({ children }) => {
+	const [user, dispatch] = useReducer(AuthReducer, initialState);
 
-// export { Consumer as default, ContextProviderComponent }
+	return (
+		<AuthStateContext.Provider value={user}>
+			<AuthDispatchContext.Provider value={dispatch}>
+				{children}
+			</AuthDispatchContext.Provider>
+		</AuthStateContext.Provider>
+	);
+};

@@ -4,7 +4,7 @@ import timeSince from "../../helpers/timeSince";
 import CommentList from "./Comments/CommentList";
 import CommentForm from "./Comments/NewComment";
 import EditPostItem from "./EditPost";
-import ContextConsumer from "../../context/context";
+// import ContextConsumer from "../../context/context";
 import useVisualMode from "../../hooks/useVisualMode";
 import Likes from './Likes';
 import styles from './PostListItem.module.scss'

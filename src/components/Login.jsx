@@ -79,6 +79,11 @@ export default function Login() {
           console.log('username', username)
           console.log('userId', userID)
           console.log('avatar', avatar)
+
+          const currentUser = {
+            userID
+          }
+
           // set({ ...data, state: state, selected: res.data[0].id });
 
           // MATT'S CODE************************************************************

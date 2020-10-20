@@ -4,7 +4,7 @@ import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import setNotifications from '../../helpers/setNotifications';
 import setUnseenTutor from '../../helpers/setUnseenTutor';
-import ContextConsumer from "../../context/context";
+// import ContextConsumer from "../../context/context";
 import useApplicationData from "../../hooks/useApplicationData";
 
 export default function Login() {

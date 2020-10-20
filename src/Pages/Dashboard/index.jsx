@@ -1,11 +1,13 @@
-import PostList from "./Posts/PostList";
-import Editor from "./Posts/Editor";
-import useApplicationData from "../hooks/useApplicationData";
+import PostList from "../../components/Posts/PostList";
+import Editor from "../../components/Posts/Editor";
+import useApplicationData from "../../hooks/useApplicationData";
 // import ContextConsumer from "../context/context";
 // import NewLogin from '../components/LoginLogout/NewLogin'
-import { getDashboardPosts } from "../helpers/profileHelpers";
-import './Home.scss'
+import { getDashboardPosts } from "../../helpers/profileHelpers";
+import '../../components/Home.scss'
 import React from 'react'
+import styles from './dashboard.module.css';
+import { useAuthDispatch, logout, useAuthState } from '../../Context';
 
 // interface IProps {
 //   value: object;
@@ -25,7 +27,7 @@ import React from 'react'
 //   [index: number]: { id: number; user_id: number; name: string };
 // }
 
-export default function Home(index) {
+export default function Home(props) {
   const {
     state,
     createPost,
@@ -39,6 +41,14 @@ export default function Home(index) {
     updatePost,
   } = useApplicationData();
 
+  const dispatch = useAuthDispatch();
+	const userDetails = useAuthState();
+
+	const handleLogout = () => {
+		logout(dispatch);
+		props.history.push('/login');
+  };
+  
   let dashPosts = getDashboardPosts(state.posts);
   // const filterOptions = getFilterOptions(state.posts);
 
@@ -68,7 +78,9 @@ export default function Home(index) {
                 <h1 className="title">Build a better dev community.</h1>
                 <p>Ask for help or be a mentor.</p>
               </div>
-
+              <button className={styles.logoutBtn} onClick={handleLogout}>
+					      Logout
+				      </button>
               <Editor
                 createPost={createPost}
                 suggestion={state.stack_preferences}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Tags from "./StackTag";
-import ContextConsumer from "../../context/context";
+// import ContextConsumer from "../../context/context";
 import styles from "./Editor.module.scss";
 
 function Editor(props) {
