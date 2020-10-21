@@ -9,24 +9,6 @@ import React from 'react'
 import styles from './dashboard.module.css';
 import { useAuthDispatch, logout, useAuthState } from '../../Context';
 
-// interface IProps {
-//   value: object;
-//   submitPost: (username: string) => void;
-//   username: "string";
-//   onChange: void;
-//   users: IUsers;
-//   onSaveEdit;
-//   updatePost: (
-//     editedPost: string,
-//     post_id: number,
-//     id: number
-//   ) => void;
-// }
-
-// interface IUsers {
-//   [index: number]: { id: number; user_id: number; name: string };
-// }
-
 export default function Home(props) {
   const {
     state,
@@ -42,8 +24,7 @@ export default function Home(props) {
   } = useApplicationData();
 
   const dispatch = useAuthDispatch();
-	const userDetails = useAuthState();
-
+  const userDetails = useAuthState();
 	const handleLogout = () => {
 		logout(dispatch);
 		props.history.push('/login');
@@ -66,69 +47,65 @@ export default function Home(props) {
   const comments = state.comments;
   const likes = state.likes;
   const users = state.users;
-//   return (
-//     <ContextConsumer>
-//       {({ data }) => {
-        // if (!data.state && !data.selected) return <NewLogin></NewLogin>;
-        return (
-          <div className="dashboard-page">
-            <div className="App">
-              <div className="hero">
-                {" "}
-                <h1 className="title">Build a better dev community.</h1>
-                <p>Ask for help or be a mentor.</p>
-              </div>
-              <button className={styles.logoutBtn} onClick={handleLogout}>
-					      Logout
-				      </button>
-              <Editor
-                createPost={createPost}
-                suggestion={state.db_skills}
-                users={users}
-              />
-              <div className="container">
-                <div className="post-filter">
-                  <div
-                    className="filter-btn filter-btn-all"
-                    onClick={() => filterPost("")}
-                  >
-                    All
-                  </div>
-                  <div
-                    className="filter-btn filter-btn-css"
-                    onClick={() => filterPost("CSS")}
-                  >
-                    CSS
-                  </div>
+  return (
+    <div className="dashboard-page">
+      <div className="App">
+        <div className="hero">
+          {" "}
+          <h1 className="title">Build a better online community.</h1>
+          <p>Ask for help or help others.</p>
+        </div>
+        <button className={styles.logoutBtn} onClick={handleLogout}>
+          Logout
+        </button>
+        <Editor
+          createPost={createPost}
+          suggestion={state.db_skills}
+          users={users}
+        />
+        <div className="container">
+          <div className="post-filter">
+            <div
+              className="filter-btn filter-btn-all"
+              onClick={() => filterPost("")}
+            >
+              All
+            </div>
+            <div
+              className="filter-btn filter-btn-css"
+              onClick={() => filterPost("CSS")}
+            >
+              CSS
+            </div>
 
-                  <div
-                    className="filter-btn filter-btn-ruby"
-                    onClick={() => filterPost("Ruby")}
-                  >
-                    Ruby
-                  </div>
-                  <div
-                    className="filter-btn filter-btn-javascript"
-                    onClick={() => filterPost("Javascript")}
-                  >
-                    Javascript
-                  </div>
-                </div>
-                <PostList
-                  users={users}
-                  posts={dashPosts}
-                  comments={comments}
-                  likes={likes}
-                  addLike={addLike}
-                  removeLike={removeLike}
-                  createComment={createComment}
-                  removeComment={removeComment}
-                  editComment={editComment}
-                  deletePost={deletePost}
-                  updatePost={updatePost}
-                />
-              </div>
+            <div
+              className="filter-btn filter-btn-ruby"
+              onClick={() => filterPost("Ruby")}
+            >
+              Ruby
+            </div>
+            <div
+              className="filter-btn filter-btn-javascript"
+              onClick={() => filterPost("Javascript")}
+            >
+              Javascript
             </div>
           </div>
-        );
+          <PostList
+            users={users}
+            posts={dashPosts}
+            comments={comments}
+            likes={likes}
+            addLike={addLike}
+            removeLike={removeLike}
+            createComment={createComment}
+            removeComment={removeComment}
+            editComment={editComment}
+            deletePost={deletePost}
+            updatePost={updatePost}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }

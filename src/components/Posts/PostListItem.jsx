@@ -85,9 +85,10 @@ function PostListItem(props) {
 				
 				const commentList = commentData.map((comment, index) => {
 					return (
-						<div>
+						<div
+							key={index}
+						>
 							<CommentList
-								key={index}
 								index={props.index}
 								avatar={comment.avatar}
 								username={comment.username}
