@@ -37,6 +37,7 @@ export default function reducer(state, action) {
           if (post.name === text) {
             return true;
           }
+          return postWithStack
         });
         console.log("from filter", postWithStack);
         const final = postWithStack.filter((post) => {

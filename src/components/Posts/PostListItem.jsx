@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardBody } from "reactstrap";
 import timeSince from "../../helpers/timeSince";
 import CommentList from "./Comments/CommentList";
@@ -8,7 +8,6 @@ import EditPostItem from "./EditPost";
 import useVisualMode from "../../hooks/useVisualMode";
 import Likes from './Likes';
 import styles from './PostListItem.module.scss'
-import Link from 'next/link'
 
 const SHOW = "SHOW";
 // const CONFIRM = "CONFIRM";

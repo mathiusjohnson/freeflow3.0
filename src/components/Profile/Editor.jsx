@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import MDEditor from "@uiw/react-md-editor";
 // import { Checkbox } from "@paljs/ui/Checkbox";
-import { Button, ButtonLink } from "reactstrap";
+// import { Button, ButtonLink } from "reactstrap";
 import Tags from "./StackTag";
 
 // import Col from "@paljs/ui/Col";
@@ -14,9 +14,9 @@ function Editor(props) {
     1: false,
   });
 
-  const onChangeCheckbox = (value, name) => {
-    setCheckbox({ ...checkbox, [name]: value });
-  };
+  // const onChangeCheckbox = (value, name) => {
+  //   setCheckbox({ ...checkbox, [name]: value });
+  // };
 
   const postObj = {
     text: value,

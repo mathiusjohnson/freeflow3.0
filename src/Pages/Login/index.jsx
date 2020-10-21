@@ -12,9 +12,7 @@ export default function Login(props) {
   const handleLogin = () => {
 
 			let response = loginUser(dispatch, { username, password });
-			console.log("response in login index: ", response);
 			if (response.user) return;
-			console.log("response in login index: ", response);
 			props.history.push('/dashboard');
 		} 
 	

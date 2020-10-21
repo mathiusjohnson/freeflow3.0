@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
 import { Card, CardBody } from "reactstrap";
 import { Button } from "reactstrap";
 import timeSince from "../../helpers/timeSince";
 import CommentList from "./Comments/CommentList";
 import CommentForm from "./Comments/NewComment";
 import EditPostItem from "./EditPost";
-import ContextConsumer from "../../context/context";
 import useVisualMode from "../../hooks/useVisualMode";
 
 const SHOW = "SHOW";
@@ -38,13 +36,13 @@ function PostListItem(props) {
   // function onCancel() {
   //   back();
   // }
-  const commentData = props.comments.filter((comment) => {
+  props.comments.filter((comment) => {
     if (props.post.post_id === comment.post_id) {
       return comment;
     }
   });
 
-  const commentList = commentData.map((comment, index) => {
+  const commentList = props.comments.map((comment, index) => {
     return (
       <CommentList
         key={index}
@@ -56,107 +54,97 @@ function PostListItem(props) {
     );
   });
 
+  // const commentsLength = commentList.length;
+  const commentObj = {
+    avatar: props.currentUser.avatar,
+    username: props.currentUser.username,
+  };
+
+  function onValidateComment() {
+    if (value === "") {
+      setError("Comment cannot be blank");
+      return;
+    }
+    if (value !== "") {
+      setError("");
+      props.createComment(
+        props.post.post_id,
+        props.currentUser.id,
+        value,
+        commentObj)
+        .then(() => {
+          setValue("");
+        });
+    }
+  }
+
   return (
-    <ContextConsumer>
-      {({ data }) => {
-        if (!data.state) return null;
-        const currentUser = props.users.find(
-          (user) => user.id === data.selected
-        );
-        // const commentsLength = commentList.length;
-        const commentObj = {
-          avatar: currentUser.avatar,
-          username: currentUser.username,
-        };
+    <Card accent="Info">
+      {mode === SHOW && (
+        <CardBody>
+          {props.user.id === parseInt(senderID, 10) ? (
+            <div className="edit-post-button">
+              <Button
+                className="blue-button button-transition"
+                onClick={onEdit}
+              >
+                Edit
+              </Button>
+              <button
+                className="red-button red-button-transition"
+                onClick={onDelete}
+              >
+                Delete
+              </button>
+            </div>
+          ) : (
+              ""
+            )}
+          <p className="time-posted">
+            {timeSince(props.post.time_posted)}{" "}
+          </p>
+          <p className="post-body">{props.post.text_body}</p>
+          <ul className="post-stack">
+            {/* <span className="bold">Stack:</span> */}
+            {props.post.stack.map((tech_stack, idx) => {
+              return <li key={idx}>{tech_stack}</li>;
+            })}
+          </ul>
+        </CardBody>
+      )}
+      {mode === EDITING && (
+        <EditPostItem
+          id={props.post.post_id}
+          time_posted={props.post.time_posted}
+          text_body={props.post.text_body}
+          stack={props.post.stack}
+          onSaveEdit={onSaveEdit}
+          user={props.currentUser}
+          updatePost={props.updatePost}
+        />
+      )}
 
-        function onValidateComment() {
-          if (value === "") {
-            setError("Comment cannot be blank");
-            return;
-          }
-          if (value !== "") {
-            setError("");
-            props.createComment(
-              props.post.post_id,
-              currentUser.id,
-              value,
-              commentObj)
-              .then(() => {
-                setValue("");
-              });
-          }
-        }
-
-        return (
-            <Card accent="Info">
-              {mode === SHOW && (
-                <CardBody>
-                  {props.user.id === parseInt(senderID, 10) ? (
-                    <div className="edit-post-button">
-                      <Button
-                        className="blue-button button-transition"
-                        onClick={onEdit}
-                      >
-                        Edit
-                      </Button>
-                      <button
-                        className="red-button red-button-transition"
-                        onClick={onDelete}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  ) : (
-                      ""
-                    )}
-                  <p className="time-posted">
-                    {timeSince(props.post.time_posted)}{" "}
-                  </p>
-                  <p className="post-body">{props.post.text_body}</p>
-                  <ul className="post-stack">
-                    {/* <span className="bold">Stack:</span> */}
-                    {props.post.stack.map((tech_stack, idx) => {
-                      return <li key={idx}>{tech_stack}</li>;
-                    })}
-                  </ul>
-                </CardBody>
-              )}
-              {mode === EDITING && (
-                <EditPostItem
-                  id={props.post.post_id}
-                  time_posted={props.post.time_posted}
-                  text_body={props.post.text_body}
-                  stack={props.post.stack}
-                  onSaveEdit={onSaveEdit}
-                  user={currentUser}
-                  updatePost={props.updatePost}
-                />
-              )}
-
-              <div className="wrap-collabsible">
-                <input
-                  id={"collapsible" + props.index}
-                  className="toggle"
-                  type="checkbox"
-                />
-                <label htmlFor={"collapsible" + props.index} className="lbl-toggle">
-                  Comments
-                </label>
-                <div className="collapsible-content">
-                  <div className="content-inner">
-                    {commentList}
-                    <CommentForm
-                      onValidateComment={onValidateComment}
-                      error={error}
-                      setError={setError}
-                    />
-                  </div>
-                </div>
-              </div>
-            </Card>
-        );
-      }}
-    </ContextConsumer>
+      <div className="wrap-collabsible">
+        <input
+          id={"collapsible" + props.index}
+          className="toggle"
+          type="checkbox"
+        />
+        <label htmlFor={"collapsible" + props.index} className="lbl-toggle">
+          Comments
+        </label>
+        <div className="collapsible-content">
+          <div className="content-inner">
+            {commentList}
+            <CommentForm
+              onValidateComment={onValidateComment}
+              error={error}
+              setError={setError}
+            />
+          </div>
+        </div>
+      </div>
+    </Card>
   );
 }
 

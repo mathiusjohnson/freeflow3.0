@@ -1,5 +1,5 @@
 // import { breakpointUp } from "@paljs/ui/breakpoints";
-import { Card, CardBody, CardHeader, CardFooter } from "reactstrap";
+import { Card, CardBody } from "reactstrap";
 // import Row from "@paljs/ui/Row";
 // import Col from "@paljs/ui/Col";
 import React, { useState, useEffect } from "react";
@@ -18,7 +18,7 @@ function EditUserInfo(props) {
   const [showAvatarList, setShowAvatarList] = useState(false);
   const [selectedAvatarUrl, setSelectedAvatarUrl] = useState("");
 
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
 
   function selectAvatar(avatarUrl) {
     setSelectedAvatarUrl(avatarUrl);
@@ -31,7 +31,7 @@ function EditUserInfo(props) {
   useEffect(() => {
     setAvatarList(props.avatars);
     setSelectedAvatarUrl(props.user.avatar);
-  }, []);
+  }, [props.avatars, props.user.avatar]);
 
   let techTags = [];
   const onChangeInput = (selectedTags) => {

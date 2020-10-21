@@ -1,7 +1,7 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
-import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
+// import { faHeart as fasHeart } from '@fortawesome/free-solid-svg-icons';
 import styles from './Likes.module.scss'
 // interface IProps {
 // 	post: IPost;
@@ -33,11 +33,11 @@ import styles from './Likes.module.scss'
 // }
 
 export default function Likes(props) {
-	const postLikes = props.likes.filter(
-    (like) => props.post.post_id === like.post_id
-  );
+	// const postLikes = props.likes.filter(
+  //   (like) => props.post.post_id === like.post_id
+  // );
 
-	const likeSum = postLikes.length;
+	// const likeSum = postLikes.length;
 	
 	// const myLikes = postLikes.filter(
 	// 	(like) => props.currentUser.id === like.liker_id

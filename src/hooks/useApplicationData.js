@@ -1,12 +1,12 @@
 import { useReducer, useEffect } from "react";
-import { getStack, makeStackObj } from "../helpers/profileHelpers";
+import { makeStackObj } from "../helpers/profileHelpers";
 import axios from "axios";
 import reducer, {
-  SET_POINTS,
+  // SET_POINTS,
   SET_APPLICATION_DATA,
   SET_SELECTED_USER,
   SET_POSTS,
-  SET_NEW_STACK,
+  // SET_NEW_STACK,
   SET_NEW_INFO,
   SET_LIKES,
   ADD_COMMENT,
@@ -18,7 +18,7 @@ import reducer, {
   EDIT_POST,
   DELETE_POST,
   FILTER_POSTS,
-  FETCH_POSTS,
+  // FETCH_POSTS,
 } from "../reducers/application";
 
 export default function useApplicationData() {
@@ -59,7 +59,6 @@ export default function useApplicationData() {
       axios.get("http://localhost:8001/api/register/avatars"),
       axios.get("http://localhost:8001/api/posts"),
     ]).then((all) => {
-      console.log("all from applicatin data hook: ", all);
       const comments = all[0].data;
       const likes = all[1].data;
       const user_skills = all[2].data;
@@ -159,7 +158,7 @@ export default function useApplicationData() {
     const getNewPostId = (res) => {
       console.log(res.id);
       Promise.all(
-        techStack.map((element) => {
+        techStack.forEach((element) => {
           axios.post(`http://localhost:8001/api/posts_skills`, {
             post_id: res.id,
             stack_id: element.id,
@@ -320,6 +319,7 @@ export default function useApplicationData() {
         })
       )
       .catch((err) => console.log("something went wrong in the update"));
+      return promise;
   };
 
   const deletePost = (post_id) => {
@@ -348,7 +348,7 @@ export default function useApplicationData() {
     if (arrOfRemoved.length !== 0) {
       axios
         .all(
-          arrOfRemoved.map((element) => {
+          arrOfRemoved.forEach((element) => {
             axios.delete(`http://localhost:8001/api/user_skills`, {
               params: element,
             });
@@ -365,7 +365,7 @@ export default function useApplicationData() {
     if (arrOfAdded.length !== 0) {
       axios
         .all(
-          arrOfAdded.map((element) => {
+          arrOfAdded.forEach((element) => {
             axios.post(`http://localhost:8001/api/user_skills`, element);
           })
         )

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import timeSince from "../../helpers/timeSince";
-import { Card, CardBody } from "reactstrap";
+import { CardBody } from "reactstrap";
 import { Button } from "reactstrap";
-import Tags from "./MentorStack";
+// import Tags from "./MentorStack";
 
 function EditPostItem(props) {
   //console.log("from edit post", props);
   const [post, setPost] = useState(props.text_body || "");
-  let techTags = [];
-  const onChangeInput = (selectedTags) => {
-    techTags = selectedTags;
-  };
+  // let techTags = [];
+  // const onChangeInput = (selectedTags) => {
+  //   techTags = selectedTags;
+  // };
 
   function onSave() {
     props.updatePost(post, props.id, props.user.id);

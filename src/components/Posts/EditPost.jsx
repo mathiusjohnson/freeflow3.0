@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import timeSince from "../../helpers/timeSince";
-import { Card, CardBody } from "reactstrap";
+// import timeSince from "../../helpers/timeSince";
+import { CardBody } from "reactstrap";
 import styles from './EditPost.module.scss'
 import poststyles from './PostListItem.module.scss'
 
 function EditPostItem(props) {
   //console.log("from edit post", props);
   const [post, setPost] = useState(props.text_body || "");
-  let techTags = [];
-  const onChangeInput = (selectedTags) => {
-    techTags = selectedTags;
-  };
+  // let techTags = [];
+  // const onChangeInput = (selectedTags) => {
+  //   techTags = selectedTags;
+  // };
 
   function onSave() {
     props.updatePost(post, props.id, props.user.id);
@@ -22,7 +22,7 @@ function EditPostItem(props) {
       <CardBody className="">
 
         <textarea
-          className={styles.edittextbody} className={styles.ontop}
+          className={styles.edittextbody}
           type="text"
           value={post}
           onChange={(event) => setPost(event.target.value)}
@@ -39,7 +39,7 @@ function EditPostItem(props) {
           onChange={onChangeInput}
           suggested={props.suggestion}
         /> */}
-        <div className={poststyles.bluebutton} className={poststyles.buttontransition}className={styles.savebtn} onClick={onSave}>Save</div>
+        <div className={poststyles.bluebutton} onClick={onSave}>Save</div>
       </CardBody>
     </div>
   );

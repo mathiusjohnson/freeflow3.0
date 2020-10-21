@@ -5,7 +5,7 @@ function Experience(props) {
   // console.log("props in experience: ", props);
 
   if (!props.user) return {};
-  console.log("user in experience: ", props.user.helpedrating);
+  // console.log("user in experience: ", props.user.helpedrating);
 
   return (
     <div className="experience">

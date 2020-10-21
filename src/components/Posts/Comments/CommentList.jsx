@@ -1,5 +1,4 @@
 import React from "react";
-import Link from 'next/link'
 import styles from './CommentList.module.scss'
 
 // interface IProps {
@@ -46,7 +45,7 @@ import styles from './CommentList.module.scss'
 // }
 
 function CommentList(props) {
-  const { index, avatar, username, text_body, comment, currentUser, removeComment, post } = props;
+  // const { index, avatar, username, text_body, comment, currentUser, removeComment, post } = props;
 
 
   // const myComment = currentUser.id === comment.commenter_id;
@@ -71,7 +70,7 @@ function CommentList(props) {
           <b>{username}&nbsp;&nbsp;</b>
         </span>
       </Link> */}
-      <span>{text_body}</span>
+      {/* <span>{text_body}</span> */}
         {/* {myCommentOrPost ? (
           <p onClick={() => onEdit()} className={styles.deleteButton}>
             Edit
