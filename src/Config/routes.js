@@ -1,8 +1,7 @@
-import React from 'react';
 import Login from '../Pages/Login';
 import Dashboard from '../Pages/Dashboard';
 import NotFound from '../Pages/NotFound';
-
+import Profile from '../Pages/Profile'
 const routes = [
 	{
 		path: '/login',
@@ -10,15 +9,25 @@ const routes = [
 		isPrivate: false,
 	},
 	{
+		path: '/',
+		component: Dashboard,
+		// isPrivate: false,
+	},
+	{
 		path: '/dashboard',
 		component: Dashboard,
-		isPrivate: true,
+		// isPrivate: false,
 	},
 	{
 		path: '/*',
 		component: NotFound,
-		isPrivate: true,
+		// isPrivate: false,
 	},
+	{
+		path: '/profile',
+		component: Profile,
+		// isPrivate: false,
+	},	
 ];
 
 export default routes;

@@ -1,5 +1,3 @@
-import React, { useState, useReducer } from 'react';
-
 let user = localStorage.getItem('currentUser')
 	? JSON.parse(localStorage.getItem('currentUser')).user
 	: '';
@@ -15,7 +13,7 @@ export const initialState = {
 };
 
 export const AuthReducer = (initialState, action) => {
-	console.log("action payload in reducer: ", action.payload);
+	console.log("action payload in reducer: ", action);
 	switch (action.type) {
 		case 'REQUEST_LOGIN':
 			return {
@@ -25,7 +23,7 @@ export const AuthReducer = (initialState, action) => {
 		case 'LOGIN_SUCCESS':
 			return {
 				...initialState,
-				user: action.payload.user,
+				user: action.payload.username,
 				token: action.payload.password,
 				loading: false,
 			};

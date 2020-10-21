@@ -65,16 +65,16 @@ export default function useApplicationData() {
       const user_skills = all[2].data;
       const posts = all[3].data;
       // const student_stack = all[4].data;
-      const experiences = all[5].data;
-      const user_profiles = all[6].data;
-      const users = all[7].data;
-      const helper_points = all[8].data;
-      const helped_points = all[9].data;
-      const db_skills = all[10].data;
-      const posts_skills = all[11].data;
-      const avatars = all[12].data;
+      const experiences = all[4].data;
+      const user_profiles = all[5].data;
+      const users = all[6].data;
+      const helper_points = all[7].data;
+      const helped_points = all[8].data;
+      const db_skills = all[9].data;
+      const posts_skills = all[10].data;
+      const avatars = all[11].data;
       // const selected = {};
-      const filtered_posts = all[13].data;
+      const filtered_posts = all[12].data;
       dispatch({
         type: SET_APPLICATION_DATA,
         comments,
