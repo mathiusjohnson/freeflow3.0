@@ -50,17 +50,7 @@ function UserProfileItem(props) {
     (user) => user.id === userDetails.userId
   );
 	console.log("current User: ", currentUser);
-	if (!currentUser) {
-		return null;
-	}
 
-	if (
-		currentUser.id ||
-		currentUser.helped_id ||
-		currentUser.helper_id
-	) {
-		senderID = currentUser;
-	}
 	const comments = state.comments;
 
 	const posts = getUserPosts(state.posts, senderID.id);
@@ -75,61 +65,61 @@ function UserProfileItem(props) {
 	// 	(helped) => helped.id === user.id
 	// );
 
-	const helper_stack = getStack(state.helper_stack, senderID.id);
+	// const helper_stack = getStack(state.helper_stack, senderID.id);
 
 	return (
 
-	<div>
+		<div>
 
-		{mode === SHOW && (
+			{mode === SHOW && (
+				<>
+					{console.log("after reducer", state.users[0])}
+					<UserInfo
+						user={currentUser}
+						loggedInUser={currentUser}
+						onEdit={onEdit}
+						// helper_stack={helper_stack}
+					/>
+				</>
+			)}
+			{mode === EDITING && (
 			<>
-				{console.log("after reducer", state.users[0])}
-				<UserInfo
+				<EditUserInfo
 					user={currentUser}
 					loggedInUser={currentUser}
-					onEdit={onEdit}
-					helper_stack={helper_stack}
+					// helper_stack={helper_stack}
+					suggestion={state.db_skills}
+					avatars={state.avatars}
+					onSaveNewInfo={updateUserInfo}
+					onSaveNewStack={updatehelperStack}
+					onSave={onSave}
+					onCancel={onCancel}
 				/>
 			</>
-		)}
-		{mode === EDITING && (
-		<>
-			<EditUserInfo
-				user={currentUser}
-				loggedInUser={currentUser}
-				helper_stack={helper_stack}
-				suggestion={state.db_skills}
-				avatars={state.avatars}
-				onSaveNewInfo={updateUserInfo}
-				onSaveNewStack={updatehelperStack}
-				onSave={onSave}
-				onCancel={onCancel}
-			/>
-		</>
-		)}
-		{currentUser.id === parseInt(loggedUser, 10) ? (
-
-		<Editor
-			id={user.id}
-			createPost={createPost}
-			suggestion={state.db_skills}
-		/>
-
-		) : (
-				""
 			)}
-				<h2>Recent Posts...</h2>
+			{currentUser.id === parseInt(loggedUser, 10) ? (
 
-		<PostList
-			// user={currentUser}
-			comments={comments}
-			posts={posts}
-			users={state.users}
-			createComment={createComment}
-			updatePost={updatePost}
-			deletePost={deletePost}
-		/>
-		</div>
+			<Editor
+				id={user.id}
+				createPost={createPost}
+				suggestion={state.db_skills}
+			/>
+
+			) : (
+					""
+				)}
+					<h2>Recent Posts...</h2>
+
+			<PostList
+				// user={currentUser}
+				comments={comments}
+				posts={posts}
+				users={state.users}
+				createComment={createComment}
+				updatePost={updatePost}
+				deletePost={deletePost}
+			/>
+			</div>
 	);
 }
 

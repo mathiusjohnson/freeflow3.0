@@ -9,7 +9,8 @@ function App() {
 	return (
 		<AuthProvider>
 			<Router>
-			<Navigation />
+			<Navigation 
+			/>
 				<Switch>
 					{routes.map((route) => (
 						<AppRoute

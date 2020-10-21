@@ -5,11 +5,14 @@ import { Card, CardBody } from "reactstrap";
 import React, { useState, useEffect } from "react";
 import Tags from "./MentorStack";
 import RegisterAvatarList from "./Avatar/RegisterAvatarList";
+import { useAuthState } from '../../Context';
 
 // import Stack from "./UserStack";
 // import Link from "next/link";
 
 function EditUserInfo(props) {
+  const userDetails = useAuthState();
+
   const [username, setUsername] = useState(props.user.username || "");
   const [location, setLocation] = useState(props.user.location || "");
 

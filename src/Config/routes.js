@@ -6,11 +6,6 @@ const routes = [
 	{
 		path: '/login',
 		component: Login,
-		isPrivate: false,
-	},
-	{
-		path: '/',
-		component: Dashboard,
 		// isPrivate: false,
 	},
 	{
@@ -18,16 +13,16 @@ const routes = [
 		component: Dashboard,
 		// isPrivate: false,
 	},
-	{
-		path: '/*',
-		component: NotFound,
-		// isPrivate: false,
-	},
+	// {
+	// 	path: '/*',
+	// 	component: NotFound,
+	// 	// isPrivate: false,
+	// },
 	{
 		path: '/profile',
 		component: Profile,
 		// isPrivate: false,
-	},	
+	},
 ];
 
 export default routes;

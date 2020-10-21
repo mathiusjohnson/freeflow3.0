@@ -1,16 +1,15 @@
 import React from "react";
-// import { Button } from "reactstrap";
-// import Stack from "./UserStack";
-
+import { NavLink } from 'react-router-dom';
 import Experience from "./UserExperience";
 import { Card, CardBody } from "reactstrap";
-import Link from "next/link";
+import { useAuthState } from '../../Context';
 
 function UserInfo(props) {
   const senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-  if (!props.user) return null;
+  // if (!props.user) return null;
   console.log("props in userinfo: ", props.user);
-
+  const userDetails = useAuthState();
+  console.log("user in userinfo: ", userDetails);
   return (
     <Card>
       <CardBody>
@@ -63,7 +62,7 @@ function UserInfo(props) {
                 Edit
               </button>
             ) : (
-                <Link to={`/messages/`} state={{ username: props.user.username }}>
+                <NavLink to={`/messages/`} state={{ username: props.user.username }}>
                   <button
                     fullWidth
                     appearance="hero"
@@ -72,7 +71,7 @@ function UserInfo(props) {
                   >
                     Message
                 </button>
-                </Link>
+                </NavLink>
               )}
           {/* </Row> */}
         </div>
