@@ -1,8 +1,6 @@
 import PostList from "../../components/Posts/PostList";
 import Editor from "../../components/Posts/Editor";
 import useApplicationData from "../../hooks/useApplicationData";
-// import ContextConsumer from "../context/context";
-// import NewLogin from '../components/LoginLogout/NewLogin'
 import { getDashboardPosts, getFilterOptions } from "../../helpers/profileHelpers";
 import '../../components/Home.scss'
 import React, { useEffect } from 'react'
