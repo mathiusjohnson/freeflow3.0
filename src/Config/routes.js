@@ -3,6 +3,8 @@ import Dashboard from '../Pages/Dashboard';
 // import NotFound from '../Pages/NotFound';
 import Profile from '../Pages/Profile'
 import Messages from '../Pages/Messages'
+import Users from '../Pages/Users'
+
 const routes = [
 	{
 		path: '/login',
@@ -14,11 +16,11 @@ const routes = [
 		component: Dashboard,
 		// isPrivate: false,
 	},
-	// {
-	// 	path: '/*',
-	// 	component: NotFound,
-	// 	// isPrivate: false,
-	// },
+	{
+		path: '/users',
+		component: Users,
+		// isPrivate: false,
+	},
 	{
 		path: '/profile',
 		component: Profile,

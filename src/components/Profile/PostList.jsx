@@ -1,5 +1,4 @@
 import React from "react";
-// import Row from "@paljs/ui/Row";
 import PostListItem from "./PostListItem";
 
 function PostList(props) {

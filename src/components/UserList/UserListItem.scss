@@ -1,0 +1,126 @@
+.userlist {
+	.post-body {
+    display: flex;
+    flex-direction: column;
+	}
+	.user-link {
+    text-decoration: none;
+		width: 30%;
+		display: inline-block;
+	}
+	.online-link {
+    text-decoration: none;
+    margin-left: 15px;
+
+  }
+	.circle {
+    display: flex;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    padding: 15px;
+		margin-bottom: 5px;
+	}
+	
+	.centered-user-deets {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+  .user-card {
+		display: inline-block;
+    width: 22%;
+    height: 10%;
+    margin-left: 15px;
+	}
+
+	.message-button {
+    padding-top: 15px;
+	}
+	
+	.language-title {
+		font-size: 1.2em;
+		font-weight: bold;
+	}
+	.stack {
+    // margin-top: 30px;
+    // margin-bottom: 10px;
+		margin-right: 10px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+  }
+
+  .list {
+    list-style-type: none;
+    float: right;
+    scroll-snap-align: start;
+	}
+	
+	.blue-button {
+    border: 1px solid #3366ff;
+    color: #3366ff;
+    font-weight: 900;
+    border-radius: 5px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .button-transition {
+    background: linear-gradient(to right, white, #3366ff 50%, white 50%);
+    overflow: hidden;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    background-position: 110%;
+    transition: background-position 275ms ease;
+    text-decoration: none;
+    color:#3366ff;
+    background-position: 100% 0;
+    transition: .2s;
+  }
+
+  .button-transition:hover {
+    cursor: pointer;
+    color: white;
+    background-position: 0 100%;
+    -webkit-text-fill-color: transparent;
+    box-shadow: 1px 1px 9px #FFF0F5;
+	}
+	
+	.no-decoration {
+		text-decoration: none;
+	}
+	
+	.experience-bars {
+		width: 70%;
+		margin-left: 280px;
+		display: inline-block;
+		// margin-bottom: -40px;
+		position: absolute;
+	}
+
+	.mentor-xp-bar {
+		margin-top: 20px;
+	}
+
+	.student-xp-bar {
+		margin-top: 20px;
+	}
+
+	.new-user {
+		margin-top: 50px;
+	}
+
+	.tutor-link {
+		text-decoration: none;
+	}
+
+}

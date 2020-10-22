@@ -1,5 +1,5 @@
 import React from 'react';
-const classNames = require('class-names');
+import classNames from 'classnames'
 
 export default function MessageButton(props) {
 

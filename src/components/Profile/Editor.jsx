@@ -1,26 +1,21 @@
 import React, { useState } from "react";
-// import MDEditor from "@uiw/react-md-editor";
-// import { Checkbox } from "@paljs/ui/Checkbox";
 // import { Button, ButtonLink } from "reactstrap";
 import Tags from "./StackTag";
-
-// import Col from "@paljs/ui/Col";
-// import Row from "@paljs/ui/Row";
 
 function Editor(props) {
   const [error, setError] = useState("");
   const [value, setValue] = React.useState("");
-  // const [checkbox, setCheckbox] = React.useState({
-  //   1: false,
-  // });
+  const [checkbox, setCheckbox] = React.useState({
+    1: false,
+  });
 
-  // const onChangeCheckbox = (value, name) => {
-  //   setCheckbox({ ...checkbox, [name]: value });
-  // };
+  const onChangeCheckbox = (value, name) => {
+    setCheckbox({ ...checkbox, [name]: value });
+  };
 
   const postObj = {
     text: value,
-    // helper: checkbox[1],
+    helper: checkbox[1],
   };
 
   let techTags = [];

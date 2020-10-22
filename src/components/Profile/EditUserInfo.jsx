@@ -1,14 +1,9 @@
-// import { breakpointUp } from "@paljs/ui/breakpoints";
 import { Card, CardBody } from "reactstrap";
-// import Row from "@paljs/ui/Row";
-// import Col from "@paljs/ui/Col";
 import React, { useState, useEffect } from "react";
 import Tags from "./MentorStack";
 import RegisterAvatarList from "./Avatar/RegisterAvatarList";
 import { useAuthState } from '../../Context';
-
 // import Stack from "./UserStack";
-// import Link from "next/link";
 
 function EditUserInfo(props) {
   const userDetails = useAuthState();
