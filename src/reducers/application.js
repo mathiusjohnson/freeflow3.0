@@ -214,7 +214,7 @@ export default function reducer(state, action) {
     case SET_APPLICATION_DATA:
       const {
         comments,
-        HELPER_POINTS,
+        helper_points,
         user_skills,
         likes,
         messages,
@@ -227,7 +227,7 @@ export default function reducer(state, action) {
         db_skills,
         posts_skills,
         avatars,
-        selected,
+        // selected,
         filtered_posts,
       } = action;
 
@@ -235,7 +235,7 @@ export default function reducer(state, action) {
         ...state,
         comments,
         user_skills,
-        HELPER_POINTS,
+        helper_points,
         likes,
         messages,
         posts,
@@ -247,7 +247,7 @@ export default function reducer(state, action) {
         db_skills,
         posts_skills,
         avatars,
-        selected,
+        // selected,
         filtered_posts,
       };
 

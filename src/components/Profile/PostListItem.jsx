@@ -36,13 +36,13 @@ function PostListItem(props) {
   // function onCancel() {
   //   back();
   // }
-  props.comments.filter((comment) => {
+  const postComments = props.comments.filter((comment) => {
     if (props.post.post_id === comment.post_id) {
       return comment;
     }
   });
 
-  const commentList = props.comments.map((comment, index) => {
+  const commentList = postComments.map((comment, index) => {
     return (
       <CommentList
         key={index}
@@ -56,8 +56,8 @@ function PostListItem(props) {
 
   // const commentsLength = commentList.length;
   const commentObj = {
-    avatar: props.currentUser.avatar,
-    username: props.currentUser.username,
+    avatar: props.user.avatar,
+    username: props.user.username,
   };
 
   function onValidateComment() {
@@ -69,7 +69,7 @@ function PostListItem(props) {
       setError("");
       props.createComment(
         props.post.post_id,
-        props.currentUser.id,
+        props.user.id,
         value,
         commentObj)
         .then(() => {
@@ -119,7 +119,7 @@ function PostListItem(props) {
           text_body={props.post.text_body}
           stack={props.post.stack}
           onSaveEdit={onSaveEdit}
-          user={props.currentUser}
+          user={props.user}
           updatePost={props.updatePost}
         />
       )}

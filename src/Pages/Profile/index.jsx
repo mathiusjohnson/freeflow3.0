@@ -6,7 +6,7 @@ import EditUserInfo from "../../components/Profile/EditUserInfo";
 import { getUser, getUserPosts, getStack } from "../../helpers/profileHelpers";
 import useVisualMode from "../../hooks/useVisualMode";
 import useApplicationData from "../../hooks/useApplicationData";
-import { useAuthDispatch, logout, useAuthState } from '../../Context';
+import { useAuthState } from '../../Context';
 import "./Profile.module.css";
 
 const SHOW = "SHOW";
@@ -28,9 +28,12 @@ function UserProfileItem(props) {
     deletePost,
   } = useApplicationData();
   const { mode, transition, back } = useVisualMode(SHOW);
-  const loggedUser = typeof document !== 'undefined' && document.cookie.split("=")[1];
   let senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+	// console.log("local storage currentuser in profile index: ", currentUser.avatar);
+	// console.log("senderID: ", senderID);
+	if (!state) return null;
+	// console.log("state in profile: ", state);
   function onEdit() {
     transition(EDITING);
   }
@@ -42,30 +45,24 @@ function UserProfileItem(props) {
   function onCancel() {
     back();
   }
-
-	const userDetails = useAuthState();
-	if (!userDetails) return null;
 	
-  let currentUser = state.users.find(
-    (user) => user.id === userDetails.userId
-  );
-	console.log("current User: ", currentUser);
-
 	const comments = state.comments;
 
-	const posts = getUserPosts(state.posts, senderID.id);
+	const posts = getUserPosts(state.posts, senderID);
 
-	const user = getUser(state.user_profiles, senderID.id);
+	const user = getUser(state.user_profiles, senderID);
 
-	// const helper = data.state.helper_points.find(
-	// 	(helper) => helper.id === user.id
-	// );
+	console.log("posts from senderID: ", posts);
+	const helper = state.helper_points.find(
+		(helper) => helper.id === user.id
+	);
 
-	// const helped = data.state.helped_points.find(
-	// 	(helped) => helped.id === user.id
-	// );
+	// console.log("helper in profile index: ", helper);
+	const helped = state.helped_points.find(
+		(helped) => helped.id === user.id
+	);
 
-	// const helper_stack = getStack(state.helper_stack, senderID.id);
+	const helper_stack = getStack(state.user_skills, senderID.id);
 
 	return (
 
@@ -73,10 +70,8 @@ function UserProfileItem(props) {
 
 			{mode === SHOW && (
 				<>
-					{console.log("after reducer", state.users[0])}
 					<UserInfo
 						user={currentUser}
-						loggedInUser={currentUser}
 						onEdit={onEdit}
 						// helper_stack={helper_stack}
 					/>
@@ -97,7 +92,7 @@ function UserProfileItem(props) {
 				/>
 			</>
 			)}
-			{currentUser.id === parseInt(loggedUser, 10) ? (
+			{currentUser.id === parseInt(senderID, 10) ? (
 
 			<Editor
 				id={user.id}
@@ -111,7 +106,7 @@ function UserProfileItem(props) {
 					<h2>Recent Posts...</h2>
 
 			<PostList
-				// user={currentUser}
+				user={currentUser}
 				comments={comments}
 				posts={posts}
 				users={state.users}

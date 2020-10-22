@@ -59,6 +59,7 @@ export default function useApplicationData() {
       axios.get("http://localhost:8001/api/register/avatars"),
       axios.get("http://localhost:8001/api/posts"),
     ]).then((all) => {
+      // console.log("all data in hook: ", all);
       const comments = all[0].data;
       const likes = all[1].data;
       const user_skills = all[2].data;

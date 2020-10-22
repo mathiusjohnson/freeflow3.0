@@ -25,14 +25,18 @@ export default function Home(props) {
 
   const dispatch = useAuthDispatch();
   const userDetails = useAuthState();
+
+	if (!userDetails) return null;
+  console.log("user details in dashboard: ", userDetails);
+  
 	const handleLogout = () => {
 		logout(dispatch);
 		props.history.push('/login');
   };
-  
+  console.log("state in dashboard: ", state);
   let dashPosts = getDashboardPosts(state.posts);
   // const filterOptions = getFilterOptions(state.posts);
-
+  const currentUser = localStorage.getItem('currentUser')
   // useEffect(() => {
   //   setOptions(filterOptions);
   // }, []);

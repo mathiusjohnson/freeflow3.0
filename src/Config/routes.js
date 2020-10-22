@@ -1,6 +1,6 @@
 import Login from '../Pages/Login';
 import Dashboard from '../Pages/Dashboard';
-import NotFound from '../Pages/NotFound';
+// import NotFound from '../Pages/NotFound';
 import Profile from '../Pages/Profile'
 const routes = [
 	{

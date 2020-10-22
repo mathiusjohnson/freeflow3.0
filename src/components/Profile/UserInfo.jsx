@@ -6,10 +6,7 @@ import { useAuthState } from '../../Context';
 
 function UserInfo(props) {
   const senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-  // if (!props.user) return null;
-  console.log("props in userinfo: ", props.user);
-  const userDetails = useAuthState();
-  console.log("user in userinfo: ", userDetails);
+  console.log("sender ID", senderID);
   return (
     <Card>
       <CardBody>

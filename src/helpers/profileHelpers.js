@@ -1,13 +1,14 @@
 export function getUser(users, senderId) {
-  //console.log("sender id", senderId);
+  // console.log("sender id in helper", parseInt(senderId));
+  // console.log("users in getUser: ", users);
   let specificUser = {};
   for (let user of users) {
-    for (let key in user) {
+    // for (let key in user) {
       // console.log(user["id"], user);
       if (user["id"] === parseInt(senderId)) {
         specificUser = user;
         break;
-      }
+      // }
     }
   }
   return specificUser;
@@ -82,6 +83,7 @@ export function getDashboardPosts(posts) {
 // }
 
 export function getStack(stack, senderId) {
+  // console.log("stack in helper: ", stack);
   let currentStack = stack.filter((lang) => {
     return lang.user_id === parseInt(senderId, 10);
   });

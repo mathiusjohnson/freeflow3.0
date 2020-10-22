@@ -43,29 +43,29 @@ function EditUserInfo(props) {
 
   function onSave() {
     const newDetails = {
-      id: props.user.id,
+      id: userDetails.id,
       avatar: selectedAvatarUrl,
       username: username,
       location: location,
     };
 
-    const oldStack = props.user_skills.map((val) => {
-      return val["name"];
-    });
-    const newStack = techTags.map((val) => {
-      return val["name"];
-    });
+    // const oldStack = props.user_skills.map((val) => {
+    //   return val["name"];
+    // });
+    // const newStack = techTags.map((val) => {
+    //   return val["name"];
+    // });
 
     //removed from the list
-    const removed = oldStack.filter((x) => !newStack.includes(x));
+    // const removed = oldStack.filter((x) => !newStack.includes(x));
     //added to the list
-    const added = newStack.filter((x) => !oldStack.includes(x));
-    if (removed.length !== 0 || added.length !== 0) {
-      props.onSaveNewStack(removed, added, props.user.id);
-    }
+    // const added = newStack.filter((x) => !oldStack.includes(x));
+    // if (removed.length !== 0 || added.length !== 0) {
+    //   props.onSaveNewStack(removed, added, userDetails.id);
+    // }
 
-    console.log("new stack?", oldStack, newStack, removed, added);
-    props.onSaveNewInfo(newDetails, props.user.id);
+    // console.log("new stack?", oldStack, newStack, removed, added);
+    props.onSaveNewInfo(newDetails, userDetails.id);
     props.onSave();
   }
   return (
@@ -79,7 +79,7 @@ function EditUserInfo(props) {
             > */}
               <div id="avatar-list-holder">
                 <RegisterAvatarList
-                  user={props.user}
+                  // user={props.user}
                   avatarList={avatarList}
                   selectAvatar={selectAvatar}
                   selectedAvatarUrl={selectedAvatarUrl}
