@@ -37,6 +37,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.20.0",
+    "class-names": "^1.0.0",
+    "classnames": "^2.2.6",
     "node": "^14.14.0",
     "react-router-dom": "^5.2.0",
     "react-tag-autocomplete": "^6.1.0",

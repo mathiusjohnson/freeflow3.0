@@ -2,6 +2,7 @@ import Login from '../Pages/Login';
 import Dashboard from '../Pages/Dashboard';
 // import NotFound from '../Pages/NotFound';
 import Profile from '../Pages/Profile'
+import Messages from '../Pages/Messages'
 const routes = [
 	{
 		path: '/login',
@@ -21,6 +22,11 @@ const routes = [
 	{
 		path: '/profile',
 		component: Profile,
+		// isPrivate: false,
+	},
+	{
+		path: '/messages',
+		component: Messages,
 		// isPrivate: false,
 	},
 ];
