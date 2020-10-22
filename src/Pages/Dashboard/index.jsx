@@ -3,9 +3,9 @@ import Editor from "../../components/Posts/Editor";
 import useApplicationData from "../../hooks/useApplicationData";
 // import ContextConsumer from "../context/context";
 // import NewLogin from '../components/LoginLogout/NewLogin'
-import { getDashboardPosts } from "../../helpers/profileHelpers";
+import { getDashboardPosts, getFilterOptions } from "../../helpers/profileHelpers";
 import '../../components/Home.scss'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './dashboard.module.css';
 import { useAuthDispatch, logout, useAuthState } from '../../Context';
 
@@ -24,19 +24,18 @@ export default function Home(props) {
   } = useApplicationData();
 
   const dispatch = useAuthDispatch();
-  const userDetails = useAuthState();
+  // const userDetails = useAuthState();
 
-	if (!userDetails) return null;
-  console.log("user details in dashboard: ", userDetails);
-  
+	// if (!userDetails) return null;
+  // console.log("user details in dashboard: ", userDetails);
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+
 	const handleLogout = () => {
 		logout(dispatch);
 		props.history.push('/login');
   };
-  console.log("state in dashboard: ", state);
   let dashPosts = getDashboardPosts(state.posts);
   // const filterOptions = getFilterOptions(state.posts);
-  const currentUser = localStorage.getItem('currentUser')
   // useEffect(() => {
   //   setOptions(filterOptions);
   // }, []);
@@ -96,6 +95,7 @@ export default function Home(props) {
             </div>
           </div>
           <PostList
+            user={currentUser}
             users={users}
             posts={dashPosts}
             comments={comments}

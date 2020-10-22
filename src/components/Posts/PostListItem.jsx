@@ -52,13 +52,6 @@ function PostListItem(props) {
     );
 	});
 
-  // return (
-  //   <ContextConsumer>
-  //     {({ data }) => {
-  //       if (!data.state) return null;
-  //       const currentUser = props.users.find(
-  //         (user) => user.id === data.selected
-  //       );
   //       // const commentsLength = commentList.length;
   //       const commentObj = {
   //         avatar: currentUser.avatar,
