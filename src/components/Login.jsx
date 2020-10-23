@@ -26,7 +26,7 @@ export default function Login() {
       .then(all => {
 
         const [avatarData] = all;
-        console.log('avatar data', avatarData.data);
+        // console.log('avatar data', avatarData.data);
 
         const uniqueAvatars = [...new Set(avatarData.data)];
 
@@ -66,7 +66,7 @@ export default function Login() {
 
     axios.post("https://stack-network.herokuapp.com/api/login-real", { username, password })
       .then((res) => {
-        console.log('res', res.data);
+        // console.log('res', res.data);
         // if username/password are correct
         if (res.data.length) {
 
@@ -76,9 +76,9 @@ export default function Login() {
 
           document.cookie = `userID=${userID};`;
 
-          console.log('username', username)
-          console.log('userId', userID)
-          console.log('avatar', avatar)
+          // console.log('username', username)
+          // console.log('userId', userID)
+          // console.log('avatar', avatar)
 
           const currentUser = {
             userID

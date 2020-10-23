@@ -45,7 +45,7 @@ function UserProfileItem(props) {
     back();
   }
 
-  console.log(state.users);
+  // console.log(state.users);
   let currentUser = state.users.find(
     (user) => user.id === props.userId || user.username === props.userId
   );
@@ -56,7 +56,7 @@ function UserProfileItem(props) {
         {({ data, set }) => {
           if (!data.state) return null;
           if (!data.selected) return null;
-          console.log("data in context: ", data.state.users);
+          // console.log("data in context: ", data.state.users);
 
           if (!currentUser) {
             currentUser = state.users.find((user) => user.id === data.selected);

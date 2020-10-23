@@ -157,9 +157,10 @@ export default function useApplicationData() {
         });
       });
     const getNewPostId = (res) => {
-      console.log(res.id);
+      console.log("res id in hook: ", res.id);
       Promise.all(
         techStack.forEach((element) => {
+          console.log("element in getnewpostid hook: ", element);
           axios.post(`http://localhost:8001/api/posts_skills`, {
             post_id: res.id,
             stack_id: element.id,
@@ -168,7 +169,7 @@ export default function useApplicationData() {
       ).then(
         axios.spread(function(...res) {
           // all requests are now complete
-          console.log("success");
+          console.log("success", res);
         })
       );
     };

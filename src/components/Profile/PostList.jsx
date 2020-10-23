@@ -3,11 +3,11 @@ import PostListItem from "./PostListItem";
 
 function PostList(props) {
   const { comments, posts, updatePost, deletePost } = props;
-  console.log("comments from post list", comments);
-  console.log("posts from post list", posts
-  );
+  // console.log("comments from post list", comments);
+  // console.log("posts from post list", posts
+  // );
 
-  posts.map(post => console.log("post in map: ", post))
+  // posts.map(post => console.log("post in map: ", post))
 
   const postData = posts.map((post, index) => {
     return (

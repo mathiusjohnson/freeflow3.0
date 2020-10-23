@@ -26,7 +26,9 @@ function UserProfileItem(props) {
     createComment,
     updatePost,
     deletePost,
-  } = useApplicationData();
+	} = useApplicationData();
+	
+	console.log("props in profile: ", props.location);
   const { mode, transition, back } = useVisualMode(SHOW);
   let senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
   const currentUser = JSON.parse(localStorage.getItem('currentUser'))

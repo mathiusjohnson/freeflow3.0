@@ -11,7 +11,7 @@
   width: 100%;
   /* border: 1px solid #475991; */
   border-radius: 10px;
-  background: #222b45;
+  /* background: #222b45; */
 }
 
 /* left container - message list */
@@ -130,7 +130,7 @@
   padding: 0.5rem;
   max-width: 60%;
   margin: 0.6rem 0.4rem;
-  background: #192038;
+  /* background: #192038; */
   /* border-radius: 8px; */
 }
 
@@ -234,8 +234,8 @@
   color:#3366ff;
   background-position: 100% 0;
   transition: .2s;
-  cursor: pointer;
-  color: white;
+  cursor: white;
+  color: black;
   background-position: 0 100%;
   -webkit-text-fill-color: transparent;
   box-shadow: 1px 1px 9px #FFF0F5
@@ -253,7 +253,7 @@
   background-position: 100% 0;
   transition: .2s;
   cursor: pointer;
-  color: white;
+  color: black;
   background-position: 0 100%;
   -webkit-text-fill-color: transparent;
   box-shadow: 1px 1px 9px #FFF0F5
@@ -292,8 +292,8 @@
   margin-right: 0.4rem;
   padding: 0.4rem 0.6rem;
   border: none;
-  background: #192038;
-  color: white;
+  /* background: #192038; */
+  color: black;
   border: 1px solid #222b45;
   height: 75px;
   border-radius: 5px;
@@ -335,7 +335,7 @@
   background: rgb(250, 70, 70);
   padding: 0.3rem 0.6rem;
   border-radius: 5px;
-  color: white;
+  color: black;
 }
 
 /* message list selected */
@@ -417,7 +417,7 @@
   align-items: center;
   position: absolute;
   left: 108px;
-  color: white;
+  color: black;
   top: 5px;
   background: rgb(250, 70, 70);
   border-radius: 100%;

@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #222b45;
+  /* background: #222b45; */
   border-radius: 10px;
   padding: 2rem;
   padding-right: 5rem;
@@ -27,7 +27,7 @@
 
 /* register input */
 .register-input {
-  background: #192038;
+  /* background: #192038; */
   color: white;
   padding: 0.75rem;
   border: 1px solid #222b45;
@@ -91,7 +91,7 @@
 .selected-avatar {
   width: 55px;
   height: 55px;
-  background: #222b45;
+  /* background: #222b45; */
   margin-right: 1rem;
   border-radius: 5px;
   border: 1px solid #3366ff;
@@ -101,7 +101,7 @@
 .register-avatar-list-container {
   display: flex;
   flex-direction: row;
-  background: #222b45;
+  /* background: #222b45; */
   border-radius: 5px;
 }
 

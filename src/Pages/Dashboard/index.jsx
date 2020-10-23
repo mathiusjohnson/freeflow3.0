@@ -22,9 +22,9 @@ export default function Home(props) {
   } = useApplicationData();
 
   const dispatch = useAuthDispatch();
-  // const userDetails = useAuthState();
+  const userDetails = useAuthState();
 
-	// if (!userDetails) return null;
+	if (!userDetails) return null;
   // console.log("user details in dashboard: ", userDetails);
   const currentUser = JSON.parse(localStorage.getItem('currentUser'))
 
@@ -63,6 +63,7 @@ export default function Home(props) {
           createPost={createPost}
           suggestion={state.db_skills}
           users={users}
+          user={currentUser}
         />
         <div className="container">
           <div className="post-filter">

@@ -8,6 +8,7 @@ import EditPostItem from "./EditPost";
 import useVisualMode from "../../hooks/useVisualMode";
 import Likes from './Likes';
 import styles from './PostListItem.module.scss'
+import { Link, NavLink } from 'react-router-dom';
 
 const SHOW = "SHOW";
 // const CONFIRM = "CONFIRM";
@@ -126,30 +127,34 @@ function PostListItem(props) {
 
 								{/* USERS DETAILS */}
 
-								{/* <Link className={styles.userlink} href={`/user-profiles/${props.post.username}`}>
+								<Link className={styles.userlink} to={{
+									pathname:`/profile/${props.post.username}`,
+									search: "?sort=name",
+									hash: "#the-hash",
+									state: { username: props.post.username }}}>
 									<div className={styles.usercard}>
 										<div className={styles.circle}>
 											<img src={props.post.avatar} alt="avatar"></img>
-										</div>    
+										</div>
 										<span className={styles.bg}>
 											<h3>{props.post.username}</h3>
 										</span>
 									</div>
 								</Link>
-								<Link className={styles.onlinelink} href={`/user-profiles/${props.post.username}`}>
+								<Link className={styles.onlinelink} to={`/profile/${props.post.username}`}>
 									<span>{props.post.active ? <h6>User is online</h6> : <h6>User is offline</h6>}
 									</span>
-								</Link> */}
+								</Link>
 								{/* MESSAGE BUTTON */}
 								<div className={styles.messagebutton}>
-									{/* <Link
+									{/* <NavLink
 										className={styles.userlink}
 										href={`/messages/`}
 										state={{ username: props.post.username }}
 									>
 										<div className={styles.bluebutton}
 										className={styles.buttontransition}>Message User</div>
-									</Link> */}
+									</NavLink> */}
 								</div>
 								<small className={styles.floatright}>{timeAgo}</small>
 								</CardBody>

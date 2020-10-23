@@ -4,11 +4,16 @@ import Dashboard from '../Pages/Dashboard';
 import Profile from '../Pages/Profile'
 import Messages from '../Pages/Messages'
 import Users from '../Pages/Users'
-
+import Register from '../Pages/Register'
 const routes = [
 	{
 		path: '/login',
 		component: Login,
+		// isPrivate: false,
+	},
+	{
+		path: '/register',
+		component: Register,
 		// isPrivate: false,
 	},
 	{

@@ -5,8 +5,8 @@ import styles from "./Editor.module.scss";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 function Editor(props) {
-  const [value, setValue] = React.useState();
-  const [checkbox, setCheckbox] = React.useState({
+  const [value, setValue] = useState('');
+  const [checkbox, setCheckbox] = useState({
     1: false,
   });
   const [error, setError] = useState("");
@@ -52,8 +52,13 @@ function Editor(props) {
   return (
     <Form >
       <FormGroup>
-        <Label for="exampleText">Text Area</Label>
-        <Input type="textarea" name="text" id="exampleText" />
+        <textarea 
+          type="textarea" 
+          name="text" 
+          id="exampleText" 
+          value={value} 
+          onChange={e => setValue(e.target.value)} 
+        />
           <Tags suggested={props.suggestion} onChange={onChangeInput} />
           <FormGroup check>
             <Label check>
