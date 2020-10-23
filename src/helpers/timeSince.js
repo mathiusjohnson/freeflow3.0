@@ -13,7 +13,7 @@ export default function timeSince(date, dbQuery) {
   //   seconds += 21600;
   // }
 
-
+  
   let interval = seconds / 31536000;
 
   if (interval > 1) {

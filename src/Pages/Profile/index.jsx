@@ -32,11 +32,15 @@ function UserProfileItem(props) {
   const { mode, transition, back } = useVisualMode(SHOW);
   let senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
   const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-	// console.log("local storage currentuser in profile index: ", currentUser.avatar);
-	// console.log("senderID: ", senderID);
+	const userDetails = useAuthState();
+	console.log("user details in profile: ", userDetails);
+
+	if (!userDetails) return null;
+
+
 	if (!state) return null;
-	// console.log("state in profile: ", state);
-  function onEdit() {
+
+	function onEdit() {
     transition(EDITING);
   }
 

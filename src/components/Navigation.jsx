@@ -1,8 +1,20 @@
 import React from 'react';
- 
+import { useAuthDispatch, logout, useAuthState } from '../Context';
 import { NavLink } from 'react-router-dom';
- 
-const Navigation = () => {
+import Login from './LoginLogout/LoginNav'
+import styles from '../Pages/Dashboard/dashboard.module.css';
+
+const Navigation = (props) => {
+   
+   const dispatch = useAuthDispatch();
+   const userDetails = useAuthState();
+   console.log("user details in profile: ", userDetails);
+   
+   const handleLogout = () => {
+		logout(dispatch);
+		// props.history.push('/login');
+  };
+   if (!userDetails) return null;
     return (
        <div>
           <NavLink to="/dashboard">Home</NavLink>
@@ -11,6 +23,9 @@ const Navigation = () => {
           <NavLink to="/users">Users</NavLink>
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/register">Register</NavLink>
+          {userDetails.user === undefined || userDetails.user === "" ? "" : <button className={styles.logoutBtn} onClick={handleLogout}>
+          Logout
+        </button>}
        </div>
     );
 }

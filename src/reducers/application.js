@@ -21,7 +21,9 @@ const FETCH_POSTS = "FETCH_POSTS";
 export default function reducer(state, action) {
   switch (action.type) {
     case SET_POSTS: {
+
       const { data } = action;
+      console.log("data in set posts: ", data);
       state = { ...state, posts: [...state.posts, data] };
       return state;
     }
@@ -122,18 +124,18 @@ export default function reducer(state, action) {
           return true;
         }
       });
-      console.log("newlike in reducer: ", newLikes);
+      // console.log("newlike in reducer: ", newLikes);
       state = { ...state, likes: newLikes };
       return state;
     }
 
     case ADD_COMMENT: {
-      console.log("before set comments reducer", state.comments);
+      // console.log("before set comments reducer", state.comments);
 
       const { data } = action;
       state = { ...state, comments: [...state.comments, data] };
 
-      console.log("after set comments reducer: ", state.comments);
+      // console.log("after set comments reducer: ", state.comments);
       return state;
     }
 
@@ -156,7 +158,7 @@ export default function reducer(state, action) {
       };
 
       filteredComments.push(newComment);
-      console.log("newcomment in reducer: ", filteredComments);
+      // console.log("newcomment in reducer: ", filteredComments);
       state = { ...state, comments: filteredComments };
       return state;
     }
@@ -175,7 +177,7 @@ export default function reducer(state, action) {
           return true;
         }
       });
-      console.log("newcomment in reducer: ", newComments);
+      // console.log("newcomment in reducer: ", newComments);
       state = { ...state, comments: newComments };
       return state;
     }

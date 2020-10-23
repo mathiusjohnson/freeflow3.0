@@ -21,17 +21,12 @@ export default function Home(props) {
     updatePost,
   } = useApplicationData();
 
-  const dispatch = useAuthDispatch();
   const userDetails = useAuthState();
 
 	if (!userDetails) return null;
-  // console.log("user details in dashboard: ", userDetails);
+  console.log("user details in dashboard: ", userDetails);
   const currentUser = JSON.parse(localStorage.getItem('currentUser'))
 
-	const handleLogout = () => {
-		logout(dispatch);
-		props.history.push('/login');
-  };
   let dashPosts = getDashboardPosts(state.posts);
   // const filterOptions = getFilterOptions(state.posts);
   // useEffect(() => {
@@ -56,9 +51,6 @@ export default function Home(props) {
           <h1 className="title">Build a better online community.</h1>
           <p>Ask for help or help others.</p>
         </div>
-        <button className={styles.logoutBtn} onClick={handleLogout}>
-          Logout
-        </button>
         <Editor
           createPost={createPost}
           suggestion={state.db_skills}

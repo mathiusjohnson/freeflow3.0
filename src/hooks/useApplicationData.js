@@ -141,7 +141,7 @@ export default function useApplicationData() {
     //   (newPost["is_helper"] = true), (newPost["is_helped"] = false);
     // }
     for (let entry of techStack) {
-      // console.log("stack name in hook", entry.name);
+      console.log("stack name in hook", entry.name);
       newPost["stack"].push(entry.name);
     }
 
@@ -155,23 +155,24 @@ export default function useApplicationData() {
           type: SET_POSTS,
           data: newPost,
         });
+      })
+      .catch((error) => {
+        console.log("I don't *post* this mess", error);
       });
     const getNewPostId = (res) => {
       console.log("res id in hook: ", res.id);
       Promise.all(
         techStack.forEach((element) => {
-          console.log("element in getnewpostid hook: ", element);
+          console.log("element in getnewpostid hook: ", element.id);
           axios.post(`http://localhost:8001/api/posts_skills`, {
             post_id: res.id,
             stack_id: element.id,
           });
         })
-      ).then(
-        axios.spread(function(...res) {
-          // all requests are now complete
-          console.log("success", res);
-        })
-      );
+      ).catch((error) => {
+        console.log("I don't *id* this mess", error);
+      });
+      // );
     };
     return promise;
   };

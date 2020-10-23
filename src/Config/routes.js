@@ -9,32 +9,32 @@ const routes = [
 	{
 		path: '/login',
 		component: Login,
-		// isPrivate: false,
+		isPrivate: false,
 	},
 	{
 		path: '/register',
 		component: Register,
-		// isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/dashboard',
 		component: Dashboard,
-		// isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/users',
 		component: Users,
-		// isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/profile',
 		component: Profile,
-		// isPrivate: false,
+		isPrivate: true,
 	},
 	{
 		path: '/messages',
 		component: Messages,
-		// isPrivate: false,
+		isPrivate: true,
 	},
 ];
 

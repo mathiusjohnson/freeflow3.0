@@ -6,7 +6,6 @@ import setNotifications from '../../helpers/setNotifications';
 import setUnseenTutor from '../../helpers/setUnseenTutor';
 // import ContextConsumer from "../../context/context";
 import useApplicationData from "../../hooks/useApplicationData";
-
 export default function Login() {
   const { state } = useApplicationData();
 

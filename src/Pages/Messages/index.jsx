@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import '../../styles/messages.css';
-// import '../../styles/tutor-sessions.css'
 import MessageList from '../../components/Messages/MessageList';
 import MessageView from '../../components/Messages/MessageView';
 import MessageHeader from '../../components/Messages/MessageHeader';

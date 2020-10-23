@@ -18,12 +18,12 @@ function App() {
     filterDashboardPosts,
     deletePost,
     updatePost,
-  } = useApplicationData();
+	} = useApplicationData();
+	
 	return (
 		<AuthProvider>
 			<Router>
-			<Navigation 
-			/>
+			<Navigation/>
 				<Switch>
 					{routes.map((route) => (
 						<AppRoute
