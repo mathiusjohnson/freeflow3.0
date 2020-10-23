@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card, CardBody } from "reactstrap";
 import timeSince from "../../helpers/timeSince";
 import CommentList from "./Comments/CommentList";
@@ -18,19 +18,18 @@ const EDITING = "EDITING";
 // const ERROR_DELETE = "ERROR_DELETE";
 
 function PostListItem(props) {
-  // const senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-  // const [value, setValue] = React.useState("Comment here...");
+  const [value, setValue] = useState("Comment here...");
   const { mode, transition } = useVisualMode(SHOW);
-  // const [ setError] = useState("");
+  const [ setError] = useState("");
 
-  // function onDelete() {
-  //   props.deletePost(props.post.post_id);
-  //   // transition(EDITING);
-  // }
+  function onDelete() {
+    props.deletePost(props.post.post_id);
+    // transition(EDITING);
+  }
 
-  // function onEdit() {
-  //   transition(EDITING);
-  // }
+  function onEdit() {
+    transition(EDITING);
+  }
 
   function onSaveEdit() {
     transition(SHOW);
@@ -53,29 +52,29 @@ function PostListItem(props) {
     );
 	});
 
-  //       // const commentsLength = commentList.length;
-  //       const commentObj = {
-  //         avatar: currentUser.avatar,
-  //         username: currentUser.username,
-  //       };
+        // const commentsLength = commentList.length;
+        const commentObj = {
+          avatar: props.currentUser.avatar,
+          username: props.currentUser.username,
+        };
 
-        // function onValidateComment() {
-        //   if (value === "") {
-        //     setError("Comment cannot be blank");
-        //     return;
-        //   }
-        //   if (value !== "") {
-        //     setError("");
-        //     props.createComment(
-        //       props.post.post_id,
-        //       currentUser.id,
-        //       value,
-        //       commentObj)
-        //       .then(() => {
-        //         setValue("");
-        //       });
-        //   }
-				// }
+        function onValidateComment() {
+          if (value === "") {
+            setError("Comment cannot be blank");
+            return;
+          }
+          if (value !== "") {
+            setError("");
+            props.createComment(
+              props.post.post_id,
+              props.currentUser.id,
+              value,
+              commentObj)
+              .then(() => {
+                setValue("");
+              });
+          }
+				}
 				
 				const commentList = commentData.map((comment, index) => {
 					return (
@@ -89,41 +88,43 @@ function PostListItem(props) {
 								text_body={comment.text_body}
 								removeComment={props.removeComment}
 								editComment={props.editComment}
-								// currentUser={currentUser}
+								currentUser={props.currentUser}
 								comment={comment}
 								post={props.post}
 							/>
 							<CommentForm 
 							post={props.post}
-							// currentUser={currentUser}
+							currentUser={props.currentUser}
 							/>
 						</div>
 					);
 				});
 
-				// const myPost = currentUser.id === props.post.owner_id ;
+				const myPost = props.currentUser.id === props.post.owner_id ;
 
 				const timeAgo = timeSince(props.post.time_posted);
-
+				console.log("props post in postlist item: ", props.post);
         return (
 					<Card accent="Info">
 						<div className={styles.dashboard}>
 							{mode === SHOW && (
 								<CardBody className={styles.postbody}>
-								{/* { myPost ?
+								{ myPost ?
 								<div>
 									<div
-									className={styles.bluebutton}
-									className={styles.buttontransition} 
-									className={styles.editbtn}  className={styles.floatright}
+									// className={styles.bluebutton}
+									// className={styles.buttontransition} 
+									// className={styles.editbtn}  className={styles.floatright}
 									onClick={onEdit}
 									>
 									Edit
 									</div>
-									<div className={styles.bluebutton}className={styles.deletebuttontransition}className={styles.deletebtn}
-									className={styles.floatright} onClick={onDelete}>Delete</div> 
+									<div 
+									// className={styles.bluebutton}className={styles.deletebuttontransition}className={styles.deletebtn}
+									// className={styles.floatright} 
+									onClick={onDelete}>Delete</div> 
 								</div> : ""
-								} */}
+								}
 
 								{/* USERS DETAILS */}
 
@@ -131,7 +132,7 @@ function PostListItem(props) {
 									pathname:`/profile/${props.post.username}`,
 									search: "?sort=name",
 									hash: "#the-hash",
-									state: { username: props.post.username }}}>
+									state: { id: props.post.owner_id }}}>
 									<div className={styles.usercard}>
 										<div className={styles.circle}>
 											<img src={props.post.avatar} alt="avatar"></img>

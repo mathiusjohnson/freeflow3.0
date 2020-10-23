@@ -28,10 +28,9 @@ function UserProfileItem(props) {
     deletePost,
 	} = useApplicationData();
 	
-	console.log("props in profile: ", props.location);
   const { mode, transition, back } = useVisualMode(SHOW);
   let senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+  let currentUser = JSON.parse(localStorage.getItem('currentUser'))
 	const userDetails = useAuthState();
 	console.log("user details in profile: ", userDetails);
 
@@ -55,10 +54,15 @@ function UserProfileItem(props) {
 	const comments = state.comments;
 
 	const posts = getUserPosts(state.posts, senderID);
+	console.log("props location in profile index: ", props.location);
+	let routedUserID
+	if (props.location.state !== null) {
+		routedUserID = props.location.state.id 
+	}
+	const user = getUser(state.user_profiles, routedUserID);
 
-	const user = getUser(state.user_profiles, senderID);
+	if (!user) return null;
 
-	console.log("posts from senderID: ", posts);
 	const helper = state.helper_points.find(
 		(helper) => helper.id === user.id
 	);
@@ -69,6 +73,12 @@ function UserProfileItem(props) {
 	);
 
 	const helper_stack = getStack(state.user_skills, senderID.id);
+	console.log("user in profile index: ", user);
+	if (user.id) {
+		currentUser = user
+	} else {
+		currentUser = JSON.parse(localStorage.getItem('currentUser'))
+	}
 
 	return (
 

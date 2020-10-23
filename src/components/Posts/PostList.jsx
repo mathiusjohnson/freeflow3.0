@@ -1,53 +1,6 @@
 import PostListItem from "./PostListItem";
 import React from 'react'
 
-// interface IProps {
-//   comments: IComments;
-//   posts: IPosts;
-//   likes: ILikes;
-//   addLike: (post_id: number, liker_id: number) => void;
-//   removeLike: (post_id: number, liker_id: number) => void;
-//   users: IUsers;
-//   createComment: (
-//     post_id: number,
-//     commenter_id: number,
-//     text_body: string
-//   ) => void;
-//   removeComment: (
-//     post_id: number,
-//     commenter_id: number,
-//     text_body: string
-//   ) => void;
-//   editComment: (
-//     post_id: number,
-//     commenter_id: number,
-//     text_body: string
-//   ) => void;
-//   deletePost: (
-//     post_id: number,
-//   ) => void;
-//   updatePost: (
-//     editedPost: string,
-//     post_id: number,
-//     id: number
-//   ) => void;
-// }
-
-// interface IUsers {
-//   [index: number]: { id: number; user_id: number; name: string };
-// }
-// interface IComments {
-//   [index: number]: { id: number; user_id: number; name: string };
-// }
-
-// interface IPosts {
-//   [index: number]: { id: number; user_id: number; name: string };
-// }
-
-// interface ILikes {
-//   [index: number]: { id: number; user_id: number; name: string };
-// }
-
 export default function PostList(props) {
   const comments = props.comments;
   const likes = props.likes;
@@ -72,6 +25,7 @@ export default function PostList(props) {
         users={props.users}
         deletePost={props.deletePost}
         updatePost={props.updatePost}
+        currentUser={props.currentUser}
       />
     );
   });

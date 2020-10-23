@@ -25,8 +25,8 @@ export default function Home(props) {
 
 	if (!userDetails) return null;
   console.log("user details in dashboard: ", userDetails);
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'))
-
+  let currentUser = JSON.parse(localStorage.getItem('currentUser'))
+console.log("current user local storage dashboard: ", currentUser.avatar);
   let dashPosts = getDashboardPosts(state.posts);
   // const filterOptions = getFilterOptions(state.posts);
   // useEffect(() => {
@@ -40,6 +40,7 @@ export default function Home(props) {
   }
   // dashPosts = state.filtered_posts;
   // console.log("dashposts in dash: ", dashPosts);
+
   const comments = state.comments;
   const likes = state.likes;
   const users = state.users;
@@ -86,7 +87,7 @@ export default function Home(props) {
             </div>
           </div>
           <PostList
-            user={currentUser}
+            currentUser={currentUser}
             users={users}
             posts={dashPosts}
             comments={comments}
