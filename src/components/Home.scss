@@ -5,7 +5,6 @@
 	}
 	.filter-btns {
 		margin-top: -30px;
-		
 	}
 	.filter-btn {
 		padding: 0.3rem 0 0.2rem;
@@ -16,76 +15,110 @@
 		display: flex;
 		justify-content: center;
 	}
-	
+
 	.filter-btn:hover {
 		cursor: pointer;
 		opacity: 0.7;
 	}
-	
+
 	.filter-btn-selected {
 		opacity: 0.7;
 	}
-	
+
 	.filter-btn-all {
 		background: #e2e3e5;
 		border-color: #d6d8db;
 	}
-	
+
 	.filter-btn-css {
 		background: #fff3cd;
 		border-color: #ffeeba;
 	}
-	
+
 	.filter-btn-ruby {
 		background: #cce5ff;
 		border-color: #b8daff;
 	}
-	
+
 	.filter-btn-javascript {
 		background: #d4edda;
 		border-color: #c3e6cb;
 	}
 }
-  .hero {
-    text-align: center;
-    margin: 40px 0 60px 0;
-  }
-  .container {
-    // position: absolute;
-    .post-filter {
-      display: flex;
-      position: relative;
-      top: 65px;
-      left: 100px;
-    }
+.hero {
+	text-align: center;
+	margin: 40px 0 60px 0;
+}
+.container {
+	// position: absolute;
+	.post-filter {
+		display: flex;
+		position: relative;
+		top: 65px;
+		left: 100px;
+	}
 
-    .filter-btn:hover {
-      cursor: pointer;
-      opacity: 0.7;
-    }
+	.filter-btn:hover {
+		cursor: pointer;
+		opacity: 0.7;
+	}
 
-    .filter-btn-selected {
-      opacity: 0.7;
-    }
+	.filter-btn-selected {
+		opacity: 0.7;
+	}
 
-    .filter-btn-all {
-      background: #e2e3e5;
-      border-color: #d6d8db;
-    }
+	.filter-btn-all {
+		background: #e2e3e5;
+		border-color: #d6d8db;
+	}
 
-    .filter-btn-css {
-      background: #fff3cd;
-      border-color: #ffeeba;
-    }
+	.filter-btn-css {
+		background: #fff3cd;
+		border-color: #ffeeba;
+	}
 
-    .filter-btn-ruby {
-      background: #cce5ff;
-      border-color: #b8daff;
-    }
+	.filter-btn-ruby {
+		background: #cce5ff;
+		border-color: #b8daff;
+	}
 
-    .filter-btn-javascript {
-      background: #d4edda;
-      border-color: #c3e6cb;
-    }
-  }
+	.filter-btn-javascript {
+		background: #d4edda;
+		border-color: #c3e6cb;
+	}
+}
 
+.nav-bar {
+	a {
+		margin: 1em;
+		padding: 0.25em;
+	}
+}
+.form-group {
+	padding: 1em;
+	margin: 1em;
+	border: 1px solid black;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	textarea {
+		height: 5em;
+		width: 80%;
+	}
+
+	.Editor_postbtn__1W8GX {
+		display: inline-block;
+		width: 5em;
+	}
+}
+.PostListItem_floatright__1lDRs {
+	margin: 1em;
+	padding: 0.25em;
+}
+
+ul .card {
+	border: solid 1px blue;
+	padding: 2em;
+}
