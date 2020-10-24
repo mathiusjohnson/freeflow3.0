@@ -1,14 +1,13 @@
 import React from 'react';
 import { useAuthDispatch, logout, useAuthState } from '../Context';
 import { NavLink } from 'react-router-dom';
-import Login from './LoginLogout/LoginNav'
 import styles from '../Pages/Dashboard/dashboard.module.css';
 
 const Navigation = (props) => {
    
    const dispatch = useAuthDispatch();
    const userDetails = useAuthState();
-   console.log("user details in profile: ", userDetails);
+   // console.log("user details in navigation: ", userDetails);
    
    const handleLogout = () => {
 		logout(dispatch);

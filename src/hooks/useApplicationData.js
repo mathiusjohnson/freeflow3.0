@@ -124,7 +124,7 @@ export default function useApplicationData() {
   };
 
   const createPost = (postDetails, techStack, id) => {
-    console.log("post details: ", techStack);
+    // console.log("post details: ", techStack);
     const newPost = {
       text_body: postDetails.text,
       active: true,
@@ -136,19 +136,19 @@ export default function useApplicationData() {
       avatar: postDetails.avatar,
       username: postDetails.username,
     };
-    console.log("newpost in hooked: ", newPost);
+    // console.log("newpost in hooked: ", newPost);
     // if (!postDetails.helper) {
     //   (newPost["is_helper"] = true), (newPost["is_helped"] = false);
     // }
     for (let entry of techStack) {
-      console.log("stack name in hook", entry.name);
+      // console.log("stack name in hook", entry.name);
       newPost["stack"].push(entry.name);
     }
 
     const promise = axios
       .post(`http://localhost:8001/api/posts`, { newPost })
       .then((response) => {
-        console.log("response.data in first .then", response.data);
+        // console.log("response.data in first .then", response.data);
         getNewPostId(response.data);
 
         dispatch({
@@ -160,10 +160,10 @@ export default function useApplicationData() {
         console.log("I don't *post* this mess", error);
       });
     const getNewPostId = (res) => {
-      console.log("res id in hook: ", res.id);
+      // console.log("res id in hook: ", res.id);
       Promise.all(
         techStack.forEach((element) => {
-          console.log("element in getnewpostid hook: ", element.id);
+          // console.log("element in getnewpostid hook: ", element.id);
           axios.post(`http://localhost:8001/api/posts_skills`, {
             post_id: res.id,
             stack_id: element.id,
@@ -178,7 +178,7 @@ export default function useApplicationData() {
   };
 
   const addLike = (postId, likerId) => {
-    console.log("like data in hook: ", postId, likerId);
+    // console.log("like data in hook: ", postId, likerId);
     const newLike = {
       post_id: postId,
       liker_id: likerId,
@@ -186,7 +186,7 @@ export default function useApplicationData() {
     const promise = axios
       .post(`http://localhost:8001/api/likes`, { newLike })
       .then((response) => {
-        console.log("response in likes hook: ", response);
+        // console.log("response in likes hook: ", response);
         dispatch({
           type: SET_LIKES,
           data: newLike,
@@ -199,7 +199,7 @@ export default function useApplicationData() {
   };
 
   const removeLike = (postId, unlikerId) => {
-    console.log("unlike data in hook: ", postId, unlikerId);
+    // console.log("unlike data in hook: ", postId, unlikerId);
     const removeLike = {
       post_id: postId,
       liker_id: unlikerId,
@@ -209,7 +209,7 @@ export default function useApplicationData() {
         params: { removeLike: removeLike },
       })
       .then((response) => {
-        console.log("response in likes hook: ", response);
+        // console.log("response in likes hook: ", response);
         dispatch({
           type: REMOVE_LIKE,
           data: removeLike,
@@ -222,7 +222,7 @@ export default function useApplicationData() {
   };
 
   const createComment = (postId, commenterId, commentDetails, commentObj) => {
-    console.log(" data in comment hook: ", postId, commenterId, commentDetails);
+    // console.log(" data in comment hook: ", postId, commenterId, commentDetails);
     const newComment = {
       post_id: postId,
       commenter_id: commenterId,
@@ -230,12 +230,12 @@ export default function useApplicationData() {
       avatar: commentObj.avatar,
       username: commentObj.username,
     };
-    console.log("new comment in hook: ", newComment);
+    // console.log("new comment in hook: ", newComment);
 
     const promise = axios
       .post(`http://localhost:8001/api/comments`, { newComment })
       .then((response) => {
-        console.log("response.data in first .then", response.data[0]);
+        // console.log("response.data in first .then", response.data[0]);
         dispatch({
           type: ADD_COMMENT,
           data: newComment,
@@ -249,14 +249,14 @@ export default function useApplicationData() {
   };
 
   const editComment = (postId, commenterId, commentDetails, oldTextBody) => {
-    console.log(" data in comment hook: ", postId, commenterId, commentDetails);
+    // console.log(" data in comment hook: ", postId, commenterId, commentDetails);
     const updatedComment = {
       post_id: postId,
       commenter_id: commenterId,
       text_body: commentDetails,
       value: oldTextBody,
     };
-    console.log("new comment in hook: ", updatedComment);
+    // console.log("new comment in hook: ", updatedComment);
 
     const promise = axios
       .put(`http://localhost:8001/api/comments`, { updatedComment })
@@ -326,7 +326,7 @@ export default function useApplicationData() {
   };
 
   const deletePost = (post_id) => {
-    console.log("here in delete", post_id);
+    // console.log("here in delete", post_id);
 
     const promise = axios
       .delete(`http://localhost:8001/api/posts`, { params: { post_id } })
@@ -382,7 +382,7 @@ export default function useApplicationData() {
   };
 
   const removeComment = (postId, commenterId) => {
-    console.log("unlike data in hook: ", postId, commenterId);
+    // console.log("unlike data in hook: ", postId, commenterId);
     const removeComment = {
       post_id: postId,
       commenter_id: commenterId,
@@ -392,7 +392,7 @@ export default function useApplicationData() {
         params: { removeComment: removeComment },
       })
       .then((response) => {
-        console.log("response in likes hook: ", response);
+        // console.log("response in likes hook: ", response);
         dispatch({
           type: REMOVE_COMMENT,
           data: removeComment,
@@ -404,7 +404,7 @@ export default function useApplicationData() {
     return promise;
   };
   const filterDashboardPosts = (filter) => {
-    console.log("from filter", filter);
+    // console.log("from filter", filter);
 
     dispatch({
       type: FILTER_POSTS,

@@ -44,20 +44,20 @@ function EditUserInfo(props) {
       location: location,
     };
 
-    // const oldStack = props.user_skills.map((val) => {
-    //   return val["name"];
-    // });
-    // const newStack = techTags.map((val) => {
-    //   return val["name"];
-    // });
+    const oldStack = props.user_skills.map((val) => {
+      return val["name"];
+    });
+    const newStack = techTags.map((val) => {
+      return val["name"];
+    });
 
     //removed from the list
-    // const removed = oldStack.filter((x) => !newStack.includes(x));
-    //added to the list
-    // const added = newStack.filter((x) => !oldStack.includes(x));
-    // if (removed.length !== 0 || added.length !== 0) {
-    //   props.onSaveNewStack(removed, added, userDetails.id);
-    // }
+    const removed = oldStack.filter((x) => !newStack.includes(x));
+    // added to the list
+    const added = newStack.filter((x) => !oldStack.includes(x));
+    if (removed.length !== 0 || added.length !== 0) {
+      props.onSaveNewStack(removed, added, userDetails.id);
+    }
 
     // console.log("new stack?", oldStack, newStack, removed, added);
     props.onSaveNewInfo(newDetails, userDetails.id);

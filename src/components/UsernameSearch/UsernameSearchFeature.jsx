@@ -2,7 +2,6 @@ import React from 'react';
 import '../../styles/username-search.css';
 import UsernameSearchItem from './UsernameSearchItem';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 export default function UsernameSearchFeature(props) {
 

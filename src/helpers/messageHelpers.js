@@ -15,7 +15,7 @@ export default function messageCleanSort(currentUserID, currentData) {
     break;
   }
 
-  // console.log('currentUsername', currentUsername);
+  console.log('currentUsername', currentUsername);
 
   let intMessageList = [];
 

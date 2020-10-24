@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Card, CardBody } from "reactstrap";
 import timeSince from "../../helpers/timeSince";
 import CommentList from "./Comments/CommentList";
@@ -18,9 +18,7 @@ const EDITING = "EDITING";
 // const ERROR_DELETE = "ERROR_DELETE";
 
 function PostListItem(props) {
-  const [value, setValue] = useState("Comment here...");
   const { mode, transition } = useVisualMode(SHOW);
-  const [ setError] = useState("");
 
   function onDelete() {
     props.deletePost(props.post.post_id);
@@ -41,7 +39,8 @@ function PostListItem(props) {
   const commentData = props.comments.filter((comment) => {
     if (props.post.post_id === comment.post_id) {
       return comment;
-    }
+		}
+		
   });
 
 	const stack = props.post.stack.map((tech_stack, index) => {
@@ -52,30 +51,6 @@ function PostListItem(props) {
     );
 	});
 
-        // const commentsLength = commentList.length;
-        const commentObj = {
-          avatar: props.currentUser.avatar,
-          username: props.currentUser.username,
-        };
-
-        function onValidateComment() {
-          if (value === "") {
-            setError("Comment cannot be blank");
-            return;
-          }
-          if (value !== "") {
-            setError("");
-            props.createComment(
-              props.post.post_id,
-              props.currentUser.id,
-              value,
-              commentObj)
-              .then(() => {
-                setValue("");
-              });
-          }
-				}
-				
 				const commentList = commentData.map((comment, index) => {
 					return (
 						<div
@@ -103,7 +78,6 @@ function PostListItem(props) {
 				const myPost = props.currentUser.id === props.post.owner_id ;
 
 				const timeAgo = timeSince(props.post.time_posted);
-				console.log("props post in postlist item: ", props.post);
         return (
 					<Card accent="Info">
 						<div className={styles.dashboard}>
@@ -148,14 +122,14 @@ function PostListItem(props) {
 								</Link>
 								{/* MESSAGE BUTTON */}
 								<div className={styles.messagebutton}>
-									{/* <NavLink
+									<NavLink
 										className={styles.userlink}
-										href={`/messages/`}
+										to={`/messages/`}
 										state={{ username: props.post.username }}
 									>
 										<div className={styles.bluebutton}
-										className={styles.buttontransition}>Message User</div>
-									</NavLink> */}
+										>Message User</div>
+									</NavLink>
 								</div>
 								<small className={styles.floatright}>{timeAgo}</small>
 								</CardBody>
@@ -173,7 +147,7 @@ function PostListItem(props) {
 									text_body={props.post.text_body}
 									stack={props.post.stack}
 									onSaveEdit={onSaveEdit}
-									// user={currentUser}
+									user={props.currentUser}
 									updatePost={props.updatePost}
 								/>
 							)}
@@ -196,7 +170,7 @@ function PostListItem(props) {
 							</div>
 							<div>
 								<Likes 
-									// currentUser={currentUser}
+									currentUser={props.currentUser}
 									likes={props.likes}
 									post={props.post}
 									addLike={props.addLike}
@@ -206,9 +180,6 @@ function PostListItem(props) {
 						</div>
 					</Card>
         );
-  //     }}
-  //   </ContextConsumer>
-  // );
 }
 
 export default PostListItem;

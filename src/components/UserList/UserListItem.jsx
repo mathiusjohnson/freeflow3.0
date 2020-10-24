@@ -7,12 +7,12 @@ import "./UserListItem.scss";
 export default function UserListItem(props) {	
 	const stack = props.user_skills.map((skill, index) => {
     if (skill.user_id === props.userId) {
-			console.log("skill name: ", skill.name);
+			// console.log("skill name: ", skill.name);
 			
       return <li className="list" key={index}>{skill.name}&nbsp;</li>
     }
 	})
-	console.log("props skill: ", stack);
+	// console.log("props skill: ", stack);
 	
   return (
     <div className="userlist">

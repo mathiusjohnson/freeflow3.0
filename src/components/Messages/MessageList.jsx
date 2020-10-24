@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import MessageItem from './MessageItem';
 import '../../styles/messages.css'
-import axios from 'axios';
 
 export default function MessageList(props) {
 

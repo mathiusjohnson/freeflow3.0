@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import Experience from "./UserExperience";
 import { Card, CardBody } from "reactstrap";
-import { useAuthState } from '../../Context';
 
 function UserInfo(props) {
   const senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
