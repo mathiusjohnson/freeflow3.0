@@ -1,68 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FREEFLOW
 
-## Available Scripts
+	Welcome to FreeFlow. This application is still in production, but we are happy to have anyone on board to assist us. Our goal is to have the site live by the end of this year with minimal functionality to begin with.
 
-In the project directory, you can run:
+	FreeFlow is a Social Media Network which connects users based on their skills and assets to others that have specific wants and needs. Users can surf the dashboard or userlist to find others that need or want something that they can offer. When a user helps another out, they gain points. As they gain more points they will become more eligible to be helped by others.
 
-### `yarn start`
+	There is a gaming aspect involved in this app, as the points will become a ranking system which gives users more privileges to make bigger asks. There will be an achievements feature implemented in the near future which gives users more points, as well as skill levels for any skills a user may have (which can be just about anything). The intention is to make the app fun for users to interact with each other and perpetuate their desire to help others and gain ranks, skill levels and achievements.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+	If you have anymore questions, or would like to know more about the app's functionality you can email the founder at mathiusjohnsondeveloper@gmail.com.
+	
+## INSTALLATION
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+	Run NPM i to install dependencies
+	Run NPM start
 
-### `yarn test`
+### DEPENDENCIES
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+	"@fortawesome/fontawesome-svg-core": "^1.2.32",
+	"@fortawesome/free-regular-svg-icons": "^5.15.1",
+	"@fortawesome/free-solid-svg-icons": "^5.15.1",
+	"@fortawesome/react-fontawesome": "^0.1.11",
+	"@material-ui/core": "^4.11.0",
+	"axios": "^0.20.0",
+	"class-names": "^1.0.0",
+	"classnames": "^2.2.6",
+	"node": "^14.14.0",
+	"react-router-dom": "^5.2.0",
+	"react-tag-autocomplete": "^6.1.0",
+	"reactstrap": "^8.6.0",
+	"sass": "^1.27.0"
