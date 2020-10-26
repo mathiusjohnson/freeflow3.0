@@ -58,7 +58,10 @@ function UserInfo(props) {
                 Edit
               </button>
             ) : (
-                <NavLink to={`/messages/`} state={{ username: props.user.username }}>
+                <NavLink to={{
+                  pathname:'/messages/',
+                  state: {username: props.user.username }
+                }}>
                   <button
                     fullWidth
                     appearance="hero"
