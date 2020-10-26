@@ -69,9 +69,11 @@ export default function UserListItem(props) {
             {/* MESSAGE BUTTON */}
             <div className="message-button">
               <NavLink
-                to={`/messages/`}
+                to={{
+                  pathname:'/messages/',
+                  state: {username: props.username }
+                }}
                 className="no-decoration"
-                state={{ username: props.username }}
               >
               <div className="blue-button button-transition">Message User</div>
               </NavLink>

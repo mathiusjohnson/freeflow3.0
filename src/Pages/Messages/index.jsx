@@ -23,7 +23,7 @@ export default function Messages(props) {
   const [createError, setCreateError] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
   const [routeUsername, setRouteUsername] = useState('');
-  const [setTotalUnread] = useState(0);
+  // const [setTotalUnread] = useState(0);
   const [usernamesUnread, setUsernamesUnread] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Messages(props) {
         const currentData = data.data.data;
 
         const unreadCount = unreadCounter(Number(userID), currentData);
-        setTotalUnread(unreadCount);
+        // setTotalUnread(unreadCount);
         // console.log('unreadCount', unreadCount);
         setNotifications(unreadCount);
 
@@ -81,7 +81,7 @@ export default function Messages(props) {
 
       });
 
-  }, [currentUsername, setTotalUnread]);
+  }, [currentUsername]);
 
   useEffect(() => {
     axios.get('http://localhost:8001/api/user_profiles')
@@ -324,7 +324,11 @@ export default function Messages(props) {
 
   // ROUTE FROM OTHER PAGE FOR SENDING MSG *********************************
   // console.log("props in messages: ", props);
-  const usernameRoute = props.location.state.username;
+  let usernameRoute;
+  console.log("props location in messages: ", props.location);
+  if (!props.location.state.username) {
+    usernameRoute = props.location.state.username;
+  }
 
   if (usernameRoute && !routeUsername) {
     setRouteUsername(usernameRoute);

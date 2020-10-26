@@ -7,7 +7,7 @@ const Navigation = (props) => {
    
    const dispatch = useAuthDispatch();
    const userDetails = useAuthState();
-   // console.log("user details in navigation: ", userDetails);
+   console.log("user details in navigation: ", userDetails.user);
    
    const handleLogout = () => {
 		logout(dispatch);
@@ -17,8 +17,13 @@ const Navigation = (props) => {
     return (
        <div>
           <NavLink to="/dashboard">Home</NavLink>
-          <NavLink to="/messages">Messages</NavLink>
-          <NavLink to="/profile">Profile</NavLink>
+          <NavLink 
+            to={{
+               pathname:'/messages/',
+               state: {username: userDetails.user }
+            }}>Messages</NavLink>
+          <NavLink 
+          to="/profile">Profile</NavLink>
           <NavLink to="/users">Users</NavLink>
           <NavLink to="/login">Login</NavLink>
           <NavLink to="/register">Register</NavLink>

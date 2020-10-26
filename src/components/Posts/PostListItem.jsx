@@ -124,8 +124,10 @@ function PostListItem(props) {
 								<div className={styles.messagebutton}>
 									<NavLink
 										className={styles.userlink}
-										to={`/messages/`}
-										state={{ username: props.post.username }}
+										to={{
+										pathname:'/messages/',
+										state: {username: props.post.username }
+									}}
 									>
 										<div className={styles.bluebutton}
 										>Message User</div>
