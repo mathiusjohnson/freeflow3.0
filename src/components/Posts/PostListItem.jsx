@@ -116,7 +116,11 @@ function PostListItem(props) {
 										</span>
 									</div>
 								</Link>
-								<Link className={styles.onlinelink} to={`/profile/${props.post.username}`}>
+								<Link className={styles.onlinelink} to={{
+									pathname:`/profile/${props.post.username}`,
+									search: "?sort=name",
+									hash: "#the-hash",
+									state: { id: props.post.owner_id }}}>
 									<span>{props.post.active ? <h6>User is online</h6> : <h6>User is offline</h6>}
 									</span>
 								</Link>
