@@ -11,7 +11,7 @@ import styles from './PostListItem.module.scss'
 import { Link, NavLink } from 'react-router-dom';
 
 const SHOW = "SHOW";
-// const CONFIRM = "CONFIRM";
+const CONFIRM = "CONFIRM";
 // const SAVING = "SAVING";
 const EDITING = "EDITING";
 // const ERROR_SAVE = "ERROR_SAVE";
@@ -37,7 +37,6 @@ function PostListItem(props) {
   //   back();
 	// }
 	
-	// console.log("props comments in postlist: ", props.comments);
   const commentData = props.comments.filter((comment) => {
     if (props.post.post_id === comment.post_id) {
       return comment;
@@ -45,10 +44,10 @@ function PostListItem(props) {
 		
   });
 
-	console.log("props post: ", props.post);
+	// console.log("props post: ", props.post);
 	const stack = props.post.stack.map((tech_stack, index) => {
     return (
-      <li className="list" key={index}>
+      <li className={styles.list} key={index}>
         {tech_stack}&nbsp;
       </li>
     );
@@ -71,11 +70,6 @@ function PostListItem(props) {
 								currentUser={props.currentUser}
 								comment={comment}
 								post={props.post}
-							/>
-							<CommentForm 
-							post={props.post}
-							createComment={props.createComment}
-							currentUser={props.currentUser}
 							/>
 						</div>
 					);
@@ -164,12 +158,12 @@ function PostListItem(props) {
 									updatePost={props.updatePost}
 								/>
 							)}
-							<h5 className={styles.stack}> {stack}</h5>
+							<h5 className={styles.stack}>Skills:&nbsp;&nbsp; {stack}</h5>
 
 							<div className={styles.wrapcollabsible}>
 								<input
 									id={"collapsible" + props.index}
-									className="toggle"
+									className={styles.toggle}
 									type="checkbox"
 								/>
 								<label htmlFor={"collapsible" + props.index} className={styles.lbltoggle}>
@@ -179,6 +173,11 @@ function PostListItem(props) {
 									<div className={styles.contentinner}>
 										{commentList}
 									</div>
+									<CommentForm 
+										post={props.post}
+										createComment={props.createComment}
+										currentUser={props.currentUser}
+									/>
 								</div>
 								
 							</div>

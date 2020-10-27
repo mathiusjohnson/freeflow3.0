@@ -37,4 +37,31 @@
 		margin-right: 55px;
 		// align-items: center;
 	}
+
+	.commentbutton {
+		border: 1px solid #3366ff;
+		color: #3366ff;
+		text-align: center;
+		font-weight: 900;
+		border-radius: 5px;
+		padding: 0.5rem 0.8rem;
+		margin-left: 20px;
+		text-transform: uppercase;
+		background: linear-gradient(to right, white, #3366ff 50%, white 50%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		background-size: 200% 100%;
+		background-position: 110%;
+		transition: background-position 350ms ease;
+		text-decoration: none;
+		width: 180px;
+	}
+
+	.commentbutton:hover {
+		cursor: pointer;
+		color: white;
+		background-position: 0 100%;
+		-webkit-text-fill-color: transparent;
+		box-shadow: 1px 1px 9px #3366ff;
+	}
 }

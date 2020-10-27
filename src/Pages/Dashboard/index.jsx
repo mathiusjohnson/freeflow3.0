@@ -66,22 +66,22 @@ export default function Home(props) {
             </div>
             <div
               className="filter-btn filter-btn-css"
-              onClick={() => filterPost("CSS")}
+              onClick={() => filterPost("Programming")}
             >
-              CSS
+              Programming
             </div>
 
             <div
               className="filter-btn filter-btn-ruby"
-              onClick={() => filterPost("Ruby")}
+              onClick={() => filterPost("Writing")}
             >
-              Ruby
+              Writing
             </div>
             <div
               className="filter-btn filter-btn-javascript"
-              onClick={() => filterPost("Javascript")}
+              onClick={() => filterPost("Cooking")}
             >
-              Javascript
+              Cooking
             </div>
           </div>
           <PostList
