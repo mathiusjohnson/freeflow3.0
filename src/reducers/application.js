@@ -32,14 +32,13 @@ export default function reducer(state, action) {
       // console.log("from filter", state.filtered_posts);
       const { text } = action;
 
-      // console.log("from filter", text);
+      console.log("from filter", text);
 
       if (text !== "") {
-        const postWithStack = state.filtered_posts.filter((post) => {
+        let postWithStack = state.filtered_posts.filter((post) => {
           if (post.name === text) {
             return true;
           }
-          return postWithStack
         });
         // console.log("from filter", postWithStack);
         const final = postWithStack.filter((post) => {

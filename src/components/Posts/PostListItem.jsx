@@ -45,7 +45,7 @@ function PostListItem(props) {
 		
   });
 
-	console.log("props post: ", props.post);
+	// console.log("props post: ", props.post);
 	const stack = props.post.stack.map((tech_stack, index) => {
     return (
       <li className="list" key={index}>

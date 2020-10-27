@@ -1,7 +1,10 @@
-import React, { useState } from "react";
-// import { Button, ButtonLink } from "reactstrap";
+import React, {useState, useRef} from 'react';
 import Tags from "./StackTag";
 import { Checkbox } from '@material-ui/core';
+import styles from "../Posts/Editor.module.scss";
+
+import {  Form, FormGroup, Label, Input } from 'reactstrap';
+import 'draft-js/dist/Draft.css';
 
 function Editor(props) {
   const [error, setError] = useState("");
@@ -10,6 +13,7 @@ function Editor(props) {
     1: false,
   });
 
+  
   const onChangeCheckbox = (value, name) => {
     setCheckbox({ ...checkbox, [name]: value });
   };
@@ -29,7 +33,7 @@ function Editor(props) {
     //empty tags should also be checked here.
     setValue("");
   };
-
+  
   function validatePost() {
     if (value === "") {
       setError("Post cannot be blank");
@@ -44,58 +48,36 @@ function Editor(props) {
   }
 
   return (
-    <div className="user-profile">
-      {/* <Row>
-        <Col className="avatar" breakPoint={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
-          <MDEditor className="editor" value={value}               
-          onChange={setValue} />
-        </Col>
-      </Row>
-      <Row> */}
-        <div className="bottom">
-          <div>
-            <Tags
-              className="tagging"
-              suggested={props.suggestion}
-              onChange={onChangeInput}
-            />
-          </div>
-          <div className="right">
-            <div className="checkbox">
-              <Checkbox
-                checked={checkbox[1]}
-                className="checkbox-input"
+    <Form >
+      <FormGroup>
+        <textarea 
+          type="textarea" 
+          name="text" 
+          id="exampleText" 
+          value={value} 
+          onChange={e => setValue(e.target.value)} 
+        />
+          <Tags suggested={props.suggestion} onChange={onChangeInput} />
+          <FormGroup check>
+            <Label check>
+              <Input 
+                type="checkbox"
                 onChange={(value) => onChangeCheckbox(value, 1)}
-              >
-                Help Needed
-              </Checkbox>
-            </div>
-            <div className="editor-buttons">
-              <button
-                fullWidth
-                appearance="hero"
-                className="green-button green button-transition"
-                onClick={() => validatePost()}
-              >
-                Post
-              </button>
-              <button
-                fullWidth
-                appearance="hero"
-                className="red-button red button-transition"
-                onClick={() => onCancel()}
-              >
-                Cancel
-              </button>
-            </div>
-            <div>
-              <section className="validation">{error}</section>
-            </div>
-          </div>
-        </div>
-      {/* </Row> */}
+                status="Success"
+                checked={checkbox[1]}
+              />{' '}
+              Help Needed
+            </Label>
+          </FormGroup>
+        <div 
+        className={styles.postbtn} 
+        onClick={() => validatePost()}>Post</div>
+    <div>
+      <section className={styles.validation}>{error}</section>
     </div>
+    </FormGroup>
+
+    </Form>
   );
 }
-
 export default Editor;
