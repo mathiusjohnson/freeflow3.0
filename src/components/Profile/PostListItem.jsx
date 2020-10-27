@@ -6,6 +6,8 @@ import CommentList from "./Comments/CommentList";
 import CommentForm from "./Comments/NewComment";
 import EditPostItem from "./EditPost";
 import useVisualMode from "../../hooks/useVisualMode";
+import styles from './PostListItem.module.scss'
+// import '../../styles/profile.css'
 
 const SHOW = "SHOW";
 // const CONFIRM = "CONFIRM";
@@ -86,13 +88,13 @@ function PostListItem(props) {
           {props.user.id === parseInt(senderID, 10) ? (
             <div className="edit-post-button">
               <Button
-                className="blue-button button-transition"
+                className={styles.blueButton}
                 onClick={onEdit}
               >
                 Edit
               </Button>
               <button
-                className="red-button red-button-transition"
+                className={styles.redButton}
                 onClick={onDelete}
               >
                 Delete

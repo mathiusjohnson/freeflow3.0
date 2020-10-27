@@ -1,0 +1,61 @@
+.blueButton {
+  border: 1px solid #3366ff;
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 100px;
+  text-transform: uppercase;
+	background: linear-gradient(to right, white, #3366ff 50%, white 50%);
+  overflow: hidden;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 200% 100%;
+  background-position: 110%;
+  transition: background-position 275ms ease;
+  text-decoration: none;
+  color: #3366ff;
+  background-position: 100% 0;
+	transition: all 0.2s ease-in-out;
+}
+
+.blueButton:hover {
+  cursor: pointer;
+  color: white;
+  background-position: 0 100%;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 1px 1px 9px #3366ff;
+}
+
+.redButton {
+  border: 1px solid rgb(250, 70, 70);
+  color: rgb(250, 70, 70);
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  background: linear-gradient(to right, white, rgb(250, 70, 70) 50%, white 50%);
+  overflow: hidden;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 200% 100%;
+  background-position: 110%;
+  transition: background-position 275ms ease;
+  text-decoration: none;
+  color: rgb(250, 70, 70);
+  background-position: 100% 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.redButton:hover {
+  cursor: pointer;
+  color: white;
+  background-position: 0 100%;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 1px 1px 9px rgb(250, 70, 70);
+}
