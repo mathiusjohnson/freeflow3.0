@@ -24,8 +24,8 @@ export default function UserList(props) {
         key={index}
         userId={user.id}
         username={user.username}
-				studentExperience={user.helpedrating}
-				mentorExperience={user.helperrating}
+				helpedExperience={user.helpedrating}
+		    helperExperience={user.helperrating}
         avatar={user.avatar}
         setSelectedUser={state.setSelectedUser}
 				active={user.active}

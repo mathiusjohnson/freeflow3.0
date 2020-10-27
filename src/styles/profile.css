@@ -305,7 +305,7 @@ textarea.profile-new-comment {
   box-shadow: 1px 1px 9px #fff0f5;
 }
 
-.user-profile .red-button {
+.user-profile .redButton {
   border: 1px solid rgb(250, 70, 70);
   color: rgb(250, 70, 70);
   font-weight: 900;
@@ -316,9 +316,6 @@ textarea.profile-new-comment {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
-}
-.user-profile .red-button-transition {
   background: linear-gradient(to right, white, rgb(250, 70, 70) 50%, white 50%);
   overflow: hidden;
   background-clip: text;
@@ -329,9 +326,9 @@ textarea.profile-new-comment {
   text-decoration: none;
   color: rgb(250, 70, 70);
   background-position: 100% 0;
-  transition: 0.5s;
+  transition: all 0.2s ease-in-out;
 }
-.user-profile .red-button-transition:hover {
+.user-profile .redButton:hover {
   cursor: pointer;
   color: white;
   background-position: 0 100%;

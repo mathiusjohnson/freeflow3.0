@@ -13,11 +13,11 @@ export default function StudentList(props) {
         userId={user.id}
         username={user.username}
 				studentExperience={user.studentrating}
-				mentorExperience={user.mentorrating}
+				helperExperience={user.helperrating}
         avatar={user.avatar}
         setSelectedUser={props.setSelectedUser}
 				active={user.active}
-				mentor_stack={props.mentor_stack}
+				helper_stack={props.helper_stack}
       />
     );
   });

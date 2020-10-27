@@ -1,4 +1,5 @@
 import React from "react";
+import '../../../styles/profile.css'
 
 function CommentList(props) {
   const { index, avatar, username, text_body } = props;

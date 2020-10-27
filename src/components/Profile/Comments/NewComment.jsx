@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "reactstrap";
+import '../../../styles/profile.css'
 
 function CommentForm(props) {
   const [value, setValue] = React.useState("Comment here...");

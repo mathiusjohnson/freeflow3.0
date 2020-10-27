@@ -25,6 +25,7 @@ const Navigation = props => {
 				Messages
 			</NavLink>
 			<NavLink to="/profile">Profile</NavLink>
+			<NavLink to="/experiences">Experiences</NavLink>
 			<NavLink to="/users">Users</NavLink>
 			<NavLink to="/login">Login</NavLink>
 			<NavLink to="/register">Register</NavLink>

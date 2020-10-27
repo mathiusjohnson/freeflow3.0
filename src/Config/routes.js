@@ -5,6 +5,8 @@ import Profile from '../Pages/Profile'
 import Messages from '../Pages/Messages'
 import Users from '../Pages/Users'
 import Register from '../Pages/Register'
+import Experiences from '../Pages/Experiences'
+
 const routes = [
 	{
 		path: '/login',
@@ -34,6 +36,11 @@ const routes = [
 	{
 		path: '/messages',
 		component: Messages,
+		isPrivate: false,
+	},
+	{
+		path: '/experiences',
+		component: Experiences,
 		isPrivate: false,
 	},
 ];

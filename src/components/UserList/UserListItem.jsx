@@ -21,13 +21,13 @@ export default function UserListItem(props) {
           <CardBody className="post-body">
             {/* EXPERIENCE BARS */}
             <div className="experience-bars">
-              <div className="mentor-xp-bar">
-                {props.mentorExperience ? 
-                  <h4>Mentor Level</h4>
+              <div className="helper-xp-bar">
+                {props.helperExperience ? 
+                  <h4>Helper Level</h4>
                 : ""}
-                {props.mentorExperience ? 
+                {props.helperExperience ? 
                   <ProgressBar 
-                    experience={Number(props.mentorExperience)}
+                    experience={Number(props.helperExperience)}
                   />
                 : ""}
               </div>
@@ -41,7 +41,7 @@ export default function UserListItem(props) {
                   />
                 : ""}
               </div>
-              {!props.studentExperience && !props.mentorExperience ? 
+              {!props.studentExperience && !props.helperExperience ? 
               <div className="new-user">
                 <h4>{props.username} is new.</h4>
                 <h5>Invite them for a <NavLink className="tutor-link" to='/tutor-sessions'>tutor session</NavLink> to help them get on the experience board!</h5>

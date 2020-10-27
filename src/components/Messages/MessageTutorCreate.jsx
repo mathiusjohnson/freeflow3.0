@@ -46,11 +46,11 @@ export default function MessageTutorCreate(props) {
         <div className="create-mentor-student-header">You're looking for:</div>
         <div className="radio-mentor">
           <input type="radio" name='radio-mentor-student' id='mentor' defaultChecked />
-          <label htmlFor="mentor">Mentorship</label>
+          <label htmlFor="mentor">Helper</label>
         </div>
         <div className="radio-student">
           <input type="radio" name='radio-mentor-student' id='student' />
-          <label htmlFor="student">Menteeship</label>
+          <label htmlFor="student">Helped</label>
         </div>
       </div>
       <div className="tutor-create-username">

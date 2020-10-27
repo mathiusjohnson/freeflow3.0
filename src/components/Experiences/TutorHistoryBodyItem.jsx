@@ -1,7 +1,7 @@
 import React from 'react';
 import TutorBtn from './TutorBtn';
 import timeSince from '../../helpers/timeSince';
-import { formatDate, getMentorUsername, getStudentUsername, getDateStatus, getTimeAgo } from '../../helpers/tutor-helpers';
+import { formatDate, getHelperUsername, getStudentUsername, getDateStatus, getTimeAgo } from '../../helpers/tutor-helpers';
 import classNames from 'classnames'
 
 export default function TutorHistoryBodyItem(props) {
@@ -54,7 +54,7 @@ export default function TutorHistoryBodyItem(props) {
         </div>
       </div>
       <div className="tutor-history-item-student-mentor">
-        {getMentorUsername(props)} / {getStudentUsername(props)}
+        {getHelperUsername(props)} / {getStudentUsername(props)}
       </div>
       <div className={statusClass}>
         {props.status.slice(0, 1).toUpperCase() + props.status.slice(1)}
