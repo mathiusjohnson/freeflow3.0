@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { CardBody } from "reactstrap";
 import styles from './EditPost.module.scss'
 import poststyles from './PostListItem.module.scss'
+import Tags from "./StackTag";
 
 function EditPostItem(props) {
   //console.log("from edit post", props);
   const [post, setPost] = useState(props.text_body || "");
   // let techTags = [];
+
   // const onChangeInput = (selectedTags) => {
   //   techTags = selectedTags;
   // };
@@ -28,7 +30,7 @@ function EditPostItem(props) {
           onChange={(event) => setPost(event.target.value)}
           placeholder="Round border"
         />
-        {/* <ul className={poststyles.poststack}>
+        <ul className={poststyles.poststack}>
           <span className={poststyles.bold}>Stack:</span>
           {props.stack.map((tech_stack, idx) => {
             return <li key={idx}>{tech_stack}</li>;
@@ -36,9 +38,9 @@ function EditPostItem(props) {
         </ul>
         <Tags
           tags={props.stack}
-          onChange={onChangeInput}
+          // onChange={onChangeInput}
           suggested={props.suggestion}
-        /> */}
+        />
         <div className={poststyles.bluebutton} onClick={onSave}>Save</div>
       </CardBody>
     </div>

@@ -23,7 +23,7 @@ export default function Messages(props) {
   const [createError, setCreateError] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
   const [routeUsername, setRouteUsername] = useState('');
-  const [totalUnread, setTotalUnread] = useState(0);
+  // const [setTotalUnread] = useState(0);
   const [usernamesUnread, setUsernamesUnread] = useState([]);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Messages(props) {
         const currentData = data.data.data;
 
         const unreadCount = unreadCounter(Number(userID), currentData);
-        setTotalUnread(unreadCount);
+        // setTotalUnread(unreadCount);
         // console.log('unreadCount', unreadCount);
         setNotifications(unreadCount);
 
@@ -47,7 +47,7 @@ export default function Messages(props) {
 
         const newMessageList = messageCleanSort(currentUserID, currentData);
 
-        console.log('messageList', newMessageList);
+        // console.log('messageList', newMessageList);
 
         setMessageList({ messageList: newMessageList });
 
@@ -68,7 +68,7 @@ export default function Messages(props) {
           changeBg(currentUsername);
         }
 
-        console.log('currentData', currentData);
+        // console.log('currentData', currentData);
         let usernamesNotRead = [];
         for (let message of currentData) {
           if (message.senderid !== userID && !message.receiver_read && message.sender) {
@@ -76,12 +76,12 @@ export default function Messages(props) {
           }
         }
         usernamesNotRead = [...new Set(usernamesNotRead)];
-        console.log('usernamesNotRead', usernamesNotRead);
+        // console.log('usernamesNotRead', usernamesNotRead);
         setUsernamesUnread(usernamesNotRead);
 
       });
 
-  }, [count]);
+  }, [currentUsername]);
 
   useEffect(() => {
     axios.get('http://localhost:8001/api/user_profiles')
@@ -229,7 +229,7 @@ export default function Messages(props) {
 
       axios.post('http://localhost:8001/api/messages/new', { textInput, receiverID, senderID })
         .then((res) => {
-          console.log('resssss', res);
+          // console.log('resssss', res);
           if (createNew) {
             setCurrentUsername(selectedUsername);
             setTimeout(() => {
@@ -324,12 +324,16 @@ export default function Messages(props) {
 
   // ROUTE FROM OTHER PAGE FOR SENDING MSG *********************************
   // console.log("props in messages: ", props);
-  // const usernameRoute = props.location.state.username;
+  let usernameRoute;
+  console.log("props location in messages: ", props.location);
+  if (!props.location.state.username) {
+    usernameRoute = props.location.state.username;
+  }
 
-  // if (usernameRoute && !routeUsername) {
-  //   setRouteUsername(usernameRoute);
-  //   clickMe(usernameRoute);
-  // }
+  if (usernameRoute && !routeUsername) {
+    setRouteUsername(usernameRoute);
+    clickMe(usernameRoute);
+  }
   // ROUTE FROM OTHER PAGE FOR SENDING MSG *********************************
 
   return (

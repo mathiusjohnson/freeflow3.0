@@ -26,9 +26,9 @@ function PostList(props) {
     );
   });
   return postData;
-  return (
-    <div>PostList</div>
-  )
+  // return (
+  //   <div>PostList</div>
+  // )
 }
 
 export default PostList;

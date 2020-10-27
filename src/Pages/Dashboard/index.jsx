@@ -1,11 +1,11 @@
 import PostList from "../../components/Posts/PostList";
 import Editor from "../../components/Posts/Editor";
 import useApplicationData from "../../hooks/useApplicationData";
-import { getDashboardPosts, getFilterOptions } from "../../helpers/profileHelpers";
+import { getDashboardPosts } from "../../helpers/profileHelpers";
 import '../../components/Home.scss'
-import React, { useEffect } from 'react'
-import styles from './dashboard.module.css';
-import { useAuthDispatch, logout, useAuthState } from '../../Context';
+import React from 'react'
+// import styles from './dashboard.module.css';
+import { useAuthState } from '../../Context';
 
 export default function Home(props) {
   const {
@@ -24,9 +24,7 @@ export default function Home(props) {
   const userDetails = useAuthState();
 
 	if (!userDetails) return null;
-  console.log("user details in dashboard: ", userDetails);
   let currentUser = JSON.parse(localStorage.getItem('currentUser'))
-console.log("current user local storage dashboard: ", currentUser.avatar);
   let dashPosts = getDashboardPosts(state.posts);
   // const filterOptions = getFilterOptions(state.posts);
   // useEffect(() => {

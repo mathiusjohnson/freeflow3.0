@@ -32,7 +32,7 @@ function UserProfileItem(props) {
   let senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
   let currentUser = JSON.parse(localStorage.getItem('currentUser'))
 	const userDetails = useAuthState();
-	console.log("user details in profile: ", userDetails);
+	// console.log("user details in profile: ", userDetails);
 
 	if (!userDetails) return null;
 
@@ -54,7 +54,7 @@ function UserProfileItem(props) {
 	const comments = state.comments;
 
 	const posts = getUserPosts(state.posts, senderID);
-	console.log("props location in profile index: ", props.location);
+	// console.log("props location in profile index: ", props.location);
 	let routedUserID
 	if (props.location.state !== null) {
 		routedUserID = props.location.state.id 
@@ -63,17 +63,17 @@ function UserProfileItem(props) {
 
 	if (!user) return null;
 
-	const helper = state.helper_points.find(
-		(helper) => helper.id === user.id
-	);
+	// const helper = state.helper_points.find(
+	// 	(helper) => helper.id === user.id
+	// );
 
 	// console.log("helper in profile index: ", helper);
-	const helped = state.helped_points.find(
-		(helped) => helped.id === user.id
-	);
+	// const helped = state.helped_points.find(
+	// 	(helped) => helped.id === user.id
+	// );
 
 	const helper_stack = getStack(state.user_skills, senderID.id);
-	console.log("user in profile index: ", user);
+	// console.log("user in profile index: ", user);
 	if (user.id) {
 		currentUser = user
 	} else {
@@ -89,7 +89,7 @@ function UserProfileItem(props) {
 					<UserInfo
 						user={currentUser}
 						onEdit={onEdit}
-						// helper_stack={helper_stack}
+						helper_stack={helper_stack}
 					/>
 				</>
 			)}
@@ -98,7 +98,7 @@ function UserProfileItem(props) {
 				<EditUserInfo
 					user={currentUser}
 					loggedInUser={currentUser}
-					// helper_stack={helper_stack}
+					helper_stack={helper_stack}
 					suggestion={state.db_skills}
 					avatars={state.avatars}
 					onSaveNewInfo={updateUserInfo}

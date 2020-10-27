@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Tags from "./StackTag";
 // import ContextConsumer from "../../context/context";
 import styles from "./Editor.module.scss";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {  Form, FormGroup, Label, Input } from 'reactstrap';
 
 function Editor(props) {
   const [value, setValue] = useState('');
@@ -15,11 +15,10 @@ function Editor(props) {
     setCheckbox({ ...checkbox, [name]: value });
   };
 
-  let avatarUrl, userID, username;
+  let avatarUrl, username;
   
   if (typeof localStorage !== 'undefined') {
     avatarUrl = typeof localStorage !== 'undefined' && localStorage.avatarUrl
-    userID = typeof localStorage !== 'undefined' && localStorage.userID
     username = typeof localStorage !== 'undefined' && localStorage.usreUrl
   }
 

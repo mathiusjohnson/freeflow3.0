@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { Button, ButtonLink } from "reactstrap";
 import Tags from "./StackTag";
+import { Checkbox } from '@material-ui/core';
 
 function Editor(props) {
   const [error, setError] = useState("");
@@ -61,13 +62,13 @@ function Editor(props) {
           </div>
           <div className="right">
             <div className="checkbox">
-              {/* <Checkbox
+              <Checkbox
                 checked={checkbox[1]}
                 className="checkbox-input"
                 onChange={(value) => onChangeCheckbox(value, 1)}
               >
                 Help Needed
-              </Checkbox> */}
+              </Checkbox>
             </div>
             <div className="editor-buttons">
               <button

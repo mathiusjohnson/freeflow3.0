@@ -9,15 +9,15 @@ import useApplicationData from "./hooks/useApplicationData";
 function App() {
 	const {
     state,
-    createPost,
-    addLike,
-    createComment,
-    removeLike,
-    removeComment,
-    editComment,
-    filterDashboardPosts,
-    deletePost,
-    updatePost,
+    // createPost,
+    // addLike,
+    // createComment,
+    // removeLike,
+    // removeComment,
+    // editComment,
+    // filterDashboardPosts,
+    // deletePost,
+    // updatePost,
 	} = useApplicationData();
 	
 	return (

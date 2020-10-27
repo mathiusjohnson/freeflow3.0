@@ -4,7 +4,7 @@ import styles from './NewComment.module.scss'
 
 export default function CommentForm(props) {
   const [value, setValue] = useState("");
-  const [error, setError] = useState("");
+  const [error] = useState("");
     
     // const commentObj = {
     //   avatar: props.currentUser.avatar,
