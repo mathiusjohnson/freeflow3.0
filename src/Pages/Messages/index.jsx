@@ -258,7 +258,7 @@ export default function Messages(props) {
   }
 
   function createTutorSession() {
-    const radios = document.getElementsByName('radio-mentor-student');
+    const radios = document.getElementsByName('radio-helper-helped');
     let radioChecked;
     for (let radio of radios) {
       if (radio.checked) {
@@ -286,13 +286,13 @@ export default function Messages(props) {
     }
     const creatorID = Number(document.cookie.split('=')[1]);
 
-    let mentorID, studentID;
-    if (radioChecked === 'mentor') {
-      mentorID = receiverID
-      studentID = creatorID;
+    let helperID, helpedID;
+    if (radioChecked === 'helper') {
+      helperID = receiverID
+      helpedID = creatorID;
     } else {
-      mentorID = creatorID;
-      studentID = receiverID;
+      helperID = creatorID;
+      helpedID = receiverID;
     }
 
     // error handling for username not present
@@ -304,7 +304,7 @@ export default function Messages(props) {
       }, 2000);
       return;
     } else {
-      axios.post('http://localhost:8001/api/tutor_experiences/new', { mentorID, studentID, creatorID })
+      axios.post('http://localhost:8001/api/tutor_experiences/new', { helperID, helpedID, creatorID })
         .then(() => {
           setShowTutor(false);
           setCount(count + 1);

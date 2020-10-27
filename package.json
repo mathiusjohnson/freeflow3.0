@@ -46,6 +46,8 @@
     "node": "^14.14.0",
     "react-froala-wysiwyg": "^3.2.2-1",
     "react-router-dom": "^5.2.0",
+    "react-slidedown": "^2.4.5",
+    "react-star-rating-component": "^1.4.1",
     "react-tag-autocomplete": "^6.1.0",
     "reactstrap": "^8.6.0",
     "sass": "^1.27.0"

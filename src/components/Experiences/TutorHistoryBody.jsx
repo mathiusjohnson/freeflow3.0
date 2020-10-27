@@ -17,8 +17,8 @@ export default function TutorHistoryBody(props) {
         dateAccepted={item.date_accepted}
         dateCompleted={item.date_completed}
         status={item.status}
-        mentorID={item.mentor_id}
-        studentID={item.student_id}
+        helperID={item.helper_id}
+        helpedID={item.helped_id}
         creatorID={item.creator_id}
         currentUserData={props.currentUserData}
         acceptAction={props.acceptAction}

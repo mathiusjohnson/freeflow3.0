@@ -8,7 +8,7 @@ export default function TutorHistoryHeader(props) {
         Date
       </div>
       <div className="tutor-history-header-usernames">
-        Mentor / Student
+        Helper / Helped
       </div>
       <div className="tutor-history-header-status">
         Status

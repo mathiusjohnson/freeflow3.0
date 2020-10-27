@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactStars from "react-star-rating-component";
-import { formatDate, getMentorUsername, getStudentUsername, getDateStatus, getTimeAgo } from '../../helpers/tutor-helpers';
+import { formatDate, getHelperUsername, getDateStatus, getTimeAgo } from '../../helpers/tutor-helpers';
+import '../../styles/tutor-sessions.css'
 
 export default function TutorRate(props) {
 
@@ -11,13 +12,13 @@ export default function TutorRate(props) {
   const onStarClick = (nextValue) => setRating(nextValue);
   const onStarHover = (nextValue) => setRating(nextValue);
 
-  function getIsMentor(props) {
+  function getIsHelper(props) {
     const userID = Number(document.cookie.split('=')[1]);
     const sessionID = props.currentTutorID;
 
     for (let tutorSession of props.currentTutorData) {
       if (sessionID === tutorSession.id) {
-        if (userID === tutorSession.mentor_id) {
+        if (userID === tutorSession.helper_id) {
           return true;
         }
         return false;
@@ -36,10 +37,10 @@ export default function TutorRate(props) {
       let otherUserID;
       const loggedInUserID = Number(document.cookie.split('=')[1]);
 
-      if (props.unratedSession.mentor_id === loggedInUserID) {
+      if (props.unratedSession.helper_id === loggedInUserID) {
         otherUserID = props.unratedSession.student_id;
       } else {
-        otherUserID = props.unratedSession.mentor_id;
+        otherUserID = props.unratedSession.helper_id;
       }
 
       for (let user of props.currentUserData) {
@@ -76,7 +77,7 @@ export default function TutorRate(props) {
       </div>
       {!props.unratedSession && (
         <div className="tutor-rate-btns-container">
-          <div className="rate-tutor-btn" onClick={() => props.submitRating(props.currentTutorID, getIsMentor(props), rating, getTutorComments())}>
+          <div className="rate-tutor-btn" onClick={() => props.submitRating(props.currentTutorID, getIsHelper(props), rating, getTutorComments())}>
             Submit
         </div>
           <div className="tutor-btn tutor-btn-decline-cancel" onClick={() => props.cancelRateSession()}>

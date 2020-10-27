@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import TutorCreateOptionItem from './TutorCreateOptionItem';
 import UsernameSearchFeature from '../UsernameSearch/UsernameSearchFeature';
-
+import '../../styles/tutor-sessions.css'
 export default function TutorCreate(props) {
 
-  // console.log('tutor create', props);
 
   function getUsernameList(props) {
 
