@@ -1,36 +1,36 @@
 .flexrow {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
 }
 
 .checkbox {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .postbtn {
-  text-align: center;
-  border: 1px solid #1cd454;
-  color: #1cd454;
-  font-weight: 900;
-  border-radius: 5px;
-  padding: 0.5rem 0.8rem;
-  margin-left: 20px;
-  text-transform: uppercase;
-  background: linear-gradient(to right, white, #1cd454 50%, white 50%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  background-position: 110%;
-  transition: background-position 350ms ease;
-  text-decoration: none;
-  color: #1cd454;
+	text-align: center;
+	border: 1px solid #1cd454;
+	color: #1cd454;
+	font-weight: 900;
+	border-radius: 5px;
+	padding: 0.5rem 0.8rem;
+	margin-left: 20px;
+	text-transform: uppercase;
+	background: linear-gradient(to right, white, #1cd454 50%, white 50%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 110%;
+	transition: background-position 350ms ease;
+	text-decoration: none;
+	color: #1cd454;
 }
 
 .postbtn:hover {
-  cursor: pointer;
-  background-position: 0 100%;
-  box-shadow: 1px 1px 9px #fff0f5;
-  -webkit-text-fill-color: transparent;
+	cursor: pointer;
+	background-position: 0 100%;
+	box-shadow: 1px 1px 9px #fff0f5;
+	-webkit-text-fill-color: transparent;
 }

@@ -51,13 +51,19 @@
 }
 .container {
 	// position: absolute;
+	margin: 0 1em;
 	.post-filter {
 		display: flex;
 		position: relative;
-		top: 65px;
+		top: 1em;
 		left: 100px;
+		border: 2px solid green;
+		padding: 1em;
+		width: 90%;
 	}
-
+	h1 {
+		margin: 1em 0;
+	}
 	.filter-btn:hover {
 		cursor: pointer;
 		opacity: 0.7;
@@ -93,10 +99,15 @@
 		margin: 1em;
 		padding: 0.25em;
 	}
+	padding: 1em;
+	display: flex;
+	height: 4em;
+	background-color: lightslategrey;
+	align-items: center;
 }
 .form-group {
 	padding: 1em;
-	margin: 1em;
+	margin: auto;
 	border: 1px solid black;
 	width: 80%;
 	display: flex;
@@ -121,4 +132,15 @@
 ul .card {
 	border: solid 1px blue;
 	padding: 2em;
+	margin: 1em 0;
+}
+
+.PostListItem_postbody__28kSb {
+	border: 2px solid red;
+	display: inline-block;
+	width: 15%;
+}
+
+.form-check-label {
+	margin: 2em 0;
 }
