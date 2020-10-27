@@ -14,27 +14,27 @@ const routes = [
 	{
 		path: '/register',
 		component: Register,
-		isPrivate: true,
+		isPrivate: false,
 	},
 	{
 		path: '/dashboard',
 		component: Dashboard,
-		isPrivate: true,
+		isPrivate: false,
 	},
 	{
 		path: '/users',
 		component: Users,
-		isPrivate: true,
+		isPrivate: false,
 	},
 	{
 		path: '/profile',
 		component: Profile,
-		isPrivate: true,
+		isPrivate: false,
 	},
 	{
 		path: '/messages',
 		component: Messages,
-		isPrivate: true,
+		isPrivate: false,
 	},
 ];
 

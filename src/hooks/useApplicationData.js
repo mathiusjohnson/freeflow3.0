@@ -166,7 +166,7 @@ export default function useApplicationData() {
           // console.log("element in getnewpostid hook: ", element.id);
           axios.post(`http://localhost:8001/api/posts_skills`, {
             post_id: res.id,
-            stack_id: element.id,
+            skill_id: element.id,
           });
         })
       ).catch((error) => {

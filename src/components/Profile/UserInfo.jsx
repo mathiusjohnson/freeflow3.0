@@ -5,7 +5,7 @@ import { Card, CardBody } from "reactstrap";
 
 function UserInfo(props) {
   const senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-  console.log("sender ID", senderID);
+  console.log("user in userinfo: ", props.user);
   return (
     <Card>
       <CardBody>
@@ -29,6 +29,7 @@ function UserInfo(props) {
                     </p>
                   )}
               </div>
+              <h2>{props.user.first_name} {props.user.last_name}</h2>
               <p className="username">
                 <span>@</span>
                 {props.user.username}

@@ -6,7 +6,7 @@
 
 	FreeFlow is a Social Media Network which connects users based on their skills  
 	and assets to others that have specific wants and needs. Users can surf the  
-        dashboard or userlist to find others that need or want something that they  
+  dashboard or userlist to find others that need or want something that they  
 	can offer. When a user helps another out, they gain points. As they gain  
 	more points they will become more eligible to be helped by others.
 

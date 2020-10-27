@@ -59,10 +59,10 @@ function UserProfileItem(props) {
 	if (props.location.state !== null) {
 		routedUserID = props.location.state.id 
 	}
-	const user = getUser(state.user_profiles, routedUserID);
-
+	let user = getUser(state.user_profiles, routedUserID);
 	if (!user) return null;
-
+	
+	console.log('user in index: ', state.user_profiles);
 	// const helper = state.helper_points.find(
 	// 	(helper) => helper.id === user.id
 	// );
@@ -74,12 +74,17 @@ function UserProfileItem(props) {
 
 	const helper_stack = getStack(state.user_skills, senderID.id);
 	// console.log("user in profile index: ", user);
+	console.log("user in profile index: ", user);
 	if (user.id) {
 		currentUser = user
 	} else {
 		currentUser = JSON.parse(localStorage.getItem('currentUser'))
+		user = getUser(state.user_profiles, currentUser.id)
 	}
 
+
+
+	console.log('current user in profile index: ', currentUser);
 	return (
 
 		<div>
