@@ -1,5 +1,5 @@
 div.user-info {
-  width: 400px;
+  width: 600px;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 2em;
@@ -36,6 +36,7 @@ p.username {
   margin-bottom: 1em;
   display: flex;
   text-align: center;
+  align-items: center;
 }
 .user-info .stack li {
   list-style: none;

@@ -1,7 +1,6 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import Tags from "./StackTag";
 import styles from "../Posts/Editor.module.scss";
-
 import {  Form, FormGroup, Label, Input } from 'reactstrap';
 import 'draft-js/dist/Draft.css';
 
@@ -27,11 +26,11 @@ function Editor(props) {
     techTags = selectedTags;
   };
 
-  const onCancel = () => {
-    //check for empty input here
-    //empty tags should also be checked here.
-    setValue("");
-  };
+  // const onCancel = () => {
+  //   //check for empty input here
+  //   //empty tags should also be checked here.
+  //   setValue("");
+  // };
   
   function validatePost() {
     if (value === "") {

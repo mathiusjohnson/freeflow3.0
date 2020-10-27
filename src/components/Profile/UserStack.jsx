@@ -7,14 +7,10 @@ function Stack(props) {
   });
 
   return (
-    // <Row>
-    //   <Col breakPoint={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
-        <ul className="stack">
-          <span className="bold">helper Stack:</span>
-          {helperStack}
-        </ul>
-    //   </Col>
-    // </Row>
+    <ul className="stack">
+      <span className="bold">Skills:</span>
+      {helperStack}
+    </ul>
   );
 }
 
