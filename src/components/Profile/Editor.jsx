@@ -1,6 +1,5 @@
 import React, {useState, useRef} from 'react';
 import Tags from "./StackTag";
-import { Checkbox } from '@material-ui/core';
 import styles from "../Posts/Editor.module.scss";
 
 import {  Form, FormGroup, Label, Input } from 'reactstrap';
