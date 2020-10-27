@@ -144,3 +144,13 @@ ul .card {
 .form-check-label {
 	margin: 2em 0;
 }
+
+.navbar {
+	height: 3em;
+	background-color: lightsteelblue;
+	display: flex;
+	align-items: center;
+	a {
+		margin: 1em;
+	}
+}

@@ -14,7 +14,7 @@ const Navigation = props => {
 	};
 	if (!userDetails) return null;
 	return (
-		<div>
+		<div className="navbar">
 			<NavLink to="/dashboard">Home</NavLink>
 			<NavLink
 				to={{
