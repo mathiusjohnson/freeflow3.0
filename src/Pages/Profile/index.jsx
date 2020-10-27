@@ -29,15 +29,10 @@ function UserProfileItem(props) {
 	} = useApplicationData();
 	
   const { mode, transition, back } = useVisualMode(SHOW);
-  let senderID = typeof document !== 'undefined' && document.cookie.split("=")[1];
-  let currentUser = JSON.parse(localStorage.getItem('currentUser'))
+  let loggedInUser = JSON.parse(localStorage.getItem('currentUser'))
 	const userDetails = useAuthState();
-	// console.log("user details in profile: ", userDetails);
 
-	if (!userDetails) return null;
-
-
-	if (!state) return null;
+	if (!userDetails || !state) return null;
 
 	function onEdit() {
     transition(EDITING);
@@ -53,8 +48,6 @@ function UserProfileItem(props) {
 	
 	const comments = state.comments;
 
-	const posts = getUserPosts(state.posts, senderID);
-	// console.log("props location in profile index: ", props.location);
 	let routedUserID
 	if (props.location.state !== null) {
 		routedUserID = props.location.state.id 
@@ -62,29 +55,21 @@ function UserProfileItem(props) {
 	let user = getUser(state.user_profiles, routedUserID);
 	if (!user) return null;
 	
-	console.log('user in index: ', state.user_profiles);
-	// const helper = state.helper_points.find(
-	// 	(helper) => helper.id === user.id
-	// );
+	// console.log('user in index: ', user);
 
-	// console.log("helper in profile index: ", helper);
-	// const helped = state.helped_points.find(
-	// 	(helped) => helped.id === user.id
-	// );
 
-	const helper_stack = getStack(state.user_skills, senderID.id);
-	// console.log("user in profile index: ", user);
-	console.log("user in profile index: ", user);
+	let currentUser;
 	if (user.id) {
 		currentUser = user
 	} else {
-		currentUser = JSON.parse(localStorage.getItem('currentUser'))
-		user = getUser(state.user_profiles, currentUser.id)
+		currentUser = loggedInUser
+		currentUser = getUser(state.user_profiles, currentUser.id)
 	}
+	
+	const posts = getUserPosts(state.posts, currentUser.id);
+	const helper_stack = getStack(state.user_skills, currentUser.id);
+	console.log("user in index prof: ", user);
 
-
-
-	console.log('current user in profile index: ', currentUser);
 	return (
 
 		<div>
@@ -113,7 +98,7 @@ function UserProfileItem(props) {
 				/>
 			</>
 			)}
-			{currentUser.id === parseInt(senderID, 10) ? (
+			{currentUser.id === parseInt(loggedInUser.id, 10) ? (
 
 			<Editor
 				id={user.id}
@@ -140,3 +125,12 @@ function UserProfileItem(props) {
 }
 
 export default UserProfileItem;
+
+	// USE LATER?
+	// const helper = state.helper_points.find(
+	// 	(helper) => helper.id === user.id
+	// );
+
+	// const helped = state.helped_points.find(
+	// 	(helped) => helped.id === user.id
+	// );

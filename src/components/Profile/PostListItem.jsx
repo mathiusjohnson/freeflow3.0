@@ -45,7 +45,6 @@ function PostListItem(props) {
   });
 
   const commentList = postComments.map((comment, index) => {
-    console.log("comment in post list item: ", comment);
     return (
       <CommentList
         key={index}

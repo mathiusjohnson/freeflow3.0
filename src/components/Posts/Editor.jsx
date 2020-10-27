@@ -16,7 +16,7 @@ function Editor(props) {
   };
 
   let avatarUrl, username;
-  
+  console.log("localStorage in editor: ", localStorage);
   if (typeof localStorage !== 'undefined') {
     avatarUrl = typeof localStorage !== 'undefined' && localStorage.avatarUrl
     username = typeof localStorage !== 'undefined' && localStorage.usreUrl
@@ -48,6 +48,7 @@ function Editor(props) {
       });
     }
   }
+
   return (
     <Form >
       <FormGroup>

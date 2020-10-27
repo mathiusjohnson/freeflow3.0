@@ -5,8 +5,6 @@ import UsernameSearchFeature from '../UsernameSearch/UsernameSearchFeature';
 
 export default function MessageHeader(props) {
 
-  console.log('msgHeaderProps', props);
-
   let avatar;
   for (let item of props.avatarList) {
     if (item.username === props.username) {

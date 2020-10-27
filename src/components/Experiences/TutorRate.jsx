@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ReactStars from "react-star-rating-component";
-import { formatDate, getHelperUsername, getDateStatus, getTimeAgo } from '../../helpers/tutor-helpers';
+import { formatDate } from '../../helpers/tutor-helpers';
 import '../../styles/tutor-sessions.css'
 
 export default function TutorRate(props) {

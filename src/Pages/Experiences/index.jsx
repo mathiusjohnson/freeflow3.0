@@ -10,7 +10,6 @@ import setUnseenTutor from '../../helpers/setUnseenTutor';
 // import 'react-slidedown/lib/slidedown.css';
 import { sortFilterAllTutorData } from '../../helpers/tutor-helpers';
 import axios from 'axios';
-import styles from './Experiences.module.scss'
 
 export default function Experiences() {
 

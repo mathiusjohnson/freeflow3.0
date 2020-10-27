@@ -38,4 +38,3 @@ function Tags(props) {
 }
 
 export default Tags;
-// ReactDOM.render(<App />, document.getElementById("app"));

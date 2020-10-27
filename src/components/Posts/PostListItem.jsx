@@ -11,7 +11,7 @@ import styles from './PostListItem.module.scss'
 import { Link, NavLink } from 'react-router-dom';
 
 const SHOW = "SHOW";
-const CONFIRM = "CONFIRM";
+// const CONFIRM = "CONFIRM";
 // const SAVING = "SAVING";
 const EDITING = "EDITING";
 // const ERROR_SAVE = "ERROR_SAVE";

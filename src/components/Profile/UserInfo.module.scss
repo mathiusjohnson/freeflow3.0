@@ -1,0 +1,29 @@
+.greenbutton {
+  border: 1px solid#16b446;
+  color: #16b446;
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 0.5rem 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, white, #16b446 20%, white 50%);
+  overflow: hidden;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 200% 100%;
+  background-position: 110%;
+  transition: background-position 275ms ease;
+  text-decoration: none;
+  background-position: 100% 0;
+  transition: all 0.2s ease-in-out;
+}
+.greenbutton:hover {
+  cursor: pointer;
+  color: white;
+  background-position: 0 100%;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 1px 1px 9px #16b446;
+}

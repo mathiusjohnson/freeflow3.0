@@ -3,7 +3,7 @@ import styles from './CommentList.module.scss'
 import { NavLink } from 'react-router-dom';
 
 function CommentList(props) {
-  const { index, avatar, username, first_name, last_name, text_body, comment, currentUser, removeComment, post } = props;
+  const { avatar, username, first_name, last_name, text_body, comment, currentUser, removeComment, post } = props;
 
 
   const myComment = currentUser.id === comment.commenter_id;
