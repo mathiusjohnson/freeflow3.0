@@ -35,7 +35,9 @@ function PostListItem(props) {
 
   // function onCancel() {
   //   back();
-  // }
+	// }
+	
+	// console.log("props comments in postlist: ", props.comments);
   const commentData = props.comments.filter((comment) => {
     if (props.post.post_id === comment.post_id) {
       return comment;
@@ -43,6 +45,7 @@ function PostListItem(props) {
 		
   });
 
+	console.log("props post: ", props.post);
 	const stack = props.post.stack.map((tech_stack, index) => {
     return (
       <li className="list" key={index}>
@@ -60,6 +63,8 @@ function PostListItem(props) {
 								index={props.index}
 								avatar={comment.avatar}
 								username={comment.username}
+								first_name={comment.first_name}
+								last_name={comment.last_name}
 								text_body={comment.text_body}
 								removeComment={props.removeComment}
 								editComment={props.editComment}
@@ -69,6 +74,7 @@ function PostListItem(props) {
 							/>
 							<CommentForm 
 							post={props.post}
+							createComment={props.createComment}
 							currentUser={props.currentUser}
 							/>
 						</div>
@@ -112,7 +118,8 @@ function PostListItem(props) {
 											<img src={props.post.avatar} alt="avatar"></img>
 										</div>
 										<span className={styles.bg}>
-											<h3>{props.post.username}</h3>
+											<h2>{props.post.first_name} {props.post.last_name}</h2>
+											<p>({props.post.username})</p>
 										</span>
 									</div>
 								</Link>
@@ -173,6 +180,7 @@ function PostListItem(props) {
 										{commentList}
 									</div>
 								</div>
+								
 							</div>
 							<div>
 								<Likes 

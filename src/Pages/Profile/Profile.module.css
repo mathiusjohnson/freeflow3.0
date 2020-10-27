@@ -1,141 +1,141 @@
 div.user-info {
-  width: 400px;
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 2em;
+	width: 400px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 2em;
 }
 
 .user-info p {
-  margin: 0.3em 0;
+	margin: 0.3em 0;
 }
 
 .user-info .avatar img {
-  width: 80px;
+	width: 80px;
 }
 .user-info .avatar .avatar-container {
-  background-color: white;
-  width: 107px;
-  margin: 1em auto;
-  border-radius: 90px;
-  height: 104px;
+	background-color: white;
+	width: 107px;
+	margin: 1em auto;
+	border-radius: 90px;
+	height: 104px;
 }
 
 p.username {
-  font-weight: 700;
-  font-size: 20px;
+	font-weight: 700;
+	font-size: 20px;
 }
 
 .status .online {
-  color: green;
+	color: green;
 }
 
 .status .offline {
-  color: grey;
+	color: grey;
 }
 .user-info .stack {
-  margin-bottom: 1em;
-  display: flex;
-  text-align: center;
+	margin-bottom: 1em;
+	display: flex;
+	text-align: center;
 }
 .user-info .stack li {
-  list-style: none;
-  margin-left: 5px;
+	list-style: none;
+	margin-left: 5px;
 }
 
 .stack .bold {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .react-tags__search-input {
-  background: #192038;
-  color: white;
-  margin: 0.4em 0;
-  width: 400px;
-  border: 1px solid #222b45;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 1rem;
+	background: #192038;
+	color: white;
+	margin: 0.4em 0;
+	width: 400px;
+	border: 1px solid #222b45;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 1rem;
 }
 
 .react-tags__suggestions #ReactTags li {
-  list-style: none;
+	list-style: none;
 }
 
 .react-tags__suggestions #ReactTags li span mark {
-  background-color: #08d991;
-  color: #fff;
-  padding: 0 0.3em;
+	background-color: #08d991;
+	color: #fff;
+	padding: 0 0.3em;
 }
 .user-profile h2 {
-  margin: 1em 0;
+	margin: 1em 0;
 }
 
 .user-profile .post .post-stack {
-  display: flex;
-  list-style: none;
-  justify-content: flex-end;
+	display: flex;
+	list-style: none;
+	justify-content: flex-end;
 }
 .user-profile .post li {
-  margin-left: 0.5em;
+	margin-left: 0.5em;
 }
 
 .user-profile .post-stack .bold {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .user-profile .time-posted {
-  text-align: right;
-  font-size: 13px;
+	text-align: right;
+	font-size: 13px;
 }
 
 .user-profile .post-body {
-  margin: 1em 0;
-  height: 100%;
+	margin: 1em 0;
+	height: 100%;
 }
 
 .edit-user-info input {
-  background: #192038;
-  color: white;
-  margin: 0.4em 0;
-  border: 1px solid #222b45;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 1rem;
-  padding: 0.4em;
+	background: #192038;
+	color: white;
+	margin: 0.4em 0;
+	border: 1px solid #222b45;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 1rem;
+	padding: 0.4em;
 }
 
 .profile-progress .mentor-progress,
 .profile-progress .student-progress {
-  display: flex;
+	display: flex;
 }
 
 .user-info a {
-  width: 100%;
+	width: 100%;
 }
 
 .user-info .avatar-list-item {
-  width: 50px;
+	width: 50px;
 }
 
 .user-info .avatar-list-item img {
-  width: 40px;
+	width: 40px;
 }
 
 .user-info .register-avatar-list-title {
-  flex-direction: column;
-  margin-right: 0;
+	flex-direction: column;
+	margin-right: 0;
 }
 
 .user-info .register-avatar-list-main-container {
-  margin: 0;
+	margin: 0;
 }
 .user-info button {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 input.react-tags__search-input {
-  width: 200px !important;
-  /* border: none;
+	width: 200px !important;
+	/* border: none;
   background: none;
   border-bottom: white 1px solid;
   padding: 0.3em;
@@ -143,50 +143,50 @@ input.react-tags__search-input {
 }
 
 .user-profile .bottom {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 0.6em;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 0 0.6em;
 }
 
 .user-profile .bottom .right {
-  margin: 0.7em 0;
-  display: flex;
-  justify-content: space-between;
+	margin: 0.7em 0;
+	display: flex;
+	justify-content: space-between;
 }
 .user-profile .right .checkbox {
-  margin: 0.7em;
+	margin: 0.7em;
 }
 
 button.react-tags__selected-tag {
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-  border: #08d991 solid 1px;
-  background: transparent;
-  padding: 0.2em 0.3em;
-  border-radius: 3px;
+	margin-top: 0.5em;
+	margin-left: 0.5em;
+	border: #08d991 solid 1px;
+	background: transparent;
+	padding: 0.2em 0.3em;
+	border-radius: 3px;
 }
 
 button span.react-tags__selected-tag-name {
-  color: #fff;
-  font-weight: 700;
+	color: #fff;
+	font-weight: 700;
 }
 
 .edit-post-button {
-  display: flex;
+	display: flex;
 }
 
 .edit-post-button button {
-  margin-right: 0.4em;
+	margin-right: 0.4em;
 }
 
 textarea.edit-post {
-  height: 100px;
-  border: none;
-  width: 100%;
-  background: transparent;
-  border-bottom: #fff 1px solid;
-  color: #fff;
+	height: 100px;
+	border: none;
+	width: 100%;
+	background: transparent;
+	border-bottom: #fff 1px solid;
+	color: #fff;
 }
 
 /* input[type="checkbox"] {
@@ -194,237 +194,237 @@ textarea.edit-post {
 } */
 
 .lbl-toggle {
-  display: block;
-  text-transform: uppercase;
-  text-align: center;
+	display: block;
+	text-transform: uppercase;
+	text-align: center;
 
-  padding: 1rem;
+	padding: 1rem;
 
-  color: #fff;
-  background: #16b446;
+	color: #fff;
+	background: #16b446;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  /* border-radius: 7px; */
-  transition: all 0.25s ease-out;
+	/* border-radius: 7px; */
+	transition: all 0.25s ease-out;
 }
 
 .lbl-toggle:hover {
-  /* color: #7c5a0b; */
-  background-color: #8cfac7;
+	/* color: #7c5a0b; */
+	background-color: #8cfac7;
 }
 .lbl-toggle::before {
-  content: " ";
-  display: inline-block;
+	content: ' ';
+	display: inline-block;
 
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-left: 5px solid currentColor;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid currentColor;
 
-  vertical-align: middle;
-  margin-right: 0.7rem;
-  transform: translateY(-2px);
+	vertical-align: middle;
+	margin-right: 0.7rem;
+	transform: translateY(-2px);
 
-  transition: transform 0.2s ease-out;
+	transition: transform 0.2s ease-out;
 }
 
 .collapsible-content .content-inner {
-  /* background: rgba(250, 224, 66, 0.2); */
-  /* border-bottom: 1px solid rgba(250, 224, 66, 0.45); */
+	/* background: rgba(250, 224, 66, 0.2); */
+	/* border-bottom: 1px solid rgba(250, 224, 66, 0.45); */
 
-  /* border-bottom-left-radius: 7px;
+	/* border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px; */
-  padding: 0.5rem 1rem;
+	padding: 0.5rem 1rem;
 }
 
 .collapsible-content {
-  max-height: 0px;
-  overflow: hidden;
+	max-height: 0px;
+	overflow: hidden;
 
-  transition: max-height 0.25s ease-in-out;
+	transition: max-height 0.25s ease-in-out;
 }
 
 .toggle:checked + .lbl-toggle + .collapsible-content {
-  max-height: 100vh;
+	max-height: 100vh;
 }
 
 .toggle:checked + .lbl-toggle::before {
-  transform: rotate(90deg) translateX(-3px);
+	transform: rotate(90deg) translateX(-3px);
 }
 
 .toggle:checked + .lbl-toggle {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
 }
 
 textarea.profile-new-comment {
-  width: 100%;
-  height: 100px;
-  margin-bottom: 1em;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 1em;
 }
 
 .profile-comment {
-  margin-bottom: 1em;
-  /* display: flex; */
+	margin-bottom: 1em;
+	/* display: flex; */
 }
 
 .profile-comment .avatar img {
-  width: 100px;
+	width: 100px;
 }
 
 .user-profile .blue-button {
-  border: 1px solid #3366ff;
-  color: #3366ff;
-  font-weight: 900;
-  border-radius: 5px;
-  padding: 0.5rem 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+	border: 1px solid #3366ff;
+	color: #3366ff;
+	font-weight: 900;
+	border-radius: 5px;
+	padding: 0.5rem 0.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
 }
 .user-profile .button-transition {
-  background: linear-gradient(to right, white, #3366ff 50%, white 50%);
-  overflow: hidden;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  background-position: 110%;
-  transition: background-position 275ms ease;
-  text-decoration: none;
-  color: #3366ff;
-  background-position: 100% 0;
-  transition: 0.5s;
+	background: linear-gradient(to right, white, #3366ff 50%, white 50%);
+	overflow: hidden;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 110%;
+	transition: background-position 275ms ease;
+	text-decoration: none;
+	color: #3366ff;
+	background-position: 100% 0;
+	transition: 0.5s;
 }
 .user-profile .button-transition:hover {
-  cursor: pointer;
-  color: white;
-  background-position: 0 100%;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 1px 1px 9px #fff0f5;
+	cursor: pointer;
+	color: white;
+	background-position: 0 100%;
+	-webkit-text-fill-color: transparent;
+	box-shadow: 1px 1px 9px #fff0f5;
 }
 
 .user-profile .red-button {
-  border: 1px solid rgb(250, 70, 70);
-  color: rgb(250, 70, 70);
-  font-weight: 900;
-  border-radius: 5px;
-  padding: 0.5rem 0.8rem;
-  display: flex;
-  /* width: 100%; */
-  justify-content: center;
-  align-items: center;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+	border: 1px solid rgb(250, 70, 70);
+	color: rgb(250, 70, 70);
+	font-weight: 900;
+	border-radius: 5px;
+	padding: 0.5rem 0.8rem;
+	display: flex;
+	/* width: 100%; */
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
 }
 .user-profile .red-button-transition {
-  background: linear-gradient(to right, white, rgb(250, 70, 70) 50%, white 50%);
-  overflow: hidden;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  background-position: 110%;
-  transition: background-position 275ms ease;
-  text-decoration: none;
-  color: rgb(250, 70, 70);
-  background-position: 100% 0;
-  transition: 0.5s;
+	background: linear-gradient(to right, white, rgb(250, 70, 70) 50%, white 50%);
+	overflow: hidden;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 110%;
+	transition: background-position 275ms ease;
+	text-decoration: none;
+	color: rgb(250, 70, 70);
+	background-position: 100% 0;
+	transition: 0.5s;
 }
 .user-profile .red-button-transition:hover {
-  cursor: pointer;
-  color: white;
-  background-position: 0 100%;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 1px 1px 9px #fff0f5;
+	cursor: pointer;
+	color: white;
+	background-position: 0 100%;
+	-webkit-text-fill-color: transparent;
+	box-shadow: 1px 1px 9px #fff0f5;
 }
 
 .user-profile .green-button {
-  border: 1px solid#16b446;
-  color: #16b446;
-  font-weight: 900;
-  border-radius: 5px;
-  padding: 0.5rem 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+	border: 1px solid#16b446;
+	color: #16b446;
+	font-weight: 900;
+	border-radius: 5px;
+	padding: 0.5rem 0.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
 }
 .user-profile .green-button-transition {
-  background: linear-gradient(to right, white, #16b446 50%, white 50%);
-  overflow: hidden;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  background-position: 110%;
-  transition: background-position 275ms ease;
-  text-decoration: none;
-  color: #0cda92;
-  background-position: 100% 0;
-  transition: 0.5s;
+	background: linear-gradient(to right, white, #16b446 50%, white 50%);
+	overflow: hidden;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 110%;
+	transition: background-position 275ms ease;
+	text-decoration: none;
+	color: #0cda92;
+	background-position: 100% 0;
+	transition: 0.5s;
 }
 .user-profile .green-button-transition:hover {
-  cursor: pointer;
-  color: white;
-  background-position: 0 100%;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 1px 1px 9px #fff0f5;
+	cursor: pointer;
+	color: white;
+	background-position: 0 100%;
+	-webkit-text-fill-color: transparent;
+	box-shadow: 1px 1px 9px #fff0f5;
 }
 
 .user-profile .text-body {
-  float: none;
-  width: 100%;
-  margin-left: 0;
-  margin-top: -0;
-  font-size: 0.9em;
-  min-height: 90%;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: #2b3858;
+	float: none;
+	width: 100%;
+	margin-left: 0;
+	margin-top: -0;
+	font-size: 0.9em;
+	min-height: 90%;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #2b3858;
 }
 
 .edit-buttons {
-  width: 100%;
+	width: 100%;
 }
 
 .user-profile .experience {
-  width: 100%;
+	width: 100%;
 }
 
 .user-profile .exp-classification {
-  display: flex;
+	display: flex;
 }
 
 .user-profile .progress-bars {
-  width: 100%;
+	width: 100%;
 }
 
 .editor-buttons {
-  display: flex;
+	display: flex;
 }
 .editor-buttons .red-button {
-  width: 100%;
-  margin-left: 1em;
+	width: 100%;
+	margin-left: 1em;
 }
 
 .user-profile .post-body {
-  background: #192038;
-  padding: 1em;
-  border-radius: 5px;
-  height: 100%;
+	background: #192038;
+	padding: 1em;
+	border-radius: 5px;
+	height: 100%;
 }
 
 .user-profile .kYdNcd {
-  overflow: visible;
+	overflow: visible;
 }
 
 .w-md-editor-toolbar {
-  background: #16b446;
+	background: #16b446;
 }
 
 .checkbox-input {
-  border-color: #16b446;
+	border-color: #16b446;
 }

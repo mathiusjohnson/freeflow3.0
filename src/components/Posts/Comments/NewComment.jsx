@@ -4,30 +4,30 @@ import styles from './NewComment.module.scss'
 
 export default function CommentForm(props) {
   const [value, setValue] = useState("");
-  const [error] = useState("");
-    
-    // const commentObj = {
-    //   avatar: props.currentUser.avatar,
-    //   username: props.currentUser.username,
-    // };
+  const [error, setError] = useState("");
+   
+    const commentObj = {
+      avatar: props.currentUser.avatar,
+      username: props.currentUser.username,
+    };
 
-    // function onValidateComment() {
-    //   if (value === "") {
-    //     setError("Comment cannot be blank");
-    //     return;
-    //   }
-    //   if (value !== ""){
-    //     setError("");
-    //     props.createComment(
-    //       props.post.post_id,                 
-    //       props.currentUser.id,
-    //       value,
-    //       commentObj)
-    //       .then(() => {
-    //     setValue("");
-    //     });         
-    //   }
-    // }
+    function onValidateComment() {
+      if (value === "") {
+        setError("Comment cannot be blank");
+        return;
+      }
+      if (value !== ""){
+        setError("");
+        props.createComment(
+          props.post.post_id,                 
+          props.currentUser.id,
+          value,
+          commentObj)
+          .then(() => {
+        setValue("");
+        });         
+      }
+    }
 
   return (
     <>
@@ -45,9 +45,8 @@ export default function CommentForm(props) {
           <section className={styles.validation}>{error}</section>
         </div>
         <div className={styles.commentlikebuttonflex}>
-          {/* <div 
-          className={styles.commentbutton}
-          className={styles.buttontransition} onClick={() => onValidateComment()}>Comment</div> */}
+          <div 
+          className={styles.commentbutton} onClick={() => onValidateComment()}>Comment</div>
         </div>
       </div>
     </>

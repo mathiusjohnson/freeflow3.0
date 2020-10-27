@@ -3,7 +3,7 @@ import styles from './CommentList.module.scss'
 import { NavLink } from 'react-router-dom';
 
 function CommentList(props) {
-  const { index, avatar, username, text_body, comment, currentUser, removeComment, post } = props;
+  const { index, avatar, username, first_name, last_name, text_body, comment, currentUser, removeComment, post } = props;
 
 
   const myComment = currentUser.id === comment.commenter_id;
@@ -25,7 +25,7 @@ function CommentList(props) {
       <div className={styles.comments}>
       <NavLink className={styles.userlink} to={`/user-profiles/${username}`}>
         <span className={styles.commentusername}>
-          <b>{username}&nbsp;&nbsp;</b>
+          <b>{first_name} {last_name}&nbsp;&nbsp;</b>
         </span>
       </NavLink>
       <span>{text_body}</span>
