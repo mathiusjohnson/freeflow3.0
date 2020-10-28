@@ -3,16 +3,7 @@ import React from 'react';
 import UsernameSearchFeature from '../UsernameSearch/UsernameSearchFeature';
 
 export default function MessageTutorCreate(props) {
-
-  // console.log('MessageTutorCreateProps', props);
-
-  // const usernameList = props.avatarList;
-
-  // const currentUserID = Number(document.cookie.split('=')[1]);
-  // const filteredUsernameList = usernameList.filter(user => {
-  //   return user.id !== currentUserID;
-  // })
-
+  
   // const usernameListData = filteredUsernameList.map(user => {
   //   return <TutorCreateOptionItem
   //     key={user.id}
@@ -40,7 +31,7 @@ export default function MessageTutorCreate(props) {
       width: '1000px'
     }}>
       <div className="tutor-create-header">
-        Create Tutor Session
+        Create Experience Session
     </div>
       <div className="tutor-create-mentor-student">
         <div className="create-mentor-student-header">You're looking for:</div>

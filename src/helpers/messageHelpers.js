@@ -4,8 +4,6 @@ export default function messageCleanSort(currentUserID, currentData) {
 
   let currentUsername;
 
-  // console.log('currentData', currentData);
-
   for (let item of currentData) {
     if (item.senderid === currentUserID) {
       currentUsername = item.sender;
@@ -14,8 +12,6 @@ export default function messageCleanSort(currentUserID, currentData) {
     currentUsername = item.receiver;
     break;
   }
-
-  console.log('currentUsername', currentUsername);
 
   let intMessageList = [];
 
@@ -29,8 +25,6 @@ export default function messageCleanSort(currentUserID, currentData) {
     }
     intMessageList.push(obj);
   }
-
-  // console.log('intMessageList', intMessageList);
 
   let msgList = {};
 
@@ -62,8 +56,6 @@ export default function messageCleanSort(currentUserID, currentData) {
     }
   }
 
-  // console.log('msgList', msgList);
-
   let dateSortedMsgList = {};
 
   for (let arr in msgList) {
@@ -72,8 +64,6 @@ export default function messageCleanSort(currentUserID, currentData) {
     })
     dateSortedMsgList[arr] = msgList[arr];
   }
-
-  // console.log('sortedMsgList', dateSortedMsgList);
 
   return dateSortedMsgList;
 

@@ -4,7 +4,6 @@ import UsernameSearchItem from './UsernameSearchItem';
 import { useState } from 'react';
 
 export default function UsernameSearchFeature(props) {
-  console.log("username route: ", props.usernameRoute);
   const [searchResults, setSearchResults] = useState([]);
 
   const searchResultData = searchResults.map((result, index) => {
@@ -19,7 +18,6 @@ export default function UsernameSearchFeature(props) {
 
   function changeSearchState() {
     const userInput = document.querySelector('#search-user-input').value
-    // console.log(userInput);
 
     // user has to input set number of chars
     let currentSearchResults = [];
@@ -32,7 +30,6 @@ export default function UsernameSearchFeature(props) {
     }
 
     setSearchResults(currentSearchResults);
-    console.log(currentSearchResults);
   }
 
   function setUsernameValue(username) {

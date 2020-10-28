@@ -5,7 +5,6 @@ import UserListItem from "./UserListItem";
 export default function StudentList(props) {
   const { users } = props;
   const usersData = users.map((user, index) => {
-		// console.log("users in user list: ", user);
 		
     return (
       <UserListItem

@@ -7,7 +7,7 @@ import styles from './UserInfo.module.scss'
 
 function UserInfo(props) {
   let loggedInUser = JSON.parse(localStorage.getItem('currentUser'))
-  console.log("props in userinfo: ", props);
+
   return (
     <Card>
       <CardBody>
@@ -34,8 +34,8 @@ function UserInfo(props) {
           </p>
           <Stack helper={props.helper_stack} />
           <Experience
-            helper={props.user.helperrating}
-            helped={props.user.helpedrating}
+            helper={props.helper}
+            helped={props.helped}
             user={props.user}
           />
           {props.user.id === parseInt(loggedInUser.id, 10) ? (

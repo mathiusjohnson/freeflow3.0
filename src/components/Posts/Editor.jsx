@@ -16,7 +16,6 @@ function Editor(props) {
   };
 
   let avatarUrl, username;
-  console.log("localStorage in editor: ", localStorage);
   if (typeof localStorage !== 'undefined') {
     avatarUrl = typeof localStorage !== 'undefined' && localStorage.avatarUrl
     username = typeof localStorage !== 'undefined' && localStorage.usreUrl
@@ -24,7 +23,6 @@ function Editor(props) {
 
   let techTags = [];
   const onChangeInput = (selectedTags) => {
-    // console.log("HELLOOOOO");
     techTags = selectedTags;
   };
 
@@ -70,7 +68,7 @@ function Editor(props) {
                 status="Success"
                 checked={checkbox[1]}
               />{' '}
-            Insert dropdown list for selecting category
+              Insert dropdown list for selecting category
             </Label>
           </FormGroup>
           <FormGroup check>

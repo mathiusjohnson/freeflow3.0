@@ -3,8 +3,6 @@ import RegisterAvatarListItem from './RegisterAvatarListItem';
 
 export default function RegisterAvatarList(props) {
 
-  console.log('registerAvatarList', props);
-
   const avatarListData = props.avatarList.map((avatar, index) => {
     return <RegisterAvatarListItem
       key={index}

@@ -23,16 +23,13 @@ export default function reducer(state, action) {
     case SET_POSTS: {
 
       const { data } = action;
-      // console.log("data in set posts: ", data);
       state = { ...state, posts: [...state.posts, data] };
       return state;
     }
 
     case FILTER_POSTS: {
-      // console.log("from filter", state.filtered_posts);
       const { text } = action;
 
-      console.log("from filter", text);
 
       if (text !== "") {
         let postWithStack = state.filtered_posts.filter((post) => {
@@ -40,7 +37,6 @@ export default function reducer(state, action) {
             return true;
           }
         });
-        // console.log("from filter", postWithStack);
         const final = postWithStack.filter((post) => {
           for (let el of postWithStack) {
             if (el.post_id === post.post_id) {
@@ -49,8 +45,7 @@ export default function reducer(state, action) {
           }
           return false;
         });
-        // console.log("from filter", state);
-        // console.log("from filter", final);
+
         state = { ...state, posts: final };
       } else {
         state = { ...state, posts: [...state.filtered_posts] };
@@ -60,24 +55,19 @@ export default function reducer(state, action) {
     }
 
     case EDIT_POST: {
-      // console.log("from reducer edit post");
       const { text, post_id } = action;
-      //console.log("WTF?");
       const removedState = state.posts.map((post) => {
         if (post.post_id === post_id) {
           post.text_body = text;
         }
         return post;
       });
-      // console.log("from reducer", removedState);
       state = { ...state, posts: removedState };
       return state;
     }
 
     case DELETE_POST: {
-      // console.log("from reducer edit post");
       const { post_id } = action;
-      // console.log("WTF?", post_id);
       const removedState = state.posts.filter((post) => {
         if (post.post_id === post_id) {
           return false;
@@ -85,13 +75,11 @@ export default function reducer(state, action) {
           return true;
         }
       });
-      // console.log("from reducer", removedState);
       state = { ...state, posts: removedState };
       return state;
     }
 
     case SET_NEW_INFO: {
-      // console.log("HERE");
       const { data, id } = action;
       const index = state.users.findIndex((x) => x.id === id);
       const users = [...state.users];
@@ -99,11 +87,9 @@ export default function reducer(state, action) {
 
       const keys = Object.keys(data);
       for (let el of keys) {
-        // console.log("from reducer", el);
         user[el] = data[el];
       }
       state = { ...state, users: users };
-      // console.log("from reducer", state.users);
 
       return state;
     }
@@ -123,18 +109,14 @@ export default function reducer(state, action) {
           return true;
         }
       });
-      // console.log("newlike in reducer: ", newLikes);
       state = { ...state, likes: newLikes };
       return state;
     }
 
     case ADD_COMMENT: {
-      // console.log("before set comments reducer", state.comments);
 
       const { data } = action;
       state = { ...state, comments: [...state.comments, data] };
-
-      // console.log("after set comments reducer: ", state.comments);
       return state;
     }
 
@@ -157,7 +139,6 @@ export default function reducer(state, action) {
       };
 
       filteredComments.push(newComment);
-      // console.log("newcomment in reducer: ", filteredComments);
       state = { ...state, comments: filteredComments };
       return state;
     }
@@ -176,7 +157,6 @@ export default function reducer(state, action) {
           return true;
         }
       });
-      // console.log("newcomment in reducer: ", newComments);
       state = { ...state, comments: newComments };
       return state;
     }
@@ -256,7 +236,6 @@ export default function reducer(state, action) {
       const matchingUser = state.users.find(
         (user) => user.id === action.userId
       );
-      // console.log("matching user: ", matchingUser);
       return { ...state, selected: matchingUser };
 
     default:

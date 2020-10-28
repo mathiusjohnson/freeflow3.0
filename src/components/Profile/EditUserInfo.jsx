@@ -58,8 +58,6 @@ function EditUserInfo(props) {
     if (removed.length !== 0 || added.length !== 0) {
       props.onSaveNewStack(removed, added, userDetails.id);
     }
-
-    // console.log("new stack?", oldStack, newStack, removed, added);
     props.onSaveNewInfo(newDetails, userDetails.id);
     props.onSave();
   }

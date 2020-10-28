@@ -21,12 +21,10 @@ export default function MessageHeader(props) {
   const currentUserID = loggedInUser.id;
 
   function getUsernameList(props) {
-    console.log("avatarlist: ", props.avatarList);
     const filteredList = props.avatarList.filter(item => {
       return item.id !== currentUserID;
     });
 
-    console.log("filtered list: ", filteredList);
     return filteredList.map(item => {
       return item.username;
     });
@@ -47,7 +45,7 @@ export default function MessageHeader(props) {
         )}
       </div>
       <div className='message-header-buttons'>
-        <div className='tutor-session-title'> Tutor Session: </div>
+        <div className='tutor-session-title'> Experience Session: </div>
         <MessageButton
           name={'Create'}
           create={true}

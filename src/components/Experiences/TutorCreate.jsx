@@ -3,8 +3,6 @@ import React from 'react';
 import UsernameSearchFeature from '../UsernameSearch/UsernameSearchFeature';
 import '../../styles/tutor-sessions.css'
 export default function TutorCreate(props) {
-  console.log("props in usernamelist: ", props);
-
 
   function getUsernameList(props) {
     const usernameList = props.currentUserData;

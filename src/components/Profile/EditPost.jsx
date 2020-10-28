@@ -5,7 +5,6 @@ import { Button } from "reactstrap";
 // import Tags from "./MentorStack";
 
 function EditPostItem(props) {
-  //console.log("from edit post", props);
   const [post, setPost] = useState(props.text_body || "");
   // let techTags = [];
   // const onChangeInput = (selectedTags) => {

@@ -6,7 +6,6 @@ import poststyles from './PostListItem.module.scss'
 import Tags from "./StackTag";
 
 function EditPostItem(props) {
-  //console.log("from edit post", props);
   const [post, setPost] = useState(props.text_body || "");
   // let techTags = [];
 

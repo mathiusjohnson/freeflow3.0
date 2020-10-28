@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProgressBar.module.scss";
+import styles from "./ProgressBar.module.scss";
 
 const ProgressBar = (props) => {
   let { experience } = props;
@@ -68,11 +68,11 @@ const ProgressBar = (props) => {
   };
 
   return (
-    <div className="progress-bars">
-      <div className="container-styles">
-        <div style={fillerStyles}className="bg-color">
+    <div className={styles.progressbars}>
+      <div className={styles.containerstyles}>
+        <div style={fillerStyles}className={styles.bgcolor}>
           <span
-            className="label-styles"
+            className={styles.labelstyles}
           >{`${experiencePoints}/${fullExperience}`}</span>
         </div>
       </div>

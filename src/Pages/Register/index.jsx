@@ -24,10 +24,6 @@ export default function Register() {
       .then(all => {
 
         const [avatarData, randomUsernameData] = all;
-
-        // console.log('random username data', randomUsernameData);
-        // console.log('avatar data', avatarData);
-
         const uniqueAvatars = [...new Set(avatarData.data)];
         const uniqueRandomUsernames = [...new Set(randomUsernameData.data)];
 
@@ -64,7 +60,6 @@ export default function Register() {
       }
     }
     const avatarSrc = document.querySelector('.selected-avatar').children[0].src;
-    // console.log(avatarSrc);
     if (avatarSrc === 'http://localhost:8000/register') {
       setSubmitError('Please select avatar!');
       return;
@@ -76,7 +71,6 @@ export default function Register() {
 
     axios.post('http://localhost:8001/api/register/new', { usernameInput, emailInput, passwordInput, avatarSrc })
       .then(res => {
-        // console.log(res);
         setSubmitSuccess(true);
 
         setTimeout(() => {
