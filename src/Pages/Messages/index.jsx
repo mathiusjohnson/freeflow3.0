@@ -331,8 +331,8 @@ export default function Messages(props) {
   // ROUTE FROM OTHER PAGE FOR SENDING MSG *********************************
   // console.log("props in messages: ", props);
   let usernameRoute;
-  // console.log("props location in messages: ", props.location);
-  if (!props.location.state.username) {
+  console.log("props location in messages: ", props.location);
+  if (props.location.state.username) {
     usernameRoute = props.location.state.username;
   }
 
@@ -341,7 +341,7 @@ export default function Messages(props) {
     clickMe(usernameRoute);
   }
   // ROUTE FROM OTHER PAGE FOR SENDING MSG *********************************
-
+  console.log("usernameRoute in messages index: ", usernameRoute);
   return (
     <div className="outside-main-message">
       {showTutor && (
@@ -374,6 +374,7 @@ export default function Messages(props) {
             avatarList={avatars}
             createNew={createNew}
             displayCreateTutorSession={displayCreateTutorSession}
+            usernameRoute={usernameRoute}
           />
           <MessageView
             currentMessages={currentMessages}

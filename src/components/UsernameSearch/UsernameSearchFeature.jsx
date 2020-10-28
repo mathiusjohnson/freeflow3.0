@@ -4,7 +4,7 @@ import UsernameSearchItem from './UsernameSearchItem';
 import { useState } from 'react';
 
 export default function UsernameSearchFeature(props) {
-
+  console.log("username route: ", props.usernameRoute);
   const [searchResults, setSearchResults] = useState([]);
 
   const searchResultData = searchResults.map((result, index) => {

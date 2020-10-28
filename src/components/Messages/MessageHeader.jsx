@@ -16,14 +16,17 @@ export default function MessageHeader(props) {
     avatar = null;
   }
 
-  const currentUserID = Number(document.cookie.split('=')[1]);
+  let loggedInUser = JSON.parse(localStorage.getItem('currentUser'))
+
+  const currentUserID = loggedInUser.id;
 
   function getUsernameList(props) {
-
+    console.log("avatarlist: ", props.avatarList);
     const filteredList = props.avatarList.filter(item => {
       return item.id !== currentUserID;
     });
 
+    console.log("filtered list: ", filteredList);
     return filteredList.map(item => {
       return item.username;
     });
@@ -38,6 +41,7 @@ export default function MessageHeader(props) {
           <div>
             <UsernameSearchFeature
               usernameList={getUsernameList(props)}
+              usernameRoute={props.usernameRoute}
             />
           </div>
         )}
