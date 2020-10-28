@@ -74,7 +74,7 @@ function UserProfileItem(props) {
 	const helped = state.helped_points.find(
 		(helped) => helped.id === currentUser.id
 	);
-
+	console.log(currentUser);
 	// console.log("helper points: ",helper, "helper points: ", helped);
 	return (
 

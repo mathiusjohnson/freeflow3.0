@@ -7,7 +7,7 @@ import styles from './UserInfo.module.scss'
 
 function UserInfo(props) {
   let loggedInUser = JSON.parse(localStorage.getItem('currentUser'))
-
+  console.log("props in userInfo: ", props.user);
   return (
     <Card>
       <CardBody>
