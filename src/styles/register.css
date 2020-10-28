@@ -1,51 +1,50 @@
 .register-main-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* background: #222b45; */
-  border-radius: 10px;
-  padding: 2rem;
-  padding-right: 5rem;
-  height: 96%;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* background: #222b45; */
+	border-radius: 10px;
+	padding: 2rem;
+	padding-right: 5rem;
+	height: 96%;
+	width: 100%;
 }
 
 .register-avatar-list-title {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .avatar-title-title,
 .register-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-right: 1rem;
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-right: 1rem;
 }
 
 /* register input */
 .register-input {
-  /* background: #192038; */
-  color: white;
-  padding: 0.75rem;
-  border: 1px solid #222b45;
-  height: 30px;
-  border-radius: 5px;
-  font-size: 1rem;
+	/* background: #192038; */
+	color: black;
+	padding: 0.75rem;
+	border: 1px solid #222b45;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 1rem;
 }
 
 .register-input:focus,
 .register-input:hover {
-  outline: none;
-  border: 1px solid #3366ff;
+	outline: none;
+	border: 1px solid #3366ff;
 }
-
 
 .toggle-avatar-list-btn,
 .username-random-btn {
-  /* border: 1px solid #3366ff;
+	/* border: 1px solid #3366ff;
   color: #3366ff;
   font-weight: 500;
   border-radius: 5px;
@@ -53,115 +52,118 @@
   display: flex;
   justify-content: center;
   align-items: center; */
-  /* margin-top: 0.5rem; */
-  border: 1px solid #3366ff;
-  color: #3366ff;
-  font-weight: 500;
-  border-radius: 5px;
-  padding: 0.3rem 0.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* text-transform: uppercase; */
-  transition: all 0.2s ease-in-out;
+	/* margin-top: 0.5rem; */
+	border: 1px solid #3366ff;
+	color: #3366ff;
+	font-weight: 500;
+	border-radius: 5px;
+	padding: 0.3rem 0.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* text-transform: uppercase; */
+	transition: all 0.2s ease-in-out;
 }
 
 .toggle-avatar-list-btn:hover,
 .username-random-btn:hover {
-  background: linear-gradient(to right, white, #3366ff 50%, white 50%);
-  overflow: hidden;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  background-position: 110%;
-  transition: background-position 275ms ease;
-  text-decoration: none;
-  color:#3366ff;
-  background-position: 100% 0;
-  transition: .2s;
-  cursor: pointer;
-  color: white;
-  background-position: 0 100%;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 1px 1px 9px #FFF0F5
+	background: linear-gradient(to right, white, #3366ff 50%, white 50%);
+	overflow: hidden;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 110%;
+	transition: background-position 275ms ease;
+	text-decoration: none;
+	color: #3366ff;
+	background-position: 100% 0;
+	transition: 0.2s;
+	cursor: pointer;
+	color: white;
+	background-position: 0 100%;
+	-webkit-text-fill-color: transparent;
+	box-shadow: 1px 1px 9px #fff0f5;
 }
-
-
 
 .selected-avatar {
-  width: 55px;
-  height: 55px;
-  /* background: #222b45; */
-  margin-right: 1rem;
-  border-radius: 5px;
-  border: 1px solid #3366ff;
+	width: 55px;
+	height: 55px;
+	/* background: #222b45; */
+	margin-right: 1rem;
+	border-radius: 5px;
+	border: 1px solid #3366ff;
 }
 
-
 .register-avatar-list-container {
-  display: flex;
-  flex-direction: row;
-  /* background: #222b45; */
-  border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	/* background: #222b45; */
+	border-radius: 5px;
 }
 
 .avatar-list {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
 }
 
 .avatar-list-item {
-  width: 52px;
-  height: 52px;
+	width: 52px;
+	height: 52px;
 }
 
 .avatar-list-item:hover {
-  cursor: pointer;
-  background: white;
-  border-radius: 5px;
+	cursor: pointer;
+	background: white;
+	border-radius: 5px;
 }
-
 
 /* Username */
 .register-username-container,
+.register-lastname-container,
+.register-firstname-container,
 .register-email-container,
 .register-password-container,
 .register-confirm-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 1rem;
-  position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 1rem;
+	position: relative;
 }
 
 .register-username-container {
-  margin-left: 11.5rem;
+	margin-left: 11.9rem;
 }
 
+.register-confirm-container,
 .register-password-container {
-  margin-right: 2.8rem;
+	margin-right: 2.8rem;
+}
+
+.register-lastname-container,
+.register-firstname-container {
+	margin-right: 3.3rem;
 }
 
 .register-confirm-container {
-  margin-right: 8.4rem;
+	margin-right: 8.4rem;
 }
 
 .username-random-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .username-random-text {
-  font-style: italic;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin:0 1rem;
+	font-style: italic;
+	font-size: 1.1rem;
+	font-weight: 600;
+	margin: 0 1rem;
 }
 
-
 .register-btn {
-  /* border: 1px solid #1cd454;
+	/* border: 1px solid #1cd454;
   color: #1cd454;
   font-weight: 500;
   border-radius: 5px;
@@ -169,102 +171,102 @@
   display: flex;
   justify-content: center;
   align-items: center; */
-  margin-right: 1rem;
-  margin-top: 0.5rem;
-  border: 1px solid #1cd454;
-  color: #1cd454;
-  font-weight: 500;
-  border-radius: 5px;
-  padding: 0.3rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* width: 210px; */
-  text-transform: uppercase;
-  transition: all 0.2s ease-in-out;
+	margin-right: 1rem;
+	margin-top: 0.5rem;
+	border: 1px solid #1cd454;
+	color: #1cd454;
+	font-weight: 500;
+	border-radius: 5px;
+	padding: 0.3rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 210px; */
+	text-transform: uppercase;
+	transition: all 0.2s ease-in-out;
 }
-
 
 .register-btn:hover {
-  background: linear-gradient(to right, white, #1cd454 50%, white 50%);
-  overflow: hidden;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-size: 200% 100%;
-  background-position: 110%;
-  transition: background-position 275ms ease;
-  text-decoration: none;
-  color:#1cd454;
-  background-position: 100% 0;
-  transition: .2s;
-  cursor: pointer;
-  color: white;
-  background-position: 0 100%;
-  -webkit-text-fill-color: transparent;
-  box-shadow: 1px 1px 9px #FFF0F5
+	background: linear-gradient(to right, white, #1cd454 50%, white 50%);
+	overflow: hidden;
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 200% 100%;
+	background-position: 110%;
+	transition: background-position 275ms ease;
+	text-decoration: none;
+	color: #1cd454;
+	background-position: 100% 0;
+	transition: 0.2s;
+	cursor: pointer;
+	color: white;
+	background-position: 0 100%;
+	-webkit-text-fill-color: transparent;
+	box-shadow: 1px 1px 9px #fff0f5;
 }
 
-
 .register-error {
-  color: rgb(250, 70, 70);
-  margin-left: 1rem;
+	color: rgb(250, 70, 70);
+	margin-left: 1rem;
 }
 
 .password-match {
-  color: #1cd454;
-  margin-left: 1rem;
+	color: #1cd454;
+	margin-left: 1rem;
 }
 
 .register-btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0.5rem;
 }
 
 .submit-error-container {
-  color: rgb(250, 70, 70);
+	color: rgb(250, 70, 70);
 }
 
 .submit-success-container {
-  color: #1cd454;
+	color: #1cd454;
 }
 
 .register-avatar-list-title {
-  margin-right: 10.8rem;
+	margin-right: 10.8rem;
 }
 
 .register-avatar-list-main-container {
-  margin-left: 2.8rem;
+	margin-left: 2.8rem;
 }
 
-.username-error{
-  position: absolute;
-  left: -300px;
+.username-error,
+.lastname-error,
+.firstname-error {
+	position: absolute;
+	left: -300px;
 }
 
 .email-error {
-  position: absolute;
-  left: -210px;
+	position: absolute;
+	left: -210px;
 }
 
 .password-error {
-  position: absolute;
-  left: -300px;
+	position: absolute;
+	left: -300px;
 }
 
 .confirm-error {
-  position: absolute;
-  left: -220px;
+	position: absolute;
+	left: -220px;
 }
 
 .password-match {
-  position: absolute;
-  left: -220px;
+	position: absolute;
+	left: -220px;
 }
 
 .register-main-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 2.5rem;
 }
