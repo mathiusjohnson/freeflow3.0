@@ -3,7 +3,7 @@ import timeSince from '../../helpers/timeSince';
 
 export default function MessageItem(props) {
 
-  console.log('MessageItemprops', props);
+  // console.log('MessageItemprops', props);
 
   let messageBody;
   if (props.recentMessage.textBody.length > 25) {
