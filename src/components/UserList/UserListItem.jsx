@@ -6,13 +6,10 @@ import "./UserListItem.scss";
 
 export default function UserListItem(props) {	
 	const stack = props.user_skills.map((skill, index) => {
-    if (skill.user_id === props.userId) {
-			// console.log("skill name: ", skill.name);
-			
+    if (skill.user_id === props.userId) {			
       return <li className="list" key={index}>{skill.name}&nbsp;</li>
     }
 	})
-	console.log("props in userlist item: ", props);
 	
   return (
     <div className="userlist">
@@ -44,7 +41,7 @@ export default function UserListItem(props) {
               {!props.studentExperience && !props.helperExperience ? 
               <div className="new-user">
                 <h4>{props.username} is new.</h4>
-                <h5>Invite them for a <NavLink className="tutor-link" to='/tutor-sessions'>tutor session</NavLink> to help them get on the experience board!</h5>
+                <h5>Invite them for a <NavLink className="tutor-link" to='/tutor-sessions'>experience session</NavLink> to help them get on the experience board!</h5>
               </div>
               : ""}
             </div>

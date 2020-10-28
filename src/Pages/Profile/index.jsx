@@ -55,7 +55,6 @@ function UserProfileItem(props) {
 	let user = getUser(state.user_profiles, routedUserID);
 	if (!user) return null;
 	
-	// console.log('user in index: ', user);
 
 
 	let currentUser;
@@ -68,8 +67,15 @@ function UserProfileItem(props) {
 	
 	const posts = getUserPosts(state.posts, currentUser.id);
 	const helper_stack = getStack(state.user_skills, currentUser.id);
-	console.log("user in index prof: ", user);
+	const helper = state.helper_points.find(
+		(helper) => helper.id === currentUser.id
+	);
 
+	const helped = state.helped_points.find(
+		(helped) => helped.id === currentUser.id
+	);
+
+	// console.log("helper points: ",helper, "helper points: ", helped);
 	return (
 
 		<div>
@@ -80,6 +86,8 @@ function UserProfileItem(props) {
 						user={currentUser}
 						onEdit={onEdit}
 						helper_stack={helper_stack}
+						helper={helper}
+						helped={helped}
 					/>
 				</>
 			)}
@@ -127,10 +135,3 @@ function UserProfileItem(props) {
 export default UserProfileItem;
 
 	// USE LATER?
-	// const helper = state.helper_points.find(
-	// 	(helper) => helper.id === user.id
-	// );
-
-	// const helped = state.helped_points.find(
-	// 	(helped) => helped.id === user.id
-	// );

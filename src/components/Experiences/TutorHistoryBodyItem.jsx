@@ -5,9 +5,6 @@ import { formatDate, getHelperUsername, getStudentUsername, getDateStatus, getTi
 import classNames from 'classnames'
 
 export default function TutorHistoryBodyItem(props) {
-
-  // console.log('tutorHistoryBodyItem', props);
-
   const statusClass = classNames('tutor-history-item-status', {
     'item-status-pending': props.status === 'pending',
     'item-status-in-progress': props.status === 'in-progress',
@@ -40,8 +37,6 @@ export default function TutorHistoryBodyItem(props) {
     }
     return props.studentID;
   }
-
-  // console.log('timeAgo', getTimeAgo(props));
 
   return (
     <div className='tutor-history-item-container'>

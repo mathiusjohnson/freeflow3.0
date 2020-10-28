@@ -15,9 +15,8 @@ export default function UserList(props) {
     // filterDashboardPosts,
     // deletePost,
     // updatePost,
-  } = useApplicationData();  console.log("state in user props: ", state);
+  } = useApplicationData();
   const usersData = state.users.map((user, index) => {
-		// console.log("users in user list: ", user);
 		
     return (
       <UserListItem

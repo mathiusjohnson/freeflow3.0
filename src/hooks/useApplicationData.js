@@ -59,12 +59,10 @@ export default function useApplicationData() {
       axios.get("http://localhost:8001/api/register/avatars"),
       axios.get("http://localhost:8001/api/posts"),
     ]).then((all) => {
-      // console.log("all data in hook: ", all);
       const comments = all[0].data;
       const likes = all[1].data;
       const user_skills = all[2].data;
       const posts = all[3].data;
-      // const student_stack = all[4].data;
       const experiences = all[4].data;
       const user_profiles = all[5].data;
       const users = all[6].data;
@@ -73,7 +71,6 @@ export default function useApplicationData() {
       const db_skills = all[9].data;
       const posts_skills = all[10].data;
       const avatars = all[11].data;
-      // const selected = {};
       const filtered_posts = all[12].data;
       dispatch({
         type: SET_APPLICATION_DATA,
@@ -81,7 +78,6 @@ export default function useApplicationData() {
         likes,
         user_skills,
         posts,
-        // student_stack,
         experiences,
         user_profiles,
         users,
@@ -90,7 +86,6 @@ export default function useApplicationData() {
         db_skills,
         posts_skills,
         avatars,
-        // selected,
         filtered_posts,
       });
     })
@@ -124,7 +119,6 @@ export default function useApplicationData() {
   };
 
   const createPost = (postDetails, techStack, id) => {
-    // console.log("post details: ", techStack);
     const newPost = {
       text_body: postDetails.text,
       active: true,
@@ -136,19 +130,16 @@ export default function useApplicationData() {
       avatar: postDetails.avatar,
       username: postDetails.username,
     };
-    // console.log("newpost in hooked: ", newPost);
     // if (!postDetails.helper) {
     //   (newPost["is_helper"] = true), (newPost["is_helped"] = false);
     // }
     for (let entry of techStack) {
-      // console.log("stack name in hook", entry.name);
       newPost["stack"].push(entry.name);
     }
 
     const promise = axios
       .post(`http://localhost:8001/api/posts`, { newPost })
       .then((response) => {
-        // console.log("response.data in first .then", response.data);
         getNewPostId(response.data);
 
         dispatch({
@@ -157,28 +148,24 @@ export default function useApplicationData() {
         });
       })
       .catch((error) => {
-        console.log("I don't *post* this mess", error);
+        console.log("Error in createPost data hook:", error);
       });
     const getNewPostId = (res) => {
-      // console.log("res id in hook: ", res.id);
       Promise.all(
         techStack.forEach((element) => {
-          // console.log("element in getnewpostid hook: ", element.id);
           axios.post(`http://localhost:8001/api/posts_skills`, {
             post_id: res.id,
             skill_id: element.id,
           });
         })
       ).catch((error) => {
-        console.log("I don't *id* this mess", error);
+        console.log("Error in geNewPostID data hook:", error);
       });
-      // );
     };
     return promise;
   };
 
   const addLike = (postId, likerId) => {
-    // console.log("like data in hook: ", postId, likerId);
     const newLike = {
       post_id: postId,
       liker_id: likerId,
@@ -186,20 +173,18 @@ export default function useApplicationData() {
     const promise = axios
       .post(`http://localhost:8001/api/likes`, { newLike })
       .then((response) => {
-        // console.log("response in likes hook: ", response);
         dispatch({
           type: SET_LIKES,
           data: newLike,
         });
       })
       .catch((error) => {
-        console.log("I don't *like* this mess", error);
+        console.log("Error in addLike data hook:", error);
       });
     return promise;
   };
 
   const removeLike = (postId, unlikerId) => {
-    // console.log("unlike data in hook: ", postId, unlikerId);
     const removeLike = {
       post_id: postId,
       liker_id: unlikerId,
@@ -209,20 +194,18 @@ export default function useApplicationData() {
         params: { removeLike: removeLike },
       })
       .then((response) => {
-        // console.log("response in likes hook: ", response);
         dispatch({
           type: REMOVE_LIKE,
           data: removeLike,
         });
       })
       .catch((error) => {
-        console.log("I don't *like* this mess", error);
+        console.log("Error in removeLike data hook:", error);
       });
     return promise;
   };
 
   const createComment = (postId, commenterId, commentDetails, commentObj) => {
-    // console.log(" data in comment hook: ", postId, commenterId, commentDetails);
     const newComment = {
       post_id: postId,
       commenter_id: commenterId,
@@ -230,50 +213,44 @@ export default function useApplicationData() {
       avatar: commentObj.avatar,
       username: commentObj.username,
     };
-    // console.log("new comment in hook: ", newComment);
 
     const promise = axios
       .post(`http://localhost:8001/api/comments`, { newComment })
       .then((response) => {
-        // console.log("response.data in first .then", response.data[0]);
         dispatch({
           type: ADD_COMMENT,
           data: newComment,
         });
       })
-      .catch((err) => {
-        console.log("I don't *comment* this mess", err);
+      .catch((error) => {
+        console.log("Error in createComment data hook:", error);
       });
 
     return promise;
   };
 
   const editComment = (postId, commenterId, commentDetails, oldTextBody) => {
-    // console.log(" data in comment hook: ", postId, commenterId, commentDetails);
     const updatedComment = {
       post_id: postId,
       commenter_id: commenterId,
       text_body: commentDetails,
       value: oldTextBody,
     };
-    // console.log("new comment in hook: ", updatedComment);
 
     const promise = axios
       .put(`http://localhost:8001/api/comments`, { updatedComment })
       .then((response) => {
-        console.log("response.data in first .then", response.data[0]);
         dispatch({
           type: EDIT_COMMENT,
           data: updatedComment,
         });
       })
-      .catch((err) => {
-        console.log("I don't *comment* this mess", err);
+      .catch((error) => {
+        console.log("Error in editComment data hook:", error);
       });
     return promise;
   };
   const updatePost = (editedPost, post_id, id) => {
-    console.log("from hook", editedPost, post_id, id);
 
     const promise = axios
       .put(`http://localhost:8001/api/posts`, {
@@ -281,27 +258,20 @@ export default function useApplicationData() {
         post_id: post_id,
       })
       .then((response) => {
-        // console.log("response.data in first .then", response.data[0]);
         dispatch({
           type: EDIT_POST,
           text: editedPost,
           post_id: post_id,
         });
       })
-      .catch((err) => {
-        console.log("I don't *comment* this mess", err);
+      .catch((error) => {
+        console.log("Error in updatePost data hook:", error);
       });
 
     return promise;
   };
 
   const updateUserInfo = (newInfo, id) => {
-    console.log(
-      "here in update",
-      state.user_profiles,
-      state.user_skills,
-      newInfo
-    );
 
     const promise = Promise.all([
       axios.put("http://localhost:8001/api/users/edit", {
@@ -321,24 +291,22 @@ export default function useApplicationData() {
           id: id,
         })
       )
-      .catch((err) => console.log("something went wrong in the update"));
+      .catch((err) => console.log("something went wrong in the update user hook"));
       return promise;
   };
 
   const deletePost = (post_id) => {
-    // console.log("here in delete", post_id);
 
     const promise = axios
       .delete(`http://localhost:8001/api/posts`, { params: { post_id } })
       .then((response) => {
-        // console.log("response.data in first .then", response.data[0]);
         dispatch({
           type: DELETE_POST,
           post_id: post_id,
         });
       })
-      .catch((err) => {
-        console.log("I don't *delete* this mess", err);
+      .catch((error) => {
+        console.log("Error in deletePost data hook:", error);
       });
 
     return promise;
@@ -382,7 +350,6 @@ export default function useApplicationData() {
   };
 
   const removeComment = (postId, commenterId) => {
-    // console.log("unlike data in hook: ", postId, commenterId);
     const removeComment = {
       post_id: postId,
       commenter_id: commenterId,
@@ -392,20 +359,17 @@ export default function useApplicationData() {
         params: { removeComment: removeComment },
       })
       .then((response) => {
-        // console.log("response in likes hook: ", response);
         dispatch({
           type: REMOVE_COMMENT,
           data: removeComment,
         });
       })
       .catch((error) => {
-        console.log("I don't *like* this mess", error);
+        console.log("Error in removeComment data hook:", error);
       });
     return promise;
   };
   const filterDashboardPosts = (filter) => {
-    // console.log("from filter", filter);
-
     dispatch({
       type: FILTER_POSTS,
       text: filter,

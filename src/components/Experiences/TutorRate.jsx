@@ -7,8 +7,6 @@ export default function TutorRate(props) {
 
   const [rating, setRating] = useState(0);
 
-  // console.log('tutorrateprops', props);
-
   const onStarClick = (nextValue) => setRating(nextValue);
   const onStarHover = (nextValue) => setRating(nextValue);
 
@@ -57,7 +55,7 @@ export default function TutorRate(props) {
   return (
     <div className='tutor-rate-container'>
       <div className="rate-tutor-header">
-        Rate Tutor Session: <strong>{getOtherUsername(props)}</strong> {props.unratedSession && (
+        Rate Experience Session: <strong>{getOtherUsername(props)}</strong> {props.unratedSession && (
           '(' + formatDate(props.unratedSession.date_completed) + ')'
         )}
       </div>

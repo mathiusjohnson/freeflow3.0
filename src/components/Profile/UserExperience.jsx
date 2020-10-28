@@ -2,26 +2,29 @@ import React from "react";
 import ProgressBar from "../ProgressBar/ProgressBar";
 
 function Experience(props) {
-  // console.log("props in experience: ", props);
 
   if (!props.user) return {};
-  // console.log("user in experience: ", props.user.helpedrating);
+  if (!props.helper) return null;
+  if (!props.helped) return null;
 
+  console.log("user in experience bar: ", props.helper.helperrating);
+  const helper = props.helper;
+  console.log(helper);
   return (
     <div className="experience">
       <div className="exp-classification">
-        {props.user.helperrating ? <p>Helper Level</p> : ""}
-        {props.user.helperrating ? (
-          <ProgressBar experience={Number(props.user.helperrating)} />
+        {props.helper ? <p>Helper Level</p> : ""}
+        {props.helper.helperrating ? (
+          <ProgressBar experience={Number(props.helper.helperrating)} />
         ) : (
           ""
         )}
       </div>
 
       <div className="exp-classification">
-        {props.user.helpedrating ? <p>Helped Level</p> : ""}
-        {props.user.helpedrating ? (
-          <ProgressBar experience={Number(props.user.helpedrating)} />
+        {props.helped.helpedrating ? <p>Helped Level</p> : ""}
+        {props.helped.helpedrating ? (
+          <ProgressBar experience={Number(props.helped.helpedrating)} />
         ) : (
           ""
         )}

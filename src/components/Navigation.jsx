@@ -6,8 +6,6 @@ import styles from '../Pages/Dashboard/dashboard.module.css';
 const Navigation = props => {
 	const dispatch = useAuthDispatch();
 	const userDetails = useAuthState();
-	// console.log('user details in navigation: ', userDetails.user);
-
 	const handleLogout = () => {
 		logout(dispatch);
 		// props.history.push('/login');

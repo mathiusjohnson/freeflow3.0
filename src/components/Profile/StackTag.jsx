@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import ReactTags from "react-tag-autocomplete";
 
 function Tags(props) {
-  // console.log("tags", props.suggested);
   const [tags, setTags] = useState(props.tags || []);
   const [suggestions, setSuggestions] = useState([]);
 
@@ -21,7 +20,6 @@ function Tags(props) {
 
   const onAddition = (tag) => {
     setTags([...tags, tag]);
-    // console.log("tags", tags);
   };
 
   return (

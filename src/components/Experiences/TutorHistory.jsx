@@ -5,8 +5,6 @@ import TutorConfirmDelete from './TutorConfirmDelete';
 
 export default function TutorHistory(props) {
 
-  // console.log('tutorHistoryProps', props);
-
   return (
     <div className='tutor-history-container'>
       <TutorHistoryHeader />
