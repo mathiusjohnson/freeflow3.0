@@ -23,17 +23,17 @@ export default function TutorCreate(props) {
   return (
     <div className='tutor-create-container'>
       <div className="tutor-create-header">
-        Create Tutor Session
+        Create Experience Session
       </div>
       <div className="tutor-create-mentor-student">
-        <div className="create-mentor-student-header">You're looking for:</div>
-        <div className="radio-mentor">
+        <div className="create-mentor-student-header">You're looking to:</div>
+        {/* <div className="radio-mentor">
           <input type="radio" name='radio-mentor-student' id='mentor' defaultChecked />
-          <label htmlFor="mentor">Mentorship</label>
-        </div>
+          <label htmlFor="mentor">Help someone out</label>
+        </div> */}
         <div className="radio-student">
           <input type="radio" name='radio-mentor-student' id='student' />
-          <label htmlFor="student">Menteeship</label>
+          <label htmlFor="student">INSERT DROPDOWN LIST FOR SKILLS/ASSETS/WANTS/NEEDS </label>
         </div>
       </div>
       <div className="tutor-create-username">

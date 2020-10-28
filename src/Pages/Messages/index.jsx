@@ -28,13 +28,17 @@ export default function Messages(props) {
 
   useEffect(() => {
 
-    const userID = document.cookie.split('=')[1];
+    // const userID = document.cookie.split('=')[1];
+    const loggedInUser = JSON.parse(localStorage.getItem('currentUser'))
+    const userID = loggedInUser.id
+    console.log("loggedInUSer in messages: ", loggedInUser.id);
+    console.log("userID in messages: ", userID);
 
     axios.post('http://localhost:8001/api/messages/', { userID })
       .then((data) => {
         const currentUserID = data.data.userId;
         const currentData = data.data.data;
-
+        console.log("data in messages: ", data.data.data);
         const unreadCount = unreadCounter(Number(userID), currentData);
         // setTotalUnread(unreadCount);
         // console.log('unreadCount', unreadCount);
@@ -91,7 +95,7 @@ export default function Messages(props) {
   }, [])
 
   function setNotifications(notifNum) {
-    console.log('notifNum', notifNum);
+    // console.log('notifNum', notifNum);
 
     const allMenuTitles = document.querySelectorAll('.menu-title');
     for (let title of allMenuTitles) {
@@ -158,7 +162,7 @@ export default function Messages(props) {
     }
     changeBg(username);
 
-    console.log('intMessages', intMessages);
+    // console.log('intMessages', intMessages);
 
     let otherUserID;
     if (intMessages.length) {
@@ -225,8 +229,10 @@ export default function Messages(props) {
       }, 2000);
 
     } else {
-      const senderID = document.cookie.split('=')[1];
+      const loggedInUser = JSON.parse(localStorage.getItem('currentUser'))
 
+      const senderID = loggedInUser.id;
+      console.log("sender id in messages: ", senderID);
       axios.post('http://localhost:8001/api/messages/new', { textInput, receiverID, senderID })
         .then((res) => {
           // console.log('resssss', res);
@@ -325,7 +331,7 @@ export default function Messages(props) {
   // ROUTE FROM OTHER PAGE FOR SENDING MSG *********************************
   // console.log("props in messages: ", props);
   let usernameRoute;
-  console.log("props location in messages: ", props.location);
+  // console.log("props location in messages: ", props.location);
   if (!props.location.state.username) {
     usernameRoute = props.location.state.username;
   }
