@@ -86,10 +86,12 @@ function Editor(props) {
           </FormGroup>
         </FormGroup>
       </Form>
-    <div 
-    className={styles.postbtn} 
-    onClick={() => validatePost()}>Post</div>
-    <div>
+      <div className={styles.postbtncontainer}>
+        <div 
+        className={styles.postbtn} 
+        onClick={() => validatePost()}>Post</div>
+        <div>
+      </div>
       <section className={styles.validation}>{error}</section>
     </div>
     </div>

@@ -8,7 +8,12 @@
 	display: flex;
 	align-items: center;
 }
-
+.postbtncontainer {
+	display: flex;
+	justify-content: flex-end;
+	width: 90%;
+	margin-top: 10px;
+}
 .postbtn {
 	text-align: center;
 	border: 1px solid #1cd454;
@@ -17,7 +22,6 @@
 	border-radius: 5px;
 	width: 80px;
 	padding: 0.5rem 0.8rem;
-	margin-left: 20px;
 	text-transform: uppercase;
 	background: linear-gradient(to right, white, #1cd454 50%, white 50%);
 	background-clip: text;
@@ -27,6 +31,7 @@
 	transition: background-position 350ms ease;
 	text-decoration: none;
 	color: #1cd454;
+	
 }
 
 .postbtn:hover {
