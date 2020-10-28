@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 const RegisterFirstName = () => {
 	const [errorMsg, setErrorMsg] = useState('');
-	const [lastName, setLastName] = useState(false);
+	const [lastName, setLastName] = useState('');
 
 	function setError() {
 		if (!lastName) {
