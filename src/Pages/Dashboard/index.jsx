@@ -47,7 +47,7 @@ export default function Home(props) {
       <div className="App">
         <div className="hero">
           {" "}
-          <h1 className="title">Build a better online community.</h1>
+          <h1 className="title">Building a better online community.</h1>
           <p>Ask for help or help others.</p>
         </div>
         <Editor

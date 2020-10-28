@@ -50,15 +50,17 @@ function Editor(props) {
   }
 
   return (
-    <Form >
-      <FormGroup>
-        <textarea 
-          type="textarea" 
-          name="text" 
-          id="exampleText" 
-          value={value} 
-          onChange={e => setValue(e.target.value)} 
-        />
+    <div>
+      <Form >
+        <FormGroup>
+          <textarea 
+            type="textarea" 
+            name="text" 
+            id="exampleText"
+            placeholder="Create new post"
+            value={value} 
+            onChange={e => setValue(e.target.value)} 
+          />
           <Tags suggested={props.suggestion} onChange={onChangeInput} />
           <FormGroup check>
             <Label check>
@@ -68,18 +70,31 @@ function Editor(props) {
                 status="Success"
                 checked={checkbox[1]}
               />{' '}
-              Help Needed
+            Insert dropdown list for selecting category
             </Label>
           </FormGroup>
+          <FormGroup check>
+            <Label check>
+                <Input 
+                  type="checkbox"
+                  onChange={(value) => onChangeCheckbox(value, 1)}
+                  status="Success"
+                  checked={checkbox[1]}
+                />{' '}
+              Insert dropdown list for selecting topic
+            </Label>
+          </FormGroup>
+        </FormGroup>
+      </Form>
+      <div className={styles.postbtncontainer}>
         <div 
         className={styles.postbtn} 
         onClick={() => validatePost()}>Post</div>
-    <div>
+        <div>
+      </div>
       <section className={styles.validation}>{error}</section>
     </div>
-    </FormGroup>
-
-    </Form>
+    </div>
   );
 }
 

@@ -41,7 +41,7 @@
 }
 
 .message-item-container:nth-child(odd) {
-  background: #2b3858;
+  background: #F5F5F5;
 }
 
 .message-item-container:hover {
