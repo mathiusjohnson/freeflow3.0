@@ -67,12 +67,16 @@ export default function Register() {
 		}
 
 		const usernameInput = document.querySelector('#username-input').value;
+		const lastnameInput = document.querySelector('#lastname-input').value;
+		const firstnameInput = document.querySelector('#firstname-input').value;
 		const emailInput = document.querySelector('#email-input').value;
 		const passwordInput = document.querySelector('#password-input').value;
 
 		axios
 			.post('http://localhost:8001/api/register/new', {
 				usernameInput,
+				firstnameInput,
+				lastnameInput,
 				emailInput,
 				passwordInput,
 				avatarSrc,
