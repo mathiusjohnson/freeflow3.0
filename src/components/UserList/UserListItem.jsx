@@ -85,7 +85,7 @@ export default function UserListItem(props) {
             </div>
             {/* POST STACK LIST */}
             <div className="stack">
-              <span className="language-title">Language Preferences:&nbsp;</span><span>{stack}</span>
+              <span className="language-title">Skills:&nbsp;</span><span>{stack}</span>
             </div>
           </CardBody>
         </Card>
