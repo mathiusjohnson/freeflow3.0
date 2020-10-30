@@ -210,6 +210,7 @@ export default function reducer(state, action) {
         avatars,
         // selected,
         filtered_posts,
+        types,
       } = action;
 
       return {
@@ -230,6 +231,7 @@ export default function reducer(state, action) {
         avatars,
         // selected,
         filtered_posts,
+        types,
       };
 
     case SET_SELECTED_USER:

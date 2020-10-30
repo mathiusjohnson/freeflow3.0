@@ -39,6 +39,7 @@ export default function useApplicationData() {
     avatars: [],
     // selected: {},
     filtered_posts: [],
+    types: {},
   });
 
   // RETRIEVES API AND SETS IT WITH REDUCER
@@ -58,6 +59,7 @@ export default function useApplicationData() {
       axios.get("http://localhost:8001/api/posts_skills"),
       axios.get("http://localhost:8001/api/register/avatars"),
       axios.get("http://localhost:8001/api/posts"),
+      axios.get("http://localhost:8001/api/types"),
     ]).then((all) => {
       const comments = all[0].data;
       const likes = all[1].data;
@@ -72,6 +74,7 @@ export default function useApplicationData() {
       const posts_skills = all[10].data;
       const avatars = all[11].data;
       const filtered_posts = all[12].data;
+      const types = all[13].data;
       dispatch({
         type: SET_APPLICATION_DATA,
         comments,
@@ -87,6 +90,7 @@ export default function useApplicationData() {
         posts_skills,
         avatars,
         filtered_posts,
+        types,
       });
     })
     .catch((error) => {
