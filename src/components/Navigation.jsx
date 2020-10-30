@@ -108,12 +108,12 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-	const dispatch = useAuthDispatch();
-	const userDetails = useAuthState();
-	const handleLogout = () => {
-		logout(dispatch);
-		// props.history.push('/login');
-	};
+  const dispatch = useAuthDispatch();
+  const userDetails = useAuthState();
+  const handleLogout = () => {
+    logout(dispatch);
+    // props.history.push('/login');
+  };
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -128,6 +128,41 @@ export default function PrimarySearchAppBar() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+
+      <NavLink to='/profile'>
+        <MenuItem onClick={handleProfileMenuOpen}>
+          <IconButton
+            aria-label='account of current user'
+            aria-controls='primary-search-account-menu'
+            aria-haspopup='true'
+            color='inherit'
+          >
+            <AccountCircle />
+          </IconButton>
+          <p>Profile</p>
+        </MenuItem>
+      </NavLink>
+      <MenuItem>
+        <NavLink to='/experiences'>Experiences</NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to='/users'>Users</NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to='/login'>Login</NavLink>
+      </MenuItem>
+      <MenuItem>
+        <NavLink to='/register'>Register</NavLink>
+      </MenuItem>
+      {userDetails.user === undefined || userDetails.user === '' ? (
+        ''
+      ) : (
+        <button className={styles.logoutBtn} onClick={handleLogout}>
+          Logout
+        </button>
+      )}
+
+
     </Menu>
   );
 
@@ -142,63 +177,55 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      <NavLink
+        to={{
+          pathname: '/messages/',
+          state: { username: userDetails.user },
+        }}
+      >
+        <MenuItem>
+          <IconButton aria-label='show 4 new mails' color='inherit'>
+            <Badge badgeContent={4} color='secondary'>
+              <MailIcon />
+            </Badge>
+          </IconButton>
+          <p>Messages</p>
+        </MenuItem>
+      </NavLink>
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+        <IconButton aria-label='show 11 new notifications' color='inherit'>
+          <Badge badgeContent={11} color='secondary'>
             <NotificationsIcon />
           </Badge>
         </IconButton>
         <p>Notifications</p>
       </MenuItem>
-			
-			<NavLink to="/profile">
-				<MenuItem onClick={handleProfileMenuOpen}>
-					<IconButton
-						aria-label="account of current user"
-						aria-controls="primary-search-account-menu"
-						aria-haspopup="true"
-						color="inherit"
-					>
-						<AccountCircle />
-					</IconButton>
-					<p>Profile</p>
-				</MenuItem>
-			</NavLink>
-
     </Menu>
   );
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position='static'>
         <Toolbar>
           <IconButton
-            edge="start"
+            edge='start'
             className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
+            color='inherit'
+            aria-label='open drawer'
           >
             <MenuIcon />
           </IconButton>
-					<NavLink to="/dashboard">
-						<Typography className={classes.title} variant="h6" noWrap>
-							Freeflow
-						</Typography>
-					</NavLink>
+          <NavLink to='/dashboard'>
+            <Typography className={classes.title} variant='h6' noWrap>
+              Freeflow
+            </Typography>
+          </NavLink>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder='Search…'
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -208,34 +235,34 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+            <IconButton aria-label='show 4 new mails' color='inherit'>
+              <Badge badgeContent={4} color='secondary'>
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+            <IconButton aria-label='show 17 new notifications' color='inherit'>
+              <Badge badgeContent={17} color='secondary'>
                 <NotificationsIcon />
               </Badge>
             </IconButton>
             <IconButton
-              edge="end"
-              aria-label="account of current user"
+              edge='end'
+              aria-label='account of current user'
               aria-controls={menuId}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <AccountCircle />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
-              aria-label="show more"
+              aria-label='show more'
               aria-controls={mobileMenuId}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <MoreIcon />
             </IconButton>
@@ -247,16 +274,6 @@ export default function PrimarySearchAppBar() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
 
 // import React from 'react';
 // import { useAuthDispatch, logout, useAuthState } from '../Context';
