@@ -62,6 +62,7 @@ export default function useApplicationData() {
       axios.get("http://localhost:8001/api/posts"),
       axios.get("http://localhost:8001/api/types"),
       axios.get("http://localhost:8001/api/skill_categories"),
+      axios.get("http://localhost:8001/api/topics"),
     ])
       .then((all) => {
         const comments = all[0].data;
@@ -79,6 +80,7 @@ export default function useApplicationData() {
         const filtered_posts = all[12].data;
         const types = all[13].data;
         const skill_categories = all[14].data;
+        const topics = all[14].data;
         dispatch({
           type: SET_APPLICATION_DATA,
           comments,
@@ -96,6 +98,7 @@ export default function useApplicationData() {
           filtered_posts,
           types,
           skill_categories,
+          topics,
         });
       })
       .catch((error) => {
