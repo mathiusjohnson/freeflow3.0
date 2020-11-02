@@ -45,7 +45,7 @@ function UserProfileItem(props) {
   function onCancel() {
     back();
   }
-	console.log("Profile state type", state.types);
+	// console.log("Profile state type", state.types);
 
 	const comments = state.comments;
 

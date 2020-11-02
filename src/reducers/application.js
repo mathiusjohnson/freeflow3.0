@@ -211,6 +211,7 @@ export default function reducer(state, action) {
         // selected,
         filtered_posts,
         types,
+        skill_categories,
       } = action;
 
       return {
@@ -232,6 +233,7 @@ export default function reducer(state, action) {
         // selected,
         filtered_posts,
         types,
+        skill_categories,
       };
 
     case SET_SELECTED_USER:

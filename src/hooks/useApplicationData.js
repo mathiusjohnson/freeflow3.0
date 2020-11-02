@@ -40,6 +40,7 @@ export default function useApplicationData() {
     // selected: {},
     filtered_posts: [],
     types: {},
+    skill_categories: {},
   });
 
   // RETRIEVES API AND SETS IT WITH REDUCER
@@ -60,42 +61,46 @@ export default function useApplicationData() {
       axios.get("http://localhost:8001/api/register/avatars"),
       axios.get("http://localhost:8001/api/posts"),
       axios.get("http://localhost:8001/api/types"),
-    ]).then((all) => {
-      const comments = all[0].data;
-      const likes = all[1].data;
-      const user_skills = all[2].data;
-      const posts = all[3].data;
-      const experiences = all[4].data;
-      const user_profiles = all[5].data;
-      const users = all[6].data;
-      const helper_points = all[7].data;
-      const helped_points = all[8].data;
-      const db_skills = all[9].data;
-      const posts_skills = all[10].data;
-      const avatars = all[11].data;
-      const filtered_posts = all[12].data;
-      const types = all[13].data;
-      dispatch({
-        type: SET_APPLICATION_DATA,
-        comments,
-        likes,
-        user_skills,
-        posts,
-        experiences,
-        user_profiles,
-        users,
-        helper_points,
-        helped_points,
-        db_skills,
-        posts_skills,
-        avatars,
-        filtered_posts,
-        types,
+      axios.get("http://localhost:8001/api/skill_categories"),
+    ])
+      .then((all) => {
+        const comments = all[0].data;
+        const likes = all[1].data;
+        const user_skills = all[2].data;
+        const posts = all[3].data;
+        const experiences = all[4].data;
+        const user_profiles = all[5].data;
+        const users = all[6].data;
+        const helper_points = all[7].data;
+        const helped_points = all[8].data;
+        const db_skills = all[9].data;
+        const posts_skills = all[10].data;
+        const avatars = all[11].data;
+        const filtered_posts = all[12].data;
+        const types = all[13].data;
+        const skill_categories = all[14].data;
+        dispatch({
+          type: SET_APPLICATION_DATA,
+          comments,
+          likes,
+          user_skills,
+          posts,
+          experiences,
+          user_profiles,
+          users,
+          helper_points,
+          helped_points,
+          db_skills,
+          posts_skills,
+          avatars,
+          filtered_posts,
+          types,
+          skill_categories,
+        });
+      })
+      .catch((error) => {
+        console.log("promise has uncaught error", error);
       });
-    })
-    .catch((error) => {
-      console.log("promise has uncaught error", error);
-    });
   }, []);
 
   // FOR WEBSOCKET
